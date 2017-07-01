@@ -1,0 +1,126 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=Shift_JIS">
+<title>zurapce: 構造体 FilePackHandle</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+<link href="tabs.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- 作成： Doxygen 1.4.6-NO -->
+<div class="tabs">
+  <ul>
+    <li><a href="index.html"><span>メインページ</span></a></li>
+    <li id="current"><a href="annotated.html"><span>データ構造</span></a></li>
+    <li><a href="files.html"><span>ファイル</span></a></li>
+    <li><a href="pages.html"><span>関連ページ</span></a></li>
+  </ul></div>
+<div class="tabs">
+  <ul>
+    <li><a href="annotated.html"><span>データ構造</span></a></li>
+    <li><a href="hierarchy.html"><span>クラス階層</span></a></li>
+    <li><a href="functions.html"><span>データフィールド</span></a></li>
+  </ul></div>
+<h1>構造体 FilePackHandle</h1><!-- doxytag: class="FilePackHandle" -->パックファイル読み込みハンドル  
+<a href="#_details">[詳細]</a>
+<p>
+<code>#include &lt;FilePack.h&gt;</code>
+<p>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td></td></tr>
+<tr><td colspan="2"><br><h2>変数</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">FILEACC&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFilePackHandle.html#b8e4bc394ea8d925628b9fe450e54ed2">file_acc</a></td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">ファイル構造体  <a href="#b8e4bc394ea8d925628b9fe450e54ed2"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFilePackHandle.html#e918192ee715a8b5a60d5b4c534a4fe6">file_amount</a></td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">ファイル数  <a href="#e918192ee715a8b5a60d5b4c534a4fe6"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">unsigned short *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFilePackHandle.html#35ab400c483b84b65c817a6500c01b41">crc</a></td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">16bit CRC.  <a href="#35ab400c483b84b65c817a6500c01b41"></a><br></td></tr>
+</table>
+<hr><a name="_details"></a><h2>説明</h2>
+パックファイル読み込みハンドル 
+<p>
+<hr><h2>構造体</h2>
+<a class="anchor" name="b8e4bc394ea8d925628b9fe450e54ed2"></a><!-- doxytag: member="FilePackHandle::file_acc" ref="b8e4bc394ea8d925628b9fe450e54ed2" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">FILEACC <a class="el" href="structFilePackHandle.html#b8e4bc394ea8d925628b9fe450e54ed2">FilePackHandle::file_acc</a>          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+ファイル構造体 
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="e918192ee715a8b5a60d5b4c534a4fe6"></a><!-- doxytag: member="FilePackHandle::file_amount" ref="e918192ee715a8b5a60d5b4c534a4fe6" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">int <a class="el" href="structFilePackHandle.html#e918192ee715a8b5a60d5b4c534a4fe6">FilePackHandle::file_amount</a>          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+ファイル数 
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="35ab400c483b84b65c817a6500c01b41"></a><!-- doxytag: member="FilePackHandle::crc" ref="35ab400c483b84b65c817a6500c01b41" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">unsigned short* <a class="el" href="structFilePackHandle.html#35ab400c483b84b65c817a6500c01b41">FilePackHandle::crc</a>          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+16bit CRC. 
+<p>
+ファイル探索時、まずファイル名から取得した CRC が同一か比較し、 同一なら実際にファイル名を比較することで、読み込みの高速化を図る。<br>
+ ハンドルを開くと、ファイル数×2バイト確保されます。<br>
+ （Autch氏の libfpk に pceth2 で nsawa氏が施した改良を取り込み）     </td>
+  </tr>
+</table>
+<hr>この構造体の説明は次のファイルから生成されました:<ul>
+<li>zurapce/<a class="el" href="FilePack_8h.html">FilePack.h</a></ul>
+<hr size="1"><address style="align: right;"><small>zurapceに対してFri May 19 08:01:24 2006に生成されました。&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.4.6-NO </small></address>
+</body>
+</html>

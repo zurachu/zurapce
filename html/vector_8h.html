@@ -1,0 +1,2554 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=Shift_JIS">
+<title>zurapce: zurapce/vector.h</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+<link href="tabs.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- 作成： Doxygen 1.4.6-NO -->
+<div class="tabs">
+  <ul>
+    <li><a href="index.html"><span>メインページ</span></a></li>
+    <li><a href="annotated.html"><span>データ構造</span></a></li>
+    <li id="current"><a href="files.html"><span>ファイル</span></a></li>
+    <li><a href="pages.html"><span>関連ページ</span></a></li>
+  </ul></div>
+<div class="tabs">
+  <ul>
+    <li><a href="files.html"><span>ファイル一覧</span></a></li>
+    <li><a href="globals.html"><span>グローバル</span></a></li>
+  </ul></div>
+<h1>zurapce/vector.h</h1><table border="0" cellpadding="0" cellspacing="0">
+<tr><td></td></tr>
+<tr><td colspan="2"><br><h2>マクロ定義</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#837103d0947a225b8f78c3d47ff9ebe2">TPVECTORTOP</a>&nbsp;&nbsp;&nbsp;0x400</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#6daf1cd081b10f08fd7e7712bc57703d">TPMAX</a>&nbsp;&nbsp;&nbsp;72</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#52ed4ba4bd01a0fcdce105b1d524a88e">KSVECTORTOP</a>&nbsp;&nbsp;&nbsp;0x20</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#2cb456985c3e0691d9f40b1a3ab49bab">KSMAX</a>&nbsp;&nbsp;&nbsp;248</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#459e6d8f15b56d8a026b92e1499b6091">TPNO_INT0</a>&nbsp;&nbsp;&nbsp;12</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#ca56fea76ebbc72127f07ada2d39793d">TPNO_INT1</a>&nbsp;&nbsp;&nbsp;13</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#e4a2a36e9f83516127b43c3d3bcb8420">TPNO_INT2</a>&nbsp;&nbsp;&nbsp;14</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#fd093f80213fe2ff923054d1db204a86">TPNO_INT3</a>&nbsp;&nbsp;&nbsp;15</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#92f8efe359ec00426b441c18df48a0a1">KSNO_VectorSetTrap</a>&nbsp;&nbsp;&nbsp;0</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#13a5593ebbb4b7051dfa640633bd57f0">KSNO_VectorSetKs</a>&nbsp;&nbsp;&nbsp;1</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#b06cb6a50c7f3f36fa25eb298e461b29">KSNO_SystemGetInfo</a>&nbsp;&nbsp;&nbsp;2</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#45029bd5ebf91a0a96e4c619e2757b75">KSNO_DebugSetMon</a>&nbsp;&nbsp;&nbsp;3</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#ebd101b0256709a74086715260264802">KSNO_AppSetProcPeriod</a>&nbsp;&nbsp;&nbsp;4</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#b5ee9edba117537167dc670d34376506">KSNO_AppReqExit</a>&nbsp;&nbsp;&nbsp;5</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#40d873365174fd8b622a6874eea9d1bf">KSNO_AppExecFile</a>&nbsp;&nbsp;&nbsp;6</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#fe145a6f4c321f8000706167ac501ea0">KSNO_AppActiveResponse</a>&nbsp;&nbsp;&nbsp;7</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#ed452a355d84c5d6e16b56ca04b9fec2">KSNO_USBDisconnect</a>&nbsp;&nbsp;&nbsp;8</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#5f1f428d87421e54dc8d2e6514984f19">KSNO_USBReconnect</a>&nbsp;&nbsp;&nbsp;9</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#e6579caf2b59d470251e90a6ebf43fca">KSNO_USBSetupMode</a>&nbsp;&nbsp;&nbsp;10</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#4cf995d6a8d1d0fc7ddbb30d135d2b62">KSNO_PadGetDirect</a>&nbsp;&nbsp;&nbsp;12</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#b46da96d7baf194781ee4e82948205c7">KSNO_PadGetProc</a>&nbsp;&nbsp;&nbsp;13</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#a72ea9f564fed645bbf1b1a9e011ea91">KSNO_PadGet</a>&nbsp;&nbsp;&nbsp;14</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#5ecfd83183404445c257e03b6fdf970b">KSNO_PadSetTrigMode</a>&nbsp;&nbsp;&nbsp;15</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#5ccf00814c42b7c5473adc0462ae2df6">KSNO_LCDDispStart</a>&nbsp;&nbsp;&nbsp;16</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#2a3aedb9f54d1c7e337a848a27a23be8">KSNO_LCDDispStop</a>&nbsp;&nbsp;&nbsp;17</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#b2989d482d30b98bdeb24ac3185e7f3e">KSNO_LCDTrans</a>&nbsp;&nbsp;&nbsp;18</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#3951257f56c81fc682bf041bc9999e91">KSNO_LCDSetBuffer</a>&nbsp;&nbsp;&nbsp;19</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#ed9499fbf5d3506b650f4eb1b7d94d8a">KSNO_LCDSetOrientation</a>&nbsp;&nbsp;&nbsp;20</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#d1a37ef166c3293fb08fa18537f43de5">KSNO_LCDSetBright</a>&nbsp;&nbsp;&nbsp;21</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#f87c4b810cde8ba82443c179c6c16372">KSNO_LCDTransDirect</a>&nbsp;&nbsp;&nbsp;22</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#18c038c2fe24289b2b3e8202f6840cab">KSNO_LCDTransRange</a>&nbsp;&nbsp;&nbsp;23</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#aa70381ba6ff9ab7778ece1dec3550cd">KSNO_FontGetAdrs</a>&nbsp;&nbsp;&nbsp;24</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#5dc1a02ed2db2c994a977d9f814d6285">KSNO_FontPut</a>&nbsp;&nbsp;&nbsp;25</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#9c4a3fb56634502ef6f2406cb0731ace">KSNO_FontSetType</a>&nbsp;&nbsp;&nbsp;26</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#567fe5bdb176cd381eb06b9a50bd9e11">KSNO_FontSetPos</a>&nbsp;&nbsp;&nbsp;27</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#45bd5c42154761cab760e4980dd6200a">KSNO_FontPutStr</a>&nbsp;&nbsp;&nbsp;28</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#015f421f386d7b50ec26aaf548a4849a">KSNO_FontPrintf</a>&nbsp;&nbsp;&nbsp;29</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#dfc1cca14c5e7c0e667828be56cc8187">KSNO_FontSetTxColor</a>&nbsp;&nbsp;&nbsp;30</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#98269c58b94efb0cef89898b4296e0a8">KSNO_FontSetBkColor</a>&nbsp;&nbsp;&nbsp;31</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#dafc4e126e7dbb90a6ea8d4b205cee95">KSNO_sprintf</a>&nbsp;&nbsp;&nbsp;32</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#ace348fd143b20b7b299931d80f7ff9f">KSNO_vsprintf</a>&nbsp;&nbsp;&nbsp;33</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#f2e0fe3b804313d36850419d59e77a3b">KSNO_CRC32</a>&nbsp;&nbsp;&nbsp;34</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#2063c78d91b866a8c80133becb104817">KSNO_CPUSetSpeed</a>&nbsp;&nbsp;&nbsp;36</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#b9ee57050ad8a95dcbfacd58e15371f8">KSNO_WaveCheckBuffs</a>&nbsp;&nbsp;&nbsp;40</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#f0308ac979b1c2423c4536ac40a06d70">KSNO_WaveDataOut</a>&nbsp;&nbsp;&nbsp;41</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#cf64e5c942f8f51a88732569316070e1">KSNO_WaveSetChAtt</a>&nbsp;&nbsp;&nbsp;42</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#47f1adb559ea55a7a52d8d625b0421b2">KSNO_WaveSetMasterAtt</a>&nbsp;&nbsp;&nbsp;43</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#0de8cfd51024756bd29ce98d375ff976">KSNO_WaveStop</a>&nbsp;&nbsp;&nbsp;44</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#38cc600ac897741706a33fd70383b102">KSNO_WaveAbort</a>&nbsp;&nbsp;&nbsp;45</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#b62e9cc713891026072b48b1d5deed86">KSNO_TimeSet</a>&nbsp;&nbsp;&nbsp;48</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#bf3b3096172b2e495b07aa04fee69c1c">KSNO_TimeGet</a>&nbsp;&nbsp;&nbsp;49</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#210d17389834a51a865f13a950cde539">KSNO_TimeSetAlarm</a>&nbsp;&nbsp;&nbsp;50</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#3b0850b4ea1a0d1dcf676666c8ef038d">KSNO_TimeGetAlarm</a>&nbsp;&nbsp;&nbsp;51</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#690f4923da32abdec2c0fae933ea6949">KSNO_FlashErase</a>&nbsp;&nbsp;&nbsp;64</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#8feaf1ee85cea7bf00af0d39b3937d9f">KSNO_FlashWrite</a>&nbsp;&nbsp;&nbsp;65</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#264d20b5468a7a77233156a3e5096af2">KSNO_TimerSetContextSwitcher</a>&nbsp;&nbsp;&nbsp;68</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#6e9705b3646768a726b27f66e019c953">KSNO_TimerAdjustPrecisionCount</a>&nbsp;&nbsp;&nbsp;69</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#acbae8af93308cb5090232e46063c5a9">KSNO_TimerSetCallback</a>&nbsp;&nbsp;&nbsp;70</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#87deeed3db1df90fb409bbb0ebb70f5c">KSNO_TimerGetCount</a>&nbsp;&nbsp;&nbsp;71</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#6e1a9be7a37c2c840b54054553ee1cdf">KSNO_FileFindOpen</a>&nbsp;&nbsp;&nbsp;72</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#7079a023990f6579fc157822040b5eb0">KSNO_FileFindNext</a>&nbsp;&nbsp;&nbsp;73</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#8d9f3af6afdcdf004d0a56d50cd43984">KSNO_FileFindClose</a>&nbsp;&nbsp;&nbsp;74</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#30cb3782b5af3f03ea873fae0e5b11d9">KSNO_FileLoad</a>&nbsp;&nbsp;&nbsp;75</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#c7ff5cfd4482b14abe8debec7c2e42eb">KSNO_FileOpen</a>&nbsp;&nbsp;&nbsp;76</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#328eacf4bee65e07211ae226a3dc1933">KSNO_FileReadSct</a>&nbsp;&nbsp;&nbsp;77</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#8214db94a15e2ee35d0352e36653182c">KSNO_FileWriteSct</a>&nbsp;&nbsp;&nbsp;78</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#75bed788b14f3e3b1c5168bd5e878de8">KSNO_FileClose</a>&nbsp;&nbsp;&nbsp;79</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#7d6078f88e7864f89318c58a01e950d8">KSNO_PowerSetReport</a>&nbsp;&nbsp;&nbsp;80</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#420a506a6fe5a741c587a577af466c74">KSNO_PowerGetStatus</a>&nbsp;&nbsp;&nbsp;81</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#93ce2748662ecbbe892ea47dceb0b45f">KSNO_PowerForceBatt</a>&nbsp;&nbsp;&nbsp;82</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#6ae848a95903a308d182311ab6210dd3">KSNO_PowerEnterStandby</a>&nbsp;&nbsp;&nbsp;83</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#95e642a7aea833163b3ea5ac24a3bd17">KSNO_IRStartRx</a>&nbsp;&nbsp;&nbsp;88</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#eba29ea31df4f7198262c368d8b87c53">KSNO_IRStartTx</a>&nbsp;&nbsp;&nbsp;89</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#52f38c217181d21a321ed802817a9a77">KSNO_IRGetStat</a>&nbsp;&nbsp;&nbsp;90</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#570c9e84f29e08beaa0473e26871b17a">KSNO_IRStop</a>&nbsp;&nbsp;&nbsp;91</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#1b77ef286d1ea74d0c0eec8d7157cde6">KSNO_IRStartRxEx</a>&nbsp;&nbsp;&nbsp;92</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#5fcd1c87478395830636a26534ab44cd">KSNO_IRStartTxEx</a>&nbsp;&nbsp;&nbsp;93</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#b26a557d0c475c6c0690db2a7ff5f4c0">KSNO_IRStartRxPulse</a>&nbsp;&nbsp;&nbsp;94</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#8196717bc34b9cd021a7e194fdaf2157">KSNO_IRStartTxPulse</a>&nbsp;&nbsp;&nbsp;95</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#e6455b246d8f2d7a43bd8dc9f425e626">KSNO_LCDPoint</a>&nbsp;&nbsp;&nbsp;96</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#83e75bd0e6f307cad33d00fdc1a0c600">KSNO_LCDLine</a>&nbsp;&nbsp;&nbsp;97</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#374008e4e120bddbaa880f02f8f41530">KSNO_LCDPaint</a>&nbsp;&nbsp;&nbsp;98</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#f25b15f1c49799da8e5890cce6d0fb04">KSNO_LCDSetObject</a>&nbsp;&nbsp;&nbsp;99</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#850b08a6b1095cbaf09d3ade81dc3d65">KSNO_LCDDrawObject</a>&nbsp;&nbsp;&nbsp;100</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#22e9010c1a68af9449b0f99cb8bc4778">KSNO_USBCOMSetup</a>&nbsp;&nbsp;&nbsp;104</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#1e052ccc4fdd5d1afd775e615fccb3eb">KSNO_USBCOMStartRx</a>&nbsp;&nbsp;&nbsp;105</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#78a2aca9abab4efdb22a84203eb327fa">KSNO_USBCOMStartTx</a>&nbsp;&nbsp;&nbsp;106</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#d668e6fdfd85492cd186b259d2551a5c">KSNO_USBCOMStop</a>&nbsp;&nbsp;&nbsp;107</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#06d8984c6dc72c78ffdc587727863dd9">KSNO_USBCOMGetStat</a>&nbsp;&nbsp;&nbsp;108</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#3affcc7d56101f8448f107928992a48f">KSNO_HeapAlloc</a>&nbsp;&nbsp;&nbsp;112</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#d3fe6a6f0bb82e84c9dbfe773b1bc093">KSNO_HeapFree</a>&nbsp;&nbsp;&nbsp;113</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#19aec1c80a49fffa032f62f7ef41c03c">KSNO_HeapRealloc</a>&nbsp;&nbsp;&nbsp;114</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#23f7cca40b00fda017a0bf1fb822f9b6">KSNO_HeapGetMaxFreeSize</a>&nbsp;&nbsp;&nbsp;115</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#48639c956dd17388e95a8d77df78068e">KSNO_FileCreate</a>&nbsp;&nbsp;&nbsp;120</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#c0632a70914fa45670a075963dd4c22f">KSNO_FileDelete</a>&nbsp;&nbsp;&nbsp;121</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#223b66a7812bea11478ffe76a76d5e1c">KSNO_FileSetBufferMode</a>&nbsp;&nbsp;&nbsp;122</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#0d09591a547443ac9c21ce4085b79130">KSNO2_SyncEnterCriticalSection</a>&nbsp;&nbsp;&nbsp;192</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#994e8d448434e51b62d85916febe4419">KSNO2_SyncLeaveCriticalSection</a>&nbsp;&nbsp;&nbsp;193</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#c66af3836b47598b00cfa2447219c4b9">KSNO2_SyncSafetyAddition</a>&nbsp;&nbsp;&nbsp;194</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#d259cf09b77d3cb8afe5541150d92bbf">KSNO2_SyncSafetySetIL</a>&nbsp;&nbsp;&nbsp;195</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#960dfc6d6c4835f5f984fd3ca562b66f">KSNO2_TimerGetPrecisionCount</a>&nbsp;&nbsp;&nbsp;196</td></tr>
+
+</table>
+<hr><h2>マクロ定義</h2>
+<a class="anchor" name="837103d0947a225b8f78c3d47ff9ebe2"></a><!-- doxytag: member="vector.h::TPVECTORTOP" ref="837103d0947a225b8f78c3d47ff9ebe2" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define TPVECTORTOP&nbsp;&nbsp;&nbsp;0x400          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="6daf1cd081b10f08fd7e7712bc57703d"></a><!-- doxytag: member="vector.h::TPMAX" ref="6daf1cd081b10f08fd7e7712bc57703d" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define TPMAX&nbsp;&nbsp;&nbsp;72          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="52ed4ba4bd01a0fcdce105b1d524a88e"></a><!-- doxytag: member="vector.h::KSVECTORTOP" ref="52ed4ba4bd01a0fcdce105b1d524a88e" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define KSVECTORTOP&nbsp;&nbsp;&nbsp;0x20          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="2cb456985c3e0691d9f40b1a3ab49bab"></a><!-- doxytag: member="vector.h::KSMAX" ref="2cb456985c3e0691d9f40b1a3ab49bab" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define KSMAX&nbsp;&nbsp;&nbsp;248          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="459e6d8f15b56d8a026b92e1499b6091"></a><!-- doxytag: member="vector.h::TPNO_INT0" ref="459e6d8f15b56d8a026b92e1499b6091" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define TPNO_INT0&nbsp;&nbsp;&nbsp;12          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="ca56fea76ebbc72127f07ada2d39793d"></a><!-- doxytag: member="vector.h::TPNO_INT1" ref="ca56fea76ebbc72127f07ada2d39793d" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define TPNO_INT1&nbsp;&nbsp;&nbsp;13          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="e4a2a36e9f83516127b43c3d3bcb8420"></a><!-- doxytag: member="vector.h::TPNO_INT2" ref="e4a2a36e9f83516127b43c3d3bcb8420" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define TPNO_INT2&nbsp;&nbsp;&nbsp;14          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="fd093f80213fe2ff923054d1db204a86"></a><!-- doxytag: member="vector.h::TPNO_INT3" ref="fd093f80213fe2ff923054d1db204a86" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define TPNO_INT3&nbsp;&nbsp;&nbsp;15          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="92f8efe359ec00426b441c18df48a0a1"></a><!-- doxytag: member="vector.h::KSNO_VectorSetTrap" ref="92f8efe359ec00426b441c18df48a0a1" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define KSNO_VectorSetTrap&nbsp;&nbsp;&nbsp;0          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="13a5593ebbb4b7051dfa640633bd57f0"></a><!-- doxytag: member="vector.h::KSNO_VectorSetKs" ref="13a5593ebbb4b7051dfa640633bd57f0" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define KSNO_VectorSetKs&nbsp;&nbsp;&nbsp;1          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="b06cb6a50c7f3f36fa25eb298e461b29"></a><!-- doxytag: member="vector.h::KSNO_SystemGetInfo" ref="b06cb6a50c7f3f36fa25eb298e461b29" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define KSNO_SystemGetInfo&nbsp;&nbsp;&nbsp;2          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="45029bd5ebf91a0a96e4c619e2757b75"></a><!-- doxytag: member="vector.h::KSNO_DebugSetMon" ref="45029bd5ebf91a0a96e4c619e2757b75" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define KSNO_DebugSetMon&nbsp;&nbsp;&nbsp;3          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="ebd101b0256709a74086715260264802"></a><!-- doxytag: member="vector.h::KSNO_AppSetProcPeriod" ref="ebd101b0256709a74086715260264802" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define KSNO_AppSetProcPeriod&nbsp;&nbsp;&nbsp;4          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="b5ee9edba117537167dc670d34376506"></a><!-- doxytag: member="vector.h::KSNO_AppReqExit" ref="b5ee9edba117537167dc670d34376506" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define KSNO_AppReqExit&nbsp;&nbsp;&nbsp;5          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="40d873365174fd8b622a6874eea9d1bf"></a><!-- doxytag: member="vector.h::KSNO_AppExecFile" ref="40d873365174fd8b622a6874eea9d1bf" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define KSNO_AppExecFile&nbsp;&nbsp;&nbsp;6          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="fe145a6f4c321f8000706167ac501ea0"></a><!-- doxytag: member="vector.h::KSNO_AppActiveResponse" ref="fe145a6f4c321f8000706167ac501ea0" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define KSNO_AppActiveResponse&nbsp;&nbsp;&nbsp;7          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="ed452a355d84c5d6e16b56ca04b9fec2"></a><!-- doxytag: member="vector.h::KSNO_USBDisconnect" ref="ed452a355d84c5d6e16b56ca04b9fec2" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define KSNO_USBDisconnect&nbsp;&nbsp;&nbsp;8          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="5f1f428d87421e54dc8d2e6514984f19"></a><!-- doxytag: member="vector.h::KSNO_USBReconnect" ref="5f1f428d87421e54dc8d2e6514984f19" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define KSNO_USBReconnect&nbsp;&nbsp;&nbsp;9          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="e6579caf2b59d470251e90a6ebf43fca"></a><!-- doxytag: member="vector.h::KSNO_USBSetupMode" ref="e6579caf2b59d470251e90a6ebf43fca" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define KSNO_USBSetupMode&nbsp;&nbsp;&nbsp;10          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="4cf995d6a8d1d0fc7ddbb30d135d2b62"></a><!-- doxytag: member="vector.h::KSNO_PadGetDirect" ref="4cf995d6a8d1d0fc7ddbb30d135d2b62" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define KSNO_PadGetDirect&nbsp;&nbsp;&nbsp;12          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="b46da96d7baf194781ee4e82948205c7"></a><!-- doxytag: member="vector.h::KSNO_PadGetProc" ref="b46da96d7baf194781ee4e82948205c7" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define KSNO_PadGetProc&nbsp;&nbsp;&nbsp;13          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="a72ea9f564fed645bbf1b1a9e011ea91"></a><!-- doxytag: member="vector.h::KSNO_PadGet" ref="a72ea9f564fed645bbf1b1a9e011ea91" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define KSNO_PadGet&nbsp;&nbsp;&nbsp;14          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="5ecfd83183404445c257e03b6fdf970b"></a><!-- doxytag: member="vector.h::KSNO_PadSetTrigMode" ref="5ecfd83183404445c257e03b6fdf970b" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define KSNO_PadSetTrigMode&nbsp;&nbsp;&nbsp;15          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="5ccf00814c42b7c5473adc0462ae2df6"></a><!-- doxytag: member="vector.h::KSNO_LCDDispStart" ref="5ccf00814c42b7c5473adc0462ae2df6" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define KSNO_LCDDispStart&nbsp;&nbsp;&nbsp;16          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="2a3aedb9f54d1c7e337a848a27a23be8"></a><!-- doxytag: member="vector.h::KSNO_LCDDispStop" ref="2a3aedb9f54d1c7e337a848a27a23be8" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define KSNO_LCDDispStop&nbsp;&nbsp;&nbsp;17          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="b2989d482d30b98bdeb24ac3185e7f3e"></a><!-- doxytag: member="vector.h::KSNO_LCDTrans" ref="b2989d482d30b98bdeb24ac3185e7f3e" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define KSNO_LCDTrans&nbsp;&nbsp;&nbsp;18          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="3951257f56c81fc682bf041bc9999e91"></a><!-- doxytag: member="vector.h::KSNO_LCDSetBuffer" ref="3951257f56c81fc682bf041bc9999e91" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define KSNO_LCDSetBuffer&nbsp;&nbsp;&nbsp;19          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="ed9499fbf5d3506b650f4eb1b7d94d8a"></a><!-- doxytag: member="vector.h::KSNO_LCDSetOrientation" ref="ed9499fbf5d3506b650f4eb1b7d94d8a" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define KSNO_LCDSetOrientation&nbsp;&nbsp;&nbsp;20          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="d1a37ef166c3293fb08fa18537f43de5"></a><!-- doxytag: member="vector.h::KSNO_LCDSetBright" ref="d1a37ef166c3293fb08fa18537f43de5" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define KSNO_LCDSetBright&nbsp;&nbsp;&nbsp;21          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="f87c4b810cde8ba82443c179c6c16372"></a><!-- doxytag: member="vector.h::KSNO_LCDTransDirect" ref="f87c4b810cde8ba82443c179c6c16372" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define KSNO_LCDTransDirect&nbsp;&nbsp;&nbsp;22          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="18c038c2fe24289b2b3e8202f6840cab"></a><!-- doxytag: member="vector.h::KSNO_LCDTransRange" ref="18c038c2fe24289b2b3e8202f6840cab" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define KSNO_LCDTransRange&nbsp;&nbsp;&nbsp;23          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="aa70381ba6ff9ab7778ece1dec3550cd"></a><!-- doxytag: member="vector.h::KSNO_FontGetAdrs" ref="aa70381ba6ff9ab7778ece1dec3550cd" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define KSNO_FontGetAdrs&nbsp;&nbsp;&nbsp;24          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="5dc1a02ed2db2c994a977d9f814d6285"></a><!-- doxytag: member="vector.h::KSNO_FontPut" ref="5dc1a02ed2db2c994a977d9f814d6285" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define KSNO_FontPut&nbsp;&nbsp;&nbsp;25          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="9c4a3fb56634502ef6f2406cb0731ace"></a><!-- doxytag: member="vector.h::KSNO_FontSetType" ref="9c4a3fb56634502ef6f2406cb0731ace" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define KSNO_FontSetType&nbsp;&nbsp;&nbsp;26          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="567fe5bdb176cd381eb06b9a50bd9e11"></a><!-- doxytag: member="vector.h::KSNO_FontSetPos" ref="567fe5bdb176cd381eb06b9a50bd9e11" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define KSNO_FontSetPos&nbsp;&nbsp;&nbsp;27          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="45bd5c42154761cab760e4980dd6200a"></a><!-- doxytag: member="vector.h::KSNO_FontPutStr" ref="45bd5c42154761cab760e4980dd6200a" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define KSNO_FontPutStr&nbsp;&nbsp;&nbsp;28          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="015f421f386d7b50ec26aaf548a4849a"></a><!-- doxytag: member="vector.h::KSNO_FontPrintf" ref="015f421f386d7b50ec26aaf548a4849a" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define KSNO_FontPrintf&nbsp;&nbsp;&nbsp;29          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="dfc1cca14c5e7c0e667828be56cc8187"></a><!-- doxytag: member="vector.h::KSNO_FontSetTxColor" ref="dfc1cca14c5e7c0e667828be56cc8187" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define KSNO_FontSetTxColor&nbsp;&nbsp;&nbsp;30          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="98269c58b94efb0cef89898b4296e0a8"></a><!-- doxytag: member="vector.h::KSNO_FontSetBkColor" ref="98269c58b94efb0cef89898b4296e0a8" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define KSNO_FontSetBkColor&nbsp;&nbsp;&nbsp;31          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="dafc4e126e7dbb90a6ea8d4b205cee95"></a><!-- doxytag: member="vector.h::KSNO_sprintf" ref="dafc4e126e7dbb90a6ea8d4b205cee95" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define KSNO_sprintf&nbsp;&nbsp;&nbsp;32          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="ace348fd143b20b7b299931d80f7ff9f"></a><!-- doxytag: member="vector.h::KSNO_vsprintf" ref="ace348fd143b20b7b299931d80f7ff9f" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define KSNO_vsprintf&nbsp;&nbsp;&nbsp;33          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="f2e0fe3b804313d36850419d59e77a3b"></a><!-- doxytag: member="vector.h::KSNO_CRC32" ref="f2e0fe3b804313d36850419d59e77a3b" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define KSNO_CRC32&nbsp;&nbsp;&nbsp;34          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="2063c78d91b866a8c80133becb104817"></a><!-- doxytag: member="vector.h::KSNO_CPUSetSpeed" ref="2063c78d91b866a8c80133becb104817" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define KSNO_CPUSetSpeed&nbsp;&nbsp;&nbsp;36          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="b9ee57050ad8a95dcbfacd58e15371f8"></a><!-- doxytag: member="vector.h::KSNO_WaveCheckBuffs" ref="b9ee57050ad8a95dcbfacd58e15371f8" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define KSNO_WaveCheckBuffs&nbsp;&nbsp;&nbsp;40          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="f0308ac979b1c2423c4536ac40a06d70"></a><!-- doxytag: member="vector.h::KSNO_WaveDataOut" ref="f0308ac979b1c2423c4536ac40a06d70" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define KSNO_WaveDataOut&nbsp;&nbsp;&nbsp;41          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="cf64e5c942f8f51a88732569316070e1"></a><!-- doxytag: member="vector.h::KSNO_WaveSetChAtt" ref="cf64e5c942f8f51a88732569316070e1" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define KSNO_WaveSetChAtt&nbsp;&nbsp;&nbsp;42          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="47f1adb559ea55a7a52d8d625b0421b2"></a><!-- doxytag: member="vector.h::KSNO_WaveSetMasterAtt" ref="47f1adb559ea55a7a52d8d625b0421b2" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define KSNO_WaveSetMasterAtt&nbsp;&nbsp;&nbsp;43          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="0de8cfd51024756bd29ce98d375ff976"></a><!-- doxytag: member="vector.h::KSNO_WaveStop" ref="0de8cfd51024756bd29ce98d375ff976" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define KSNO_WaveStop&nbsp;&nbsp;&nbsp;44          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="38cc600ac897741706a33fd70383b102"></a><!-- doxytag: member="vector.h::KSNO_WaveAbort" ref="38cc600ac897741706a33fd70383b102" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define KSNO_WaveAbort&nbsp;&nbsp;&nbsp;45          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="b62e9cc713891026072b48b1d5deed86"></a><!-- doxytag: member="vector.h::KSNO_TimeSet" ref="b62e9cc713891026072b48b1d5deed86" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define KSNO_TimeSet&nbsp;&nbsp;&nbsp;48          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="bf3b3096172b2e495b07aa04fee69c1c"></a><!-- doxytag: member="vector.h::KSNO_TimeGet" ref="bf3b3096172b2e495b07aa04fee69c1c" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define KSNO_TimeGet&nbsp;&nbsp;&nbsp;49          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="210d17389834a51a865f13a950cde539"></a><!-- doxytag: member="vector.h::KSNO_TimeSetAlarm" ref="210d17389834a51a865f13a950cde539" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define KSNO_TimeSetAlarm&nbsp;&nbsp;&nbsp;50          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="3b0850b4ea1a0d1dcf676666c8ef038d"></a><!-- doxytag: member="vector.h::KSNO_TimeGetAlarm" ref="3b0850b4ea1a0d1dcf676666c8ef038d" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define KSNO_TimeGetAlarm&nbsp;&nbsp;&nbsp;51          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="690f4923da32abdec2c0fae933ea6949"></a><!-- doxytag: member="vector.h::KSNO_FlashErase" ref="690f4923da32abdec2c0fae933ea6949" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define KSNO_FlashErase&nbsp;&nbsp;&nbsp;64          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="8feaf1ee85cea7bf00af0d39b3937d9f"></a><!-- doxytag: member="vector.h::KSNO_FlashWrite" ref="8feaf1ee85cea7bf00af0d39b3937d9f" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define KSNO_FlashWrite&nbsp;&nbsp;&nbsp;65          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="264d20b5468a7a77233156a3e5096af2"></a><!-- doxytag: member="vector.h::KSNO_TimerSetContextSwitcher" ref="264d20b5468a7a77233156a3e5096af2" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define KSNO_TimerSetContextSwitcher&nbsp;&nbsp;&nbsp;68          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="6e9705b3646768a726b27f66e019c953"></a><!-- doxytag: member="vector.h::KSNO_TimerAdjustPrecisionCount" ref="6e9705b3646768a726b27f66e019c953" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define KSNO_TimerAdjustPrecisionCount&nbsp;&nbsp;&nbsp;69          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="acbae8af93308cb5090232e46063c5a9"></a><!-- doxytag: member="vector.h::KSNO_TimerSetCallback" ref="acbae8af93308cb5090232e46063c5a9" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define KSNO_TimerSetCallback&nbsp;&nbsp;&nbsp;70          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="87deeed3db1df90fb409bbb0ebb70f5c"></a><!-- doxytag: member="vector.h::KSNO_TimerGetCount" ref="87deeed3db1df90fb409bbb0ebb70f5c" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define KSNO_TimerGetCount&nbsp;&nbsp;&nbsp;71          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="6e1a9be7a37c2c840b54054553ee1cdf"></a><!-- doxytag: member="vector.h::KSNO_FileFindOpen" ref="6e1a9be7a37c2c840b54054553ee1cdf" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define KSNO_FileFindOpen&nbsp;&nbsp;&nbsp;72          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="7079a023990f6579fc157822040b5eb0"></a><!-- doxytag: member="vector.h::KSNO_FileFindNext" ref="7079a023990f6579fc157822040b5eb0" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define KSNO_FileFindNext&nbsp;&nbsp;&nbsp;73          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="8d9f3af6afdcdf004d0a56d50cd43984"></a><!-- doxytag: member="vector.h::KSNO_FileFindClose" ref="8d9f3af6afdcdf004d0a56d50cd43984" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define KSNO_FileFindClose&nbsp;&nbsp;&nbsp;74          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="30cb3782b5af3f03ea873fae0e5b11d9"></a><!-- doxytag: member="vector.h::KSNO_FileLoad" ref="30cb3782b5af3f03ea873fae0e5b11d9" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define KSNO_FileLoad&nbsp;&nbsp;&nbsp;75          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="c7ff5cfd4482b14abe8debec7c2e42eb"></a><!-- doxytag: member="vector.h::KSNO_FileOpen" ref="c7ff5cfd4482b14abe8debec7c2e42eb" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define KSNO_FileOpen&nbsp;&nbsp;&nbsp;76          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="328eacf4bee65e07211ae226a3dc1933"></a><!-- doxytag: member="vector.h::KSNO_FileReadSct" ref="328eacf4bee65e07211ae226a3dc1933" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define KSNO_FileReadSct&nbsp;&nbsp;&nbsp;77          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="8214db94a15e2ee35d0352e36653182c"></a><!-- doxytag: member="vector.h::KSNO_FileWriteSct" ref="8214db94a15e2ee35d0352e36653182c" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define KSNO_FileWriteSct&nbsp;&nbsp;&nbsp;78          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="75bed788b14f3e3b1c5168bd5e878de8"></a><!-- doxytag: member="vector.h::KSNO_FileClose" ref="75bed788b14f3e3b1c5168bd5e878de8" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define KSNO_FileClose&nbsp;&nbsp;&nbsp;79          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="7d6078f88e7864f89318c58a01e950d8"></a><!-- doxytag: member="vector.h::KSNO_PowerSetReport" ref="7d6078f88e7864f89318c58a01e950d8" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define KSNO_PowerSetReport&nbsp;&nbsp;&nbsp;80          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="420a506a6fe5a741c587a577af466c74"></a><!-- doxytag: member="vector.h::KSNO_PowerGetStatus" ref="420a506a6fe5a741c587a577af466c74" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define KSNO_PowerGetStatus&nbsp;&nbsp;&nbsp;81          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="93ce2748662ecbbe892ea47dceb0b45f"></a><!-- doxytag: member="vector.h::KSNO_PowerForceBatt" ref="93ce2748662ecbbe892ea47dceb0b45f" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define KSNO_PowerForceBatt&nbsp;&nbsp;&nbsp;82          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="6ae848a95903a308d182311ab6210dd3"></a><!-- doxytag: member="vector.h::KSNO_PowerEnterStandby" ref="6ae848a95903a308d182311ab6210dd3" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define KSNO_PowerEnterStandby&nbsp;&nbsp;&nbsp;83          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="95e642a7aea833163b3ea5ac24a3bd17"></a><!-- doxytag: member="vector.h::KSNO_IRStartRx" ref="95e642a7aea833163b3ea5ac24a3bd17" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define KSNO_IRStartRx&nbsp;&nbsp;&nbsp;88          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="eba29ea31df4f7198262c368d8b87c53"></a><!-- doxytag: member="vector.h::KSNO_IRStartTx" ref="eba29ea31df4f7198262c368d8b87c53" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define KSNO_IRStartTx&nbsp;&nbsp;&nbsp;89          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="52f38c217181d21a321ed802817a9a77"></a><!-- doxytag: member="vector.h::KSNO_IRGetStat" ref="52f38c217181d21a321ed802817a9a77" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define KSNO_IRGetStat&nbsp;&nbsp;&nbsp;90          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="570c9e84f29e08beaa0473e26871b17a"></a><!-- doxytag: member="vector.h::KSNO_IRStop" ref="570c9e84f29e08beaa0473e26871b17a" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define KSNO_IRStop&nbsp;&nbsp;&nbsp;91          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="1b77ef286d1ea74d0c0eec8d7157cde6"></a><!-- doxytag: member="vector.h::KSNO_IRStartRxEx" ref="1b77ef286d1ea74d0c0eec8d7157cde6" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define KSNO_IRStartRxEx&nbsp;&nbsp;&nbsp;92          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="5fcd1c87478395830636a26534ab44cd"></a><!-- doxytag: member="vector.h::KSNO_IRStartTxEx" ref="5fcd1c87478395830636a26534ab44cd" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define KSNO_IRStartTxEx&nbsp;&nbsp;&nbsp;93          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="b26a557d0c475c6c0690db2a7ff5f4c0"></a><!-- doxytag: member="vector.h::KSNO_IRStartRxPulse" ref="b26a557d0c475c6c0690db2a7ff5f4c0" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define KSNO_IRStartRxPulse&nbsp;&nbsp;&nbsp;94          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="8196717bc34b9cd021a7e194fdaf2157"></a><!-- doxytag: member="vector.h::KSNO_IRStartTxPulse" ref="8196717bc34b9cd021a7e194fdaf2157" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define KSNO_IRStartTxPulse&nbsp;&nbsp;&nbsp;95          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="e6455b246d8f2d7a43bd8dc9f425e626"></a><!-- doxytag: member="vector.h::KSNO_LCDPoint" ref="e6455b246d8f2d7a43bd8dc9f425e626" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define KSNO_LCDPoint&nbsp;&nbsp;&nbsp;96          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="83e75bd0e6f307cad33d00fdc1a0c600"></a><!-- doxytag: member="vector.h::KSNO_LCDLine" ref="83e75bd0e6f307cad33d00fdc1a0c600" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define KSNO_LCDLine&nbsp;&nbsp;&nbsp;97          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="374008e4e120bddbaa880f02f8f41530"></a><!-- doxytag: member="vector.h::KSNO_LCDPaint" ref="374008e4e120bddbaa880f02f8f41530" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define KSNO_LCDPaint&nbsp;&nbsp;&nbsp;98          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="f25b15f1c49799da8e5890cce6d0fb04"></a><!-- doxytag: member="vector.h::KSNO_LCDSetObject" ref="f25b15f1c49799da8e5890cce6d0fb04" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define KSNO_LCDSetObject&nbsp;&nbsp;&nbsp;99          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="850b08a6b1095cbaf09d3ade81dc3d65"></a><!-- doxytag: member="vector.h::KSNO_LCDDrawObject" ref="850b08a6b1095cbaf09d3ade81dc3d65" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define KSNO_LCDDrawObject&nbsp;&nbsp;&nbsp;100          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="22e9010c1a68af9449b0f99cb8bc4778"></a><!-- doxytag: member="vector.h::KSNO_USBCOMSetup" ref="22e9010c1a68af9449b0f99cb8bc4778" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define KSNO_USBCOMSetup&nbsp;&nbsp;&nbsp;104          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="1e052ccc4fdd5d1afd775e615fccb3eb"></a><!-- doxytag: member="vector.h::KSNO_USBCOMStartRx" ref="1e052ccc4fdd5d1afd775e615fccb3eb" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define KSNO_USBCOMStartRx&nbsp;&nbsp;&nbsp;105          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="78a2aca9abab4efdb22a84203eb327fa"></a><!-- doxytag: member="vector.h::KSNO_USBCOMStartTx" ref="78a2aca9abab4efdb22a84203eb327fa" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define KSNO_USBCOMStartTx&nbsp;&nbsp;&nbsp;106          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="d668e6fdfd85492cd186b259d2551a5c"></a><!-- doxytag: member="vector.h::KSNO_USBCOMStop" ref="d668e6fdfd85492cd186b259d2551a5c" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define KSNO_USBCOMStop&nbsp;&nbsp;&nbsp;107          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="06d8984c6dc72c78ffdc587727863dd9"></a><!-- doxytag: member="vector.h::KSNO_USBCOMGetStat" ref="06d8984c6dc72c78ffdc587727863dd9" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define KSNO_USBCOMGetStat&nbsp;&nbsp;&nbsp;108          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="3affcc7d56101f8448f107928992a48f"></a><!-- doxytag: member="vector.h::KSNO_HeapAlloc" ref="3affcc7d56101f8448f107928992a48f" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define KSNO_HeapAlloc&nbsp;&nbsp;&nbsp;112          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="d3fe6a6f0bb82e84c9dbfe773b1bc093"></a><!-- doxytag: member="vector.h::KSNO_HeapFree" ref="d3fe6a6f0bb82e84c9dbfe773b1bc093" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define KSNO_HeapFree&nbsp;&nbsp;&nbsp;113          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="19aec1c80a49fffa032f62f7ef41c03c"></a><!-- doxytag: member="vector.h::KSNO_HeapRealloc" ref="19aec1c80a49fffa032f62f7ef41c03c" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define KSNO_HeapRealloc&nbsp;&nbsp;&nbsp;114          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="23f7cca40b00fda017a0bf1fb822f9b6"></a><!-- doxytag: member="vector.h::KSNO_HeapGetMaxFreeSize" ref="23f7cca40b00fda017a0bf1fb822f9b6" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define KSNO_HeapGetMaxFreeSize&nbsp;&nbsp;&nbsp;115          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="48639c956dd17388e95a8d77df78068e"></a><!-- doxytag: member="vector.h::KSNO_FileCreate" ref="48639c956dd17388e95a8d77df78068e" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define KSNO_FileCreate&nbsp;&nbsp;&nbsp;120          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="c0632a70914fa45670a075963dd4c22f"></a><!-- doxytag: member="vector.h::KSNO_FileDelete" ref="c0632a70914fa45670a075963dd4c22f" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define KSNO_FileDelete&nbsp;&nbsp;&nbsp;121          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="223b66a7812bea11478ffe76a76d5e1c"></a><!-- doxytag: member="vector.h::KSNO_FileSetBufferMode" ref="223b66a7812bea11478ffe76a76d5e1c" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define KSNO_FileSetBufferMode&nbsp;&nbsp;&nbsp;122          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="0d09591a547443ac9c21ce4085b79130"></a><!-- doxytag: member="vector.h::KSNO2_SyncEnterCriticalSection" ref="0d09591a547443ac9c21ce4085b79130" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define KSNO2_SyncEnterCriticalSection&nbsp;&nbsp;&nbsp;192          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="994e8d448434e51b62d85916febe4419"></a><!-- doxytag: member="vector.h::KSNO2_SyncLeaveCriticalSection" ref="994e8d448434e51b62d85916febe4419" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define KSNO2_SyncLeaveCriticalSection&nbsp;&nbsp;&nbsp;193          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="c66af3836b47598b00cfa2447219c4b9"></a><!-- doxytag: member="vector.h::KSNO2_SyncSafetyAddition" ref="c66af3836b47598b00cfa2447219c4b9" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define KSNO2_SyncSafetyAddition&nbsp;&nbsp;&nbsp;194          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="d259cf09b77d3cb8afe5541150d92bbf"></a><!-- doxytag: member="vector.h::KSNO2_SyncSafetySetIL" ref="d259cf09b77d3cb8afe5541150d92bbf" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define KSNO2_SyncSafetySetIL&nbsp;&nbsp;&nbsp;195          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="960dfc6d6c4835f5f984fd3ca562b66f"></a><!-- doxytag: member="vector.h::KSNO2_TimerGetPrecisionCount" ref="960dfc6d6c4835f5f984fd3ca562b66f" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define KSNO2_TimerGetPrecisionCount&nbsp;&nbsp;&nbsp;196          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<hr size="1"><address style="align: right;"><small>zurapceに対してFri May 19 08:01:24 2006に生成されました。&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.4.6-NO </small></address>
+</body>
+</html>

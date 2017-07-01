@@ -1,0 +1,35 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=Shift_JIS">
+<title>zurapce: 16階調画像フォーマット</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+<link href="tabs.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- 作成： Doxygen 1.4.6-NO -->
+<div class="tabs">
+  <ul>
+    <li><a href="index.html"><span>メインページ</span></a></li>
+    <li><a href="annotated.html"><span>データ構造</span></a></li>
+    <li><a href="files.html"><span>ファイル</span></a></li>
+    <li><a href="pages.html"><span>関連ページ</span></a></li>
+  </ul></div>
+<h1><a class="anchor" name="pgx_format">16階調画像フォーマット</a></h1>PIECE_BMP の拡張フォーマットです。 構造体は PIECE_BMP をそのまま使います。<p>
+<div class="fragment"><pre class="fragment">        <span class="keyword">typedef</span> <span class="keyword">struct </span>{
+                DWORD head; <span class="comment">// 識別子 'PBEX'（既存アプリの誤動作防止）</span>
+                DWORD fsize; <span class="comment">// ファイル長</span>
+                BYTE bpp; <span class="comment">// bit 深度 (4)</span>
+                BYTE mask; <span class="comment">// マスクの bit 深度 (1)</span>
+                <span class="keywordtype">int</span> w; <span class="comment">// X 幅 8 ピクセル単位厳守</span>
+                <span class="keywordtype">int</span> h; <span class="comment">// Y 高さ</span>
+                DWORD buf_size; <span class="comment">// BMP サイズ = ( bpp + mask ) * w * h / 8</span>
+        } PBMP_FILEHEADER;
+        
+        <span class="keyword">typedef</span> <span class="keyword">struct </span>{
+                PBMP_FILEHEADER header;
+                BYTE *buf; <span class="comment">// 4 BIT 1 ピクセル</span>
+                BYTE *mask; <span class="comment">// 1 BIT 1 ピクセル</span>
+        } PIECE_BMP;
+</pre></div> <hr size="1"><address style="align: right;"><small>zurapceに対してFri May 19 08:01:24 2006に生成されました。&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.4.6-NO </small></address>
+</body>
+</html>

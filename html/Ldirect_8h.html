@@ -1,0 +1,647 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=Shift_JIS">
+<title>zurapce: zurapce/Ldirect.h</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+<link href="tabs.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- 作成： Doxygen 1.4.6-NO -->
+<div class="tabs">
+  <ul>
+    <li><a href="index.html"><span>メインページ</span></a></li>
+    <li><a href="annotated.html"><span>データ構造</span></a></li>
+    <li id="current"><a href="files.html"><span>ファイル</span></a></li>
+    <li><a href="pages.html"><span>関連ページ</span></a></li>
+  </ul></div>
+<div class="tabs">
+  <ul>
+    <li><a href="files.html"><span>ファイル一覧</span></a></li>
+    <li><a href="globals.html"><span>グローバル</span></a></li>
+  </ul></div>
+<h1>zurapce/Ldirect.h</h1>16階調描画関連. <a href="#_details">[詳細]</a>
+<p>
+<code>#include &lt;piece.h&gt;</code><br>
+<code>#include &lt;string.h&gt;</code><br>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td></td></tr>
+<tr><td colspan="2"><br><h2>マクロ定義</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="Ldirect_8h.html#8aa809090ec300a3537695fb320de1f3">ZURAPCE_LDIRECT_H</a></td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="Ldirect_8h.html#55d27f8014ef169b11ebea909b42f32d">LDIRECT_PAGE_NUM</a>&nbsp;&nbsp;&nbsp;5</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">切り替えページ数  <a href="#55d27f8014ef169b11ebea909b42f32d"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="Ldirect_8h.html#11cde3f19f1e6525c258754afed20204">LDIRECT_COLOR_NUM</a>&nbsp;&nbsp;&nbsp;16</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">階調数（LDIRECT_PAGE_NUM * 3 + 1）  <a href="#11cde3f19f1e6525c258754afed20204"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="Ldirect_8h.html#83fcc1f821ff9368801befa0c7de2a94">LDIRECT_VBUFF_TRANS</a>&nbsp;&nbsp;&nbsp;0x40</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">４階調用仮想画面バッファで透過色とみなすフラグ.  <a href="#83fcc1f821ff9368801befa0c7de2a94"></a><br></td></tr>
+<tr><td colspan="2"><br><h2>関数</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="Ldirect_8h.html#dd8e18cd89e161465a99ee53e05fb45d">Ldirect_Init</a> (void)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">初期化.  <a href="#dd8e18cd89e161465a99ee53e05fb45d"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="Ldirect_8h.html#82e7768e626f850897b917bd64b93185">Ldirect_Update</a> (void)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">LCD ダイレクト転送用バッファを更新します.  <a href="#82e7768e626f850897b917bd64b93185"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="Ldirect_8h.html#cedd5ef85ea525bdee2811827ceaf282">Ldirect_VBuffView</a> (BOOL visible)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">LCD_Trans() で４階調用仮想画面バッファを LCD ダイレクト転送用バッファに 転送するかどうかを設定します.  <a href="#cedd5ef85ea525bdee2811827ceaf282"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="Ldirect_8h.html#14fac664189e0bfbd5770dad1725ba8a">Ldirect_Trans</a> (void)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">LCD ダイレクト転送.  <a href="#14fac664189e0bfbd5770dad1725ba8a"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="Ldirect_8h.html#e2c009a2d7745eed1fba9b3b0759e639">Ldirect_VBuffClear</a> (int x, int y, int w, int h)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">４階調用仮想画面バッファを透過色で塗り潰す.  <a href="#e2c009a2d7745eed1fba9b3b0759e639"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="Ldirect_8h.html#a7952189f4170c47675e7796e630de99">Ldirect_DrawObject</a> (PIECE_BMP const *p, int dx, int dy, int sx, int sy, int width, int height)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">16階調用仮想画面バッファに16階調画像を描画.  <a href="#a7952189f4170c47675e7796e630de99"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="Ldirect_8h.html#ca6d1995fd1872863ee95d135e233a39">Ldirect_Point</a> (BYTE color, int const x, int const y)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">16階調用仮想画面バッファに点を描画.  <a href="#ca6d1995fd1872863ee95d135e233a39"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="Ldirect_8h.html#40b50d68985ee6256da849dd0aa886cf">Ldirect_Paint</a> (BYTE color, int x, int y, int width, int height)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">16階調用仮想画面バッファに矩形を描画.  <a href="#40b50d68985ee6256da849dd0aa886cf"></a><br></td></tr>
+<tr><td colspan="2"><br><h2>変数</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">BYTE *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="Ldirect_8h.html#dfcfe01a78c81820bd379abdcc9076b3">g_lbuff</a></td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">16階調用仮想画面バッファ.  <a href="#dfcfe01a78c81820bd379abdcc9076b3"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">BYTE *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="Ldirect_8h.html#8ab8c29534b2d5ff32173499922ba678">g_dbuff</a> [LDIRECT_PAGE_NUM]</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">LCD ダイレクト転送用バッファ.  <a href="#8ab8c29534b2d5ff32173499922ba678"></a><br></td></tr>
+</table>
+<hr><a name="_details"></a><h2>説明</h2>
+16階調描画関連. 
+<p>
+液晶の残像を利用して、5枚の画像を高速に切り替え、16階調の画像を表示しているようにみせかけます。<br>
+ さらに、通常の４階調仮想画面バッファを重ね合わせて表示できます。<p>
+処理が重いですが、コードを高速 RAM に配置することで高速化できます。<br>
+ project.mak の USE_LDIRECT_ON_FRAM := true を有効にして、<br>
+ pceAppInit() の先頭で <a class="el" href="FramObject_8h.html#49c170896c5acae3f91a09bff5e5e994">FramObject_Init()</a> を呼び出して下さい。<p>
+<dl compact><dt><b>参照:</b></dt><dd><a class="el" href="pgx_format.html">16階調画像フォーマット</a></dd></dl>
+<dl compact><dt><b>作者:</b></dt><dd>zurachu </dd></dl>
+<hr><h2>マクロ定義</h2>
+<a class="anchor" name="8aa809090ec300a3537695fb320de1f3"></a><!-- doxytag: member="Ldirect.h::ZURAPCE_LDIRECT_H" ref="8aa809090ec300a3537695fb320de1f3" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define ZURAPCE_LDIRECT_H          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="55d27f8014ef169b11ebea909b42f32d"></a><!-- doxytag: member="Ldirect.h::LDIRECT_PAGE_NUM" ref="55d27f8014ef169b11ebea909b42f32d" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define LDIRECT_PAGE_NUM&nbsp;&nbsp;&nbsp;5          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+切り替えページ数 
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="11cde3f19f1e6525c258754afed20204"></a><!-- doxytag: member="Ldirect.h::LDIRECT_COLOR_NUM" ref="11cde3f19f1e6525c258754afed20204" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define LDIRECT_COLOR_NUM&nbsp;&nbsp;&nbsp;16          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+階調数（LDIRECT_PAGE_NUM * 3 + 1） 
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="83fcc1f821ff9368801befa0c7de2a94"></a><!-- doxytag: member="Ldirect.h::LDIRECT_VBUFF_TRANS" ref="83fcc1f821ff9368801befa0c7de2a94" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define LDIRECT_VBUFF_TRANS&nbsp;&nbsp;&nbsp;0x40          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+４階調用仮想画面バッファで透過色とみなすフラグ. 
+<p>
+なぜか他のビットだと上手くいかない。これでも上手くいかないこともある。 原因は不明。     </td>
+  </tr>
+</table>
+<hr><h2>関数</h2>
+<a class="anchor" name="dd8e18cd89e161465a99ee53e05fb45d"></a><!-- doxytag: member="Ldirect.h::Ldirect_Init" ref="dd8e18cd89e161465a99ee53e05fb45d" args="(void)" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">int Ldirect_Init           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">void&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+初期化. 
+<p>
+16階調用仮想画面バッファおよび LCD ダイレクト転送用バッファ（5枚）を確保します。 <dl compact><dt><b>戻り値:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>1</em>&nbsp;</td><td>バッファ確保成功 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>0</em>&nbsp;</td><td>バッファ確保失敗 </td></tr>
+  </table>
+</dl>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="82e7768e626f850897b917bd64b93185"></a><!-- doxytag: member="Ldirect.h::Ldirect_Update" ref="82e7768e626f850897b917bd64b93185" args="(void)" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">void Ldirect_Update           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">void&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+LCD ダイレクト転送用バッファを更新します. 
+<p>
+実際には、内部で更新フラグを立てるだけで、 <a class="el" href="Ldirect_8h.html#14fac664189e0bfbd5770dad1725ba8a">Ldirect_Trans()</a> で1フレーム1枚ずつ、<br>
+ 16階調用仮想画面、４階調用仮想画面を LCD ダイレクト転送用バッファに転送します。     </td>
+  </tr>
+</table>
+<a class="anchor" name="cedd5ef85ea525bdee2811827ceaf282"></a><!-- doxytag: member="Ldirect.h::Ldirect_VBuffView" ref="cedd5ef85ea525bdee2811827ceaf282" args="(BOOL visible)" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">void Ldirect_VBuffView           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">BOOL&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap> <em>visible</em>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+LCD_Trans() で４階調用仮想画面バッファを LCD ダイレクト転送用バッファに 転送するかどうかを設定します. 
+<p>
+<dl compact><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>visible</em>&nbsp;</td><td>フラグ </td></tr>
+  </table>
+</dl>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="14fac664189e0bfbd5770dad1725ba8a"></a><!-- doxytag: member="Ldirect.h::Ldirect_Trans" ref="14fac664189e0bfbd5770dad1725ba8a" args="(void)" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">void Ldirect_Trans           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">void&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+LCD ダイレクト転送. 
+<p>
+LCD ダイレクト転送用バッファを切り替えて、 LCD バッファに転送します。<br>
+ 毎フレーム呼び出して下さい。<br>
+ <a class="el" href="Ldirect_8h.html#82e7768e626f850897b917bd64b93185">Ldirect_Update()</a> が呼び出されてから まだ LCD ダイレクト転送用バッファが更新されていない場合、<br>
+ 16階調用仮想画面、４階調用仮想画面を LCD ダイレクト転送用バッファに 転送してから転送します。     </td>
+  </tr>
+</table>
+<a class="anchor" name="e2c009a2d7745eed1fba9b3b0759e639"></a><!-- doxytag: member="Ldirect.h::Ldirect_VBuffClear" ref="e2c009a2d7745eed1fba9b3b0759e639" args="(int x, int y, int w, int h)" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">void Ldirect_VBuffClear           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">int&nbsp;</td>
+          <td class="mdname" nowrap> <em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="md" nowrap align="right"></td>
+          <td class="md"></td>
+          <td class="md" nowrap>int&nbsp;</td>
+          <td class="mdname" nowrap> <em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="md" nowrap align="right"></td>
+          <td class="md"></td>
+          <td class="md" nowrap>int&nbsp;</td>
+          <td class="mdname" nowrap> <em>w</em>, </td>
+        </tr>
+        <tr>
+          <td class="md" nowrap align="right"></td>
+          <td class="md"></td>
+          <td class="md" nowrap>int&nbsp;</td>
+          <td class="mdname" nowrap> <em>h</em></td>
+        </tr>
+        <tr>
+          <td class="md"></td>
+          <td class="md">)&nbsp;</td>
+          <td class="md" colspan="2"></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+４階調用仮想画面バッファを透過色で塗り潰す. 
+<p>
+<dl compact><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>x</em>&nbsp;</td><td>左上 X 座標 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>y</em>&nbsp;</td><td>左上 Y 座標 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>w</em>&nbsp;</td><td>幅 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>h</em>&nbsp;</td><td>高さ </td></tr>
+  </table>
+</dl>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="a7952189f4170c47675e7796e630de99"></a><!-- doxytag: member="Ldirect.h::Ldirect_DrawObject" ref="a7952189f4170c47675e7796e630de99" args="(PIECE_BMP const *p, int dx, int dy, int sx, int sy, int width, int height)" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">int Ldirect_DrawObject           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">PIECE_BMP const *&nbsp;</td>
+          <td class="mdname" nowrap> <em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="md" nowrap align="right"></td>
+          <td class="md"></td>
+          <td class="md" nowrap>int&nbsp;</td>
+          <td class="mdname" nowrap> <em>dx</em>, </td>
+        </tr>
+        <tr>
+          <td class="md" nowrap align="right"></td>
+          <td class="md"></td>
+          <td class="md" nowrap>int&nbsp;</td>
+          <td class="mdname" nowrap> <em>dy</em>, </td>
+        </tr>
+        <tr>
+          <td class="md" nowrap align="right"></td>
+          <td class="md"></td>
+          <td class="md" nowrap>int&nbsp;</td>
+          <td class="mdname" nowrap> <em>sx</em>, </td>
+        </tr>
+        <tr>
+          <td class="md" nowrap align="right"></td>
+          <td class="md"></td>
+          <td class="md" nowrap>int&nbsp;</td>
+          <td class="mdname" nowrap> <em>sy</em>, </td>
+        </tr>
+        <tr>
+          <td class="md" nowrap align="right"></td>
+          <td class="md"></td>
+          <td class="md" nowrap>int&nbsp;</td>
+          <td class="mdname" nowrap> <em>width</em>, </td>
+        </tr>
+        <tr>
+          <td class="md" nowrap align="right"></td>
+          <td class="md"></td>
+          <td class="md" nowrap>int&nbsp;</td>
+          <td class="mdname" nowrap> <em>height</em></td>
+        </tr>
+        <tr>
+          <td class="md"></td>
+          <td class="md">)&nbsp;</td>
+          <td class="md" colspan="2"></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+16階調用仮想画面バッファに16階調画像を描画. 
+<p>
+<dl compact><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>p</em>&nbsp;</td><td>16階調 PIECE_BMP へのポインタ </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>dx</em>&nbsp;</td><td>描画先左上 X 座標 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>dy</em>&nbsp;</td><td>描画先左上 Y 座標 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>sx</em>&nbsp;</td><td>描画元左上 X 座標 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>sy</em>&nbsp;</td><td>描画元左上 Y 座標 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>width</em>&nbsp;</td><td>幅 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>height</em>&nbsp;</td><td>高さ </td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>戻り値:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>0</em>&nbsp;</td><td>描画なし </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>1</em>&nbsp;</td><td>描画完了</td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>参照:</b></dt><dd><a class="el" href="pgx_format.html">16階調画像フォーマット</a> </dd></dl>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="ca6d1995fd1872863ee95d135e233a39"></a><!-- doxytag: member="Ldirect.h::Ldirect_Point" ref="ca6d1995fd1872863ee95d135e233a39" args="(BYTE color, int const x, int const y)" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">void Ldirect_Point           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">BYTE&nbsp;</td>
+          <td class="mdname" nowrap> <em>color</em>, </td>
+        </tr>
+        <tr>
+          <td class="md" nowrap align="right"></td>
+          <td class="md"></td>
+          <td class="md" nowrap>int const &nbsp;</td>
+          <td class="mdname" nowrap> <em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="md" nowrap align="right"></td>
+          <td class="md"></td>
+          <td class="md" nowrap>int const &nbsp;</td>
+          <td class="mdname" nowrap> <em>y</em></td>
+        </tr>
+        <tr>
+          <td class="md"></td>
+          <td class="md">)&nbsp;</td>
+          <td class="md" colspan="2"></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+16階調用仮想画面バッファに点を描画. 
+<p>
+<dl compact><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>color</em>&nbsp;</td><td>色 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>x</em>&nbsp;</td><td>X座標 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>y</em>&nbsp;</td><td>Y座標 </td></tr>
+  </table>
+</dl>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="40b50d68985ee6256da849dd0aa886cf"></a><!-- doxytag: member="Ldirect.h::Ldirect_Paint" ref="40b50d68985ee6256da849dd0aa886cf" args="(BYTE color, int x, int y, int width, int height)" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">void Ldirect_Paint           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">BYTE&nbsp;</td>
+          <td class="mdname" nowrap> <em>color</em>, </td>
+        </tr>
+        <tr>
+          <td class="md" nowrap align="right"></td>
+          <td class="md"></td>
+          <td class="md" nowrap>int&nbsp;</td>
+          <td class="mdname" nowrap> <em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="md" nowrap align="right"></td>
+          <td class="md"></td>
+          <td class="md" nowrap>int&nbsp;</td>
+          <td class="mdname" nowrap> <em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="md" nowrap align="right"></td>
+          <td class="md"></td>
+          <td class="md" nowrap>int&nbsp;</td>
+          <td class="mdname" nowrap> <em>width</em>, </td>
+        </tr>
+        <tr>
+          <td class="md" nowrap align="right"></td>
+          <td class="md"></td>
+          <td class="md" nowrap>int&nbsp;</td>
+          <td class="mdname" nowrap> <em>height</em></td>
+        </tr>
+        <tr>
+          <td class="md"></td>
+          <td class="md">)&nbsp;</td>
+          <td class="md" colspan="2"></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+16階調用仮想画面バッファに矩形を描画. 
+<p>
+<dl compact><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>color</em>&nbsp;</td><td>色 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>x</em>&nbsp;</td><td>左上X座標 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>y</em>&nbsp;</td><td>左上Y座標 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>width</em>&nbsp;</td><td>幅 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>height</em>&nbsp;</td><td>高さ </td></tr>
+  </table>
+</dl>
+    </td>
+  </tr>
+</table>
+<hr><h2>変数</h2>
+<a class="anchor" name="dfcfe01a78c81820bd379abdcc9076b3"></a><!-- doxytag: member="Ldirect.h::g_lbuff" ref="dfcfe01a78c81820bd379abdcc9076b3" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">BYTE* <a class="el" href="Ldirect_8h.html#dfcfe01a78c81820bd379abdcc9076b3">g_lbuff</a>          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+16階調用仮想画面バッファ. 
+<p>
+バッファの構造は、通常の４階調用仮想画面バッファと同じです。<br>
+ 1ドット1バイト（下位4ビットのみ使用＝16色）<br>
+ 横128ドット×縦88ドット = 11246バイト <div class="fragment"><pre class="fragment">g_lbuff→+---------... ...------------+
+         |                            |
+         |                            |  ↑
+         .                            .
+         .                            .  Y 88 ドット
+         .                            .
+         |                            |  ↓
+         |                            |
+         +---------... ...------------+
+                ← X 128 ドット→
+</pre></div>     </td>
+  </tr>
+</table>
+<a class="anchor" name="8ab8c29534b2d5ff32173499922ba678"></a><!-- doxytag: member="Ldirect.h::g_dbuff" ref="8ab8c29534b2d5ff32173499922ba678" args="[LDIRECT_PAGE_NUM]" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">BYTE* <a class="el" href="Ldirect_8h.html#8ab8c29534b2d5ff32173499922ba678">g_dbuff</a>[LDIRECT_PAGE_NUM]          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+LCD ダイレクト転送用バッファ. 
+<p>
+    </td>
+  </tr>
+</table>
+<hr size="1"><address style="align: right;"><small>zurapceに対してFri May 19 08:01:23 2006に生成されました。&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.4.6-NO </small></address>
+</body>
+</html>

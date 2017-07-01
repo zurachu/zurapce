@@ -1,0 +1,441 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=Shift_JIS">
+<title>zurapce: zurapce/FontFuchi.h</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+<link href="tabs.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- 作成： Doxygen 1.4.6-NO -->
+<div class="tabs">
+  <ul>
+    <li><a href="index.html"><span>メインページ</span></a></li>
+    <li><a href="annotated.html"><span>データ構造</span></a></li>
+    <li id="current"><a href="files.html"><span>ファイル</span></a></li>
+    <li><a href="pages.html"><span>関連ページ</span></a></li>
+  </ul></div>
+<div class="tabs">
+  <ul>
+    <li><a href="files.html"><span>ファイル一覧</span></a></li>
+    <li><a href="globals.html"><span>グローバル</span></a></li>
+  </ul></div>
+<h1>zurapce/FontFuchi.h</h1>縁取りフォント関連. <a href="#_details">[詳細]</a>
+<p>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td></td></tr>
+<tr><td colspan="2"><br><h2>マクロ定義</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="FontFuchi_8h.html#a4b73350fa8f94827657c173fe5d81c1">ZURAPCE_FONT_FUCHI_H</a></td></tr>
+
+<tr><td colspan="2"><br><h2>関数</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="FontFuchi_8h.html#706174b8a3587a538218cc60b51116d5">FontFuchi_SetPos</a> (int x, int y)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">文字表示座標を指定.  <a href="#706174b8a3587a538218cc60b51116d5"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="FontFuchi_8h.html#fb4e96f66136797ee9e1d0d214a05a72">FontFuchi_SetRange</a> (int left, int top, int right, int bottom)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">文字表示範囲を指定.  <a href="#fb4e96f66136797ee9e1d0d214a05a72"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="FontFuchi_8h.html#4a5def11e5c1190efdf8e52c45758dec">FontFuchi_SetType</a> (int type)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">文字種類を指定.  <a href="#4a5def11e5c1190efdf8e52c45758dec"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="FontFuchi_8h.html#aa73287ac21c7a43802542ed5e17d6fd">FontFuchi_SetTxColor</a> (int color)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">文字色を指定.  <a href="#aa73287ac21c7a43802542ed5e17d6fd"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="FontFuchi_8h.html#a09a290608cf6b5bb0d7bc7b8743cb9d">FontFuchi_SetBdColor</a> (int color)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">縁取り色を指定.  <a href="#a09a290608cf6b5bb0d7bc7b8743cb9d"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">unsigned short&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="FontFuchi_8h.html#0fc19b896e0e6ff809f6fce50b0233f0">FontFuchi_Put</a> (int x, int y, unsigned short code)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">縁取りフォントを仮想画面に表示.  <a href="#0fc19b896e0e6ff809f6fce50b0233f0"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="FontFuchi_8h.html#d2ab428b1cb72bce735b182a1ae12a03">FontFuchi_PutStr</a> (char const *p)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">縁取り文字列を仮想画面に書き込みます.  <a href="#d2ab428b1cb72bce735b182a1ae12a03"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="FontFuchi_8h.html#db46fc0e9daa3e2211d9593f9106b85a">FontFuchi_Printf</a> (char const *fmt,...)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">縁取り文字列を仮想画面に書き込みます（書式指定）.  <a href="#db46fc0e9daa3e2211d9593f9106b85a"></a><br></td></tr>
+</table>
+<hr><a name="_details"></a><h2>説明</h2>
+縁取りフォント関連. 
+<p>
+仮想画面に文字を縁取りしたフォントを表示します。 使用方法は、ほぼ pceFont 系関数互換です。 <dl compact><dt><b>作者:</b></dt><dd>zurachu </dd></dl>
+<hr><h2>マクロ定義</h2>
+<a class="anchor" name="a4b73350fa8f94827657c173fe5d81c1"></a><!-- doxytag: member="FontFuchi.h::ZURAPCE_FONT_FUCHI_H" ref="a4b73350fa8f94827657c173fe5d81c1" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define ZURAPCE_FONT_FUCHI_H          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<hr><h2>関数</h2>
+<a class="anchor" name="706174b8a3587a538218cc60b51116d5"></a><!-- doxytag: member="FontFuchi.h::FontFuchi_SetPos" ref="706174b8a3587a538218cc60b51116d5" args="(int x, int y)" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">void FontFuchi_SetPos           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">int&nbsp;</td>
+          <td class="mdname" nowrap> <em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="md" nowrap align="right"></td>
+          <td class="md"></td>
+          <td class="md" nowrap>int&nbsp;</td>
+          <td class="mdname" nowrap> <em>y</em></td>
+        </tr>
+        <tr>
+          <td class="md"></td>
+          <td class="md">)&nbsp;</td>
+          <td class="md" colspan="2"></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+文字表示座標を指定. 
+<p>
+<dl compact><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>x</em>&nbsp;</td><td>x座標 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>y</em>&nbsp;</td><td>y座標 </td></tr>
+  </table>
+</dl>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="fb4e96f66136797ee9e1d0d214a05a72"></a><!-- doxytag: member="FontFuchi.h::FontFuchi_SetRange" ref="fb4e96f66136797ee9e1d0d214a05a72" args="(int left, int top, int right, int bottom)" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">void FontFuchi_SetRange           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">int&nbsp;</td>
+          <td class="mdname" nowrap> <em>left</em>, </td>
+        </tr>
+        <tr>
+          <td class="md" nowrap align="right"></td>
+          <td class="md"></td>
+          <td class="md" nowrap>int&nbsp;</td>
+          <td class="mdname" nowrap> <em>top</em>, </td>
+        </tr>
+        <tr>
+          <td class="md" nowrap align="right"></td>
+          <td class="md"></td>
+          <td class="md" nowrap>int&nbsp;</td>
+          <td class="mdname" nowrap> <em>right</em>, </td>
+        </tr>
+        <tr>
+          <td class="md" nowrap align="right"></td>
+          <td class="md"></td>
+          <td class="md" nowrap>int&nbsp;</td>
+          <td class="mdname" nowrap> <em>bottom</em></td>
+        </tr>
+        <tr>
+          <td class="md"></td>
+          <td class="md">)&nbsp;</td>
+          <td class="md" colspan="2"></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+文字表示範囲を指定. 
+<p>
+<dl compact><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>left</em>&nbsp;</td><td>左端x座標 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>top</em>&nbsp;</td><td>上端y座標 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>right</em>&nbsp;</td><td>右端x座標 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>bottom</em>&nbsp;</td><td>下端y座標 </td></tr>
+  </table>
+</dl>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="4a5def11e5c1190efdf8e52c45758dec"></a><!-- doxytag: member="FontFuchi.h::FontFuchi_SetType" ref="4a5def11e5c1190efdf8e52c45758dec" args="(int type)" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">void FontFuchi_SetType           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">int&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap> <em>type</em>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+文字種類を指定. 
+<p>
+<dl compact><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>type</em>&nbsp;</td><td>種類（０～２）<ul>
+<li>0 通常フォント 半角5×10ドット 全角10×10ドット</li><li>1 拡大フォント 半角8×16ドット ボールド (ASCIIのみ)</li><li>2 極小フォント 半角4× 6ドット (ASCIIのみ) </li></ul>
+</td></tr>
+  </table>
+</dl>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="aa73287ac21c7a43802542ed5e17d6fd"></a><!-- doxytag: member="FontFuchi.h::FontFuchi_SetTxColor" ref="aa73287ac21c7a43802542ed5e17d6fd" args="(int color)" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">void FontFuchi_SetTxColor           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">int&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap> <em>color</em>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+文字色を指定. 
+<p>
+<dl compact><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>color</em>&nbsp;</td><td>色（０～３）<ul>
+<li>0 白</li><li>1 薄灰色</li><li>2 濃灰色</li><li>3 黒 </li></ul>
+</td></tr>
+  </table>
+</dl>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="a09a290608cf6b5bb0d7bc7b8743cb9d"></a><!-- doxytag: member="FontFuchi.h::FontFuchi_SetBdColor" ref="a09a290608cf6b5bb0d7bc7b8743cb9d" args="(int color)" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">void FontFuchi_SetBdColor           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">int&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap> <em>color</em>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+縁取り色を指定. 
+<p>
+<dl compact><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>color</em>&nbsp;</td><td>色（０～３）<ul>
+<li>0 白</li><li>1 薄灰色</li><li>2 濃灰色</li><li>3 黒 </li></ul>
+</td></tr>
+  </table>
+</dl>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="0fc19b896e0e6ff809f6fce50b0233f0"></a><!-- doxytag: member="FontFuchi.h::FontFuchi_Put" ref="0fc19b896e0e6ff809f6fce50b0233f0" args="(int x, int y, unsigned short code)" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">unsigned short FontFuchi_Put           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">int&nbsp;</td>
+          <td class="mdname" nowrap> <em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="md" nowrap align="right"></td>
+          <td class="md"></td>
+          <td class="md" nowrap>int&nbsp;</td>
+          <td class="mdname" nowrap> <em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="md" nowrap align="right"></td>
+          <td class="md"></td>
+          <td class="md" nowrap>unsigned short&nbsp;</td>
+          <td class="mdname" nowrap> <em>code</em></td>
+        </tr>
+        <tr>
+          <td class="md"></td>
+          <td class="md">)&nbsp;</td>
+          <td class="md" colspan="2"></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+縁取りフォントを仮想画面に表示. 
+<p>
+<dl compact><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>x</em>&nbsp;</td><td>x座標 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>y</em>&nbsp;</td><td>y座標 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>code</em>&nbsp;</td><td>文字コード </td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>戻り値:</b></dt><dd><ul>
+<li>b0-7 x方向の幅 <br>
+</li><li>b8-15 y方向の幅 </li></ul>
+</dd></dl>
+<dl compact><dt><b>警告:</b></dt><dd>ユーザ側で FontProxy を利用しない場合、フォント種類が上書きされてしまいます。 </dd></dl>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="d2ab428b1cb72bce735b182a1ae12a03"></a><!-- doxytag: member="FontFuchi.h::FontFuchi_PutStr" ref="d2ab428b1cb72bce735b182a1ae12a03" args="(char const *p)" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">int FontFuchi_PutStr           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">char const *&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap> <em>p</em>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+縁取り文字列を仮想画面に書き込みます. 
+<p>
+<dl compact><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>p</em>&nbsp;</td><td>文字列のアドレス。0 で終端。 </td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>戻り値:</b></dt><dd>もし最後の１バイトがシフト JIS の第１バイトだった場合そのコードを返します。 その他の場合は 0 です。 </dd></dl>
+<dl compact><dt><b>警告:</b></dt><dd>ユーザ側で FontProxy を利用しない場合、フォント種類が上書きされてしまいます。 </dd></dl>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="db46fc0e9daa3e2211d9593f9106b85a"></a><!-- doxytag: member="FontFuchi.h::FontFuchi_Printf" ref="db46fc0e9daa3e2211d9593f9106b85a" args="(char const *fmt,...)" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">int FontFuchi_Printf           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">char const *&nbsp;</td>
+          <td class="mdname" nowrap> <em>fmt</em>, </td>
+        </tr>
+        <tr>
+          <td class="md" nowrap align="right"></td>
+          <td class="md"></td>
+          <td class="md" nowrap>&nbsp;</td>
+          <td class="mdname" nowrap> <em>...</em></td>
+        </tr>
+        <tr>
+          <td class="md"></td>
+          <td class="md">)&nbsp;</td>
+          <td class="md" colspan="2"></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+縁取り文字列を仮想画面に書き込みます（書式指定）. 
+<p>
+<dl compact><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>fmt</em>&nbsp;</td><td>書式文字列 </td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>戻り値:</b></dt><dd>出力したバイト数 </dd></dl>
+<dl compact><dt><b>警告:</b></dt><dd>ユーザ側で FontProxy を利用しない場合、フォント種類が上書きされてしまいます。 </dd></dl>
+    </td>
+  </tr>
+</table>
+<hr size="1"><address style="align: right;"><small>zurapceに対してFri May 19 08:01:23 2006に生成されました。&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.4.6-NO </small></address>
+</body>
+</html>
