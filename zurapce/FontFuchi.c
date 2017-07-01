@@ -227,7 +227,7 @@ static int put_str( int type, char const* p )
 	int y = s_y;
 	m.b.h = s_font_height[ s_type ];
 
-	while ( 1 )
+	while( 1 )
 	{
 		ch = *p++;
 		if( !ch )
@@ -236,7 +236,7 @@ static int put_str( int type, char const* p )
 		}
 		else if( ( 0x81 <= ch && ch <= 0x9f ) || ( 0xE0 <= ch && ch <= 0xfc ) ) // ‘SŠp
 		{
-			if ( *p )
+			if( *p )
 			{
 				unsigned short code =  ( ch << 8 ) | *p++;
 				m.s = ( type )? put_moji( x, y, code ) : put_fuchi( x, y, code );
@@ -247,7 +247,7 @@ static int put_str( int type, char const* p )
 				break;
 			}
 		}
-		else if ( ch == '\n' ) // LF
+		else if( ch == '\n' ) // LF
 		{
 			goto CRLF;
 		}
@@ -256,7 +256,7 @@ static int put_str( int type, char const* p )
 			m.s = ( type )? put_moji( x, y, ch ) : put_fuchi( x, y, ch );
 			x += m.b.w;
 		}
-		if ( s_right <= x )
+		if( s_right <= x )
 		{
 CRLF:
 			x = s_left;

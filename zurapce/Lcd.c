@@ -35,7 +35,7 @@ void Lcd_Update( void )
 
 void Lcd_Trans( void )
 {
-	if ( s_lcd_update )
+	if( s_lcd_update )
 	{
 		pceLCDTrans();
 		s_lcd_update = FALSE;

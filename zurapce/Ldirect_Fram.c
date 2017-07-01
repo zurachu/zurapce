@@ -77,9 +77,9 @@ static void vbuff_trans( int const page )
 	BYTE* vbuff_ptr = pceLCDSetBuffer( INVALIDPTR );
 	BYTE c, mask_bit, high_bit, low_bit;
 
-	for ( xx = 0; xx < DISP_X / 8; xx += 1 )
+	for( xx = 0; xx < DISP_X / 8; xx += 1 )
 	{
-		for ( yy = 0; yy < DISP_Y; yy += 1 )
+		for( yy = 0; yy < DISP_Y; yy += 1 )
 		{
 			c = *vbuff_ptr++; mask_bit  = ( c & LDIRECT_VBUFF_TRANS ) >> 6;	high_bit = c >> 1;	low_bit = c & 1;
 			c = *vbuff_ptr++; mask_bit |= ( c & LDIRECT_VBUFF_TRANS ) >> 5;	high_bit |= c & 2;	low_bit |= ( c & 1 ) << 1;
@@ -106,7 +106,7 @@ void Ldirect_Trans( void )
 {
 	static int page = 0;
 	
-	if ( s_dbuff_update_count )
+	if( s_dbuff_update_count )
 	{
 		lbuff_trans( page );
 		if( s_vbuff_view )
