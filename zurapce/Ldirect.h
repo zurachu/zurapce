@@ -92,7 +92,7 @@ int Ldirect_Init( void );
 void Ldirect_Update( void );
 
 /**
-	LCD_Trans() で４階調用仮想画面バッファを LCD ダイレクト転送用バッファに
+	Ldirect_Trans() で４階調用仮想画面バッファを LCD ダイレクト転送用バッファに
 	転送するかどうかを設定します.
 	@param visible フラグ
 */
