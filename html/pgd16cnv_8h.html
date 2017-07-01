@@ -1,0 +1,119 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>zurapce: pgd16cnv/pgd16cnv/pgd16cnv.h ファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">zurapce
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.13 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',false,false,'search.php','検索');
+});
+</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_28fde032fffbc04981cbc7542b0d5bc1.html">pgd16cnv</a></li><li class="navelem"><a class="el" href="dir_f73965f9f1778417ce63775486ae4f5a.html">pgd16cnv</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">データ構造</a> &#124;
+<a href="#func-members">関数</a>  </div>
+  <div class="headertitle">
+<div class="title">pgd16cnv.h ファイル</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Windows BMP から16階調 P/ECE BMP に変換.  
+<a href="#details">[詳解]</a></p>
+<div class="textblock"><code>#include &lt;windows.h&gt;</code><br />
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+データ構造</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structPBMP__FILEHEADER.html">PBMP_FILEHEADER</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">P/ECE BMP ヘッダ構造体.  <a href="structPBMP__FILEHEADER.html#details">[詳解]</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+関数</h2></td></tr>
+<tr class="memitem:ab8b4b09b0f76273f451347d34c142fe3"><td class="memItemLeft" align="right" valign="top">unsigned char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pgd16cnv_8h.html#ab8b4b09b0f76273f451347d34c142fe3">pgd16cnv</a> (BITMAPINFOHEADER const *bi, unsigned char const *bmp)</td></tr>
+<tr class="memdesc:ab8b4b09b0f76273f451347d34c142fe3"><td class="mdescLeft">&#160;</td><td class="mdescRight">ヒープを確保して、Windows BMP から16階調 P/ECE BMP に変換したデータを格納.  <a href="#ab8b4b09b0f76273f451347d34c142fe3">[詳解]</a><br /></td></tr>
+<tr class="separator:ab8b4b09b0f76273f451347d34c142fe3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><p>Windows BMP から16階調 P/ECE BMP に変換. </p>
+<dl class="section author"><dt>著者</dt><dd>zurachu </dd></dl>
+</div><h2 class="groupheader">関数詳解</h2>
+<a id="ab8b4b09b0f76273f451347d34c142fe3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab8b4b09b0f76273f451347d34c142fe3">&#9670;&nbsp;</a></span>pgd16cnv()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned char* pgd16cnv </td>
+          <td>(</td>
+          <td class="paramtype">BITMAPINFOHEADER const *&#160;</td>
+          <td class="paramname"><em>bi</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned char const *&#160;</td>
+          <td class="paramname"><em>bmp</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>ヒープを確保して、Windows BMP から16階調 P/ECE BMP に変換したデータを格納. </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">bi</td><td>Windows BMP 情報 </td></tr>
+    <tr><td class="paramname">bmp</td><td>Windows ビットマップ部分（メモリにはトップダウンで配置） </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>格納したヒープ領域（失敗時 NULL） </dd></dl>
+<dl class="section warning"><dt>警告</dt><dd>不要になったヒープは free() すること。 </dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築: &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.13
+</small></address>
+</body>
+</html>

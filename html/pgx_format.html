@@ -1,35 +1,53 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html><head><meta http-equiv="Content-Type" content="text/html;charset=Shift_JIS">
-<title>zurapce: 16ŠK’²‰æ‘œƒtƒH[ƒ}ƒbƒg</title>
-<link href="doxygen.css" rel="stylesheet" type="text/css">
-<link href="tabs.css" rel="stylesheet" type="text/css">
-</head><body>
-<!-- ì¬F Doxygen 1.4.6-NO -->
-<div class="tabs">
-  <ul>
-    <li><a href="index.html"><span>ƒƒCƒ“ƒy[ƒW</span></a></li>
-    <li><a href="annotated.html"><span>ƒf[ƒ^\‘¢</span></a></li>
-    <li><a href="files.html"><span>ƒtƒ@ƒCƒ‹</span></a></li>
-    <li><a href="pages.html"><span>ŠÖ˜Aƒy[ƒW</span></a></li>
-  </ul></div>
-<h1><a class="anchor" name="pgx_format">16ŠK’²‰æ‘œƒtƒH[ƒ}ƒbƒg</a></h1>PIECE_BMP ‚ÌŠg’£ƒtƒH[ƒ}ƒbƒg‚Å‚·B \‘¢‘Ì‚Í PIECE_BMP ‚ð‚»‚Ì‚Ü‚ÜŽg‚¢‚Ü‚·B<p>
-<div class="fragment"><pre class="fragment">        <span class="keyword">typedef</span> <span class="keyword">struct </span>{
-                DWORD head; <span class="comment">// Ž¯•ÊŽq 'PBEX'iŠù‘¶ƒAƒvƒŠ‚ÌŒë“®ì–hŽ~j</span>
-                DWORD fsize; <span class="comment">// ƒtƒ@ƒCƒ‹’·</span>
-                BYTE bpp; <span class="comment">// bit [“x (4)</span>
-                BYTE mask; <span class="comment">// ƒ}ƒXƒN‚Ì bit [“x (1)</span>
-                <span class="keywordtype">int</span> w; <span class="comment">// X • 8 ƒsƒNƒZƒ‹’PˆÊŒµŽç</span>
-                <span class="keywordtype">int</span> h; <span class="comment">// Y ‚‚³</span>
-                DWORD buf_size; <span class="comment">// BMP ƒTƒCƒY = ( bpp + mask ) * w * h / 8</span>
-        } PBMP_FILEHEADER;
-        
-        <span class="keyword">typedef</span> <span class="keyword">struct </span>{
-                PBMP_FILEHEADER header;
-                BYTE *buf; <span class="comment">// 4 BIT 1 ƒsƒNƒZƒ‹</span>
-                BYTE *mask; <span class="comment">// 1 BIT 1 ƒsƒNƒZƒ‹</span>
-        } PIECE_BMP;
-</pre></div> <hr size="1"><address style="align: right;"><small>zurapce‚É‘Î‚µ‚ÄFri May 19 08:01:24 2006‚É¶¬‚³‚ê‚Ü‚µ‚½B&nbsp;
-<a href="http://www.doxygen.org/index.html">
-<img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.4.6-NO </small></address>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>zurapce: 16éšŽèª¿ç”»åƒãƒ•ã‚©ãƒ¼ãƒžãƒƒãƒˆ</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">zurapce
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- æ§‹ç¯‰: Doxygen 1.8.13 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',false,false,'search.php','æ¤œç´¢');
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">16éšŽèª¿ç”»åƒãƒ•ã‚©ãƒ¼ãƒžãƒƒãƒˆ </div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><p>PIECE_BMP ã®æ‹¡å¼µãƒ•ã‚©ãƒ¼ãƒžãƒƒãƒˆã§ã™ã€‚ æ§‹é€ ä½“ã¯ PIECE_BMP ã‚’ãã®ã¾ã¾ä½¿ã„ã¾ã™ã€‚ 16éšŽèª¿ BMP ã‚’ pgd16cnv ã§å¤‰æ›ã—ã¦ä¸‹ã•ã„ã€‚</p>
+<div class="fragment"><div class="line"><span class="keyword">typedef</span> <span class="keyword">struct </span>{</div><div class="line">    DWORD head; <span class="comment">// è­˜åˆ¥å­ &#39;PBEX&#39;ï¼ˆæ—¢å­˜ã‚¢ãƒ—ãƒªã®èª¤å‹•ä½œé˜²æ­¢ï¼‰</span></div><div class="line">    DWORD fsize; <span class="comment">// ãƒ•ã‚¡ã‚¤ãƒ«é•·</span></div><div class="line">    BYTE bpp; <span class="comment">// bit æ·±åº¦ (4)</span></div><div class="line">    BYTE mask; <span class="comment">// ãƒžã‚¹ã‚¯ã® bit æ·±åº¦ (1)</span></div><div class="line">    <span class="keywordtype">int</span> w; <span class="comment">// X å¹… 8 ãƒ”ã‚¯ã‚»ãƒ«å˜ä½åŽ³å®ˆ</span></div><div class="line">    <span class="keywordtype">int</span> h; <span class="comment">// Y é«˜ã•</span></div><div class="line">    DWORD buf_size; <span class="comment">// BMP ã‚µã‚¤ã‚º = ( bpp + mask ) * w * h / 8</span></div><div class="line">} <a class="code" href="structPBMP__FILEHEADER.html">PBMP_FILEHEADER</a>;</div><div class="line"></div><div class="line"><span class="keyword">typedef</span> <span class="keyword">struct </span>{</div><div class="line">    <a class="code" href="structPBMP__FILEHEADER.html">PBMP_FILEHEADER</a> header;</div><div class="line">    BYTE *buf; <span class="comment">// 4 BIT 1 ãƒ”ã‚¯ã‚»ãƒ«</span></div><div class="line">    BYTE *mask; <span class="comment">// 1 BIT 1 ãƒ”ã‚¯ã‚»ãƒ«</span></div><div class="line">} PIECE_BMP;</div></div><!-- fragment --> </div></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+æ§‹ç¯‰: &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.13
+</small></address>
 </body>
 </html>

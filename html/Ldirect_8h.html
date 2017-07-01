@@ -1,647 +1,542 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html><head><meta http-equiv="Content-Type" content="text/html;charset=Shift_JIS">
-<title>zurapce: zurapce/Ldirect.h</title>
-<link href="doxygen.css" rel="stylesheet" type="text/css">
-<link href="tabs.css" rel="stylesheet" type="text/css">
-</head><body>
-<!-- �쐬�F Doxygen 1.4.6-NO -->
-<div class="tabs">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>zurapce: zurapce/Ldirect.h ファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">zurapce
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.13 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',false,false,'search.php','検索');
+});
+</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
   <ul>
-    <li><a href="index.html"><span>���C���y�[�W</span></a></li>
-    <li><a href="annotated.html"><span>�f�[�^�\��</span></a></li>
-    <li id="current"><a href="files.html"><span>�t�@�C��</span></a></li>
-    <li><a href="pages.html"><span>�֘A�y�[�W</span></a></li>
-  </ul></div>
-<div class="tabs">
-  <ul>
-    <li><a href="files.html"><span>�t�@�C���ꗗ</span></a></li>
-    <li><a href="globals.html"><span>�O���[�o��</span></a></li>
-  </ul></div>
-<h1>zurapce/Ldirect.h</h1>16�K���`��֘A. <a href="#_details">[�ڍ�]</a>
-<p>
-<code>#include &lt;piece.h&gt;</code><br>
-<code>#include &lt;string.h&gt;</code><br>
-<table border="0" cellpadding="0" cellspacing="0">
-<tr><td></td></tr>
-<tr><td colspan="2"><br><h2>�}�N����`</h2></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="Ldirect_8h.html#8aa809090ec300a3537695fb320de1f3">ZURAPCE_LDIRECT_H</a></td></tr>
+<li class="navelem"><a class="el" href="dir_6808de0d3b614476abd72b1d98fe57fc.html">zurapce</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#define-members">マクロ定義</a> &#124;
+<a href="#func-members">関数</a> &#124;
+<a href="#var-members">変数</a>  </div>
+  <div class="headertitle">
+<div class="title">Ldirect.h ファイル</div>  </div>
+</div><!--header-->
+<div class="contents">
 
-<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="Ldirect_8h.html#55d27f8014ef169b11ebea909b42f32d">LDIRECT_PAGE_NUM</a>&nbsp;&nbsp;&nbsp;5</td></tr>
-
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">�؂�ւ��y�[�W��  <a href="#55d27f8014ef169b11ebea909b42f32d"></a><br></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="Ldirect_8h.html#11cde3f19f1e6525c258754afed20204">LDIRECT_COLOR_NUM</a>&nbsp;&nbsp;&nbsp;16</td></tr>
-
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">�K�����iLDIRECT_PAGE_NUM * 3 + 1�j  <a href="#11cde3f19f1e6525c258754afed20204"></a><br></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="Ldirect_8h.html#83fcc1f821ff9368801befa0c7de2a94">LDIRECT_VBUFF_TRANS</a>&nbsp;&nbsp;&nbsp;0x40</td></tr>
-
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">�S�K���p���z��ʃo�b�t�@�œ��ߐF�Ƃ݂Ȃ��t���O.  <a href="#83fcc1f821ff9368801befa0c7de2a94"></a><br></td></tr>
-<tr><td colspan="2"><br><h2>�֐�</h2></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="Ldirect_8h.html#dd8e18cd89e161465a99ee53e05fb45d">Ldirect_Init</a> (void)</td></tr>
-
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">������.  <a href="#dd8e18cd89e161465a99ee53e05fb45d"></a><br></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="Ldirect_8h.html#82e7768e626f850897b917bd64b93185">Ldirect_Update</a> (void)</td></tr>
-
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">LCD �_�C���N�g�]���p�o�b�t�@���X�V���܂�.  <a href="#82e7768e626f850897b917bd64b93185"></a><br></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="Ldirect_8h.html#cedd5ef85ea525bdee2811827ceaf282">Ldirect_VBuffView</a> (BOOL visible)</td></tr>
-
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">LCD_Trans() �łS�K���p���z��ʃo�b�t�@�� LCD �_�C���N�g�]���p�o�b�t�@�� �]�����邩�ǂ�����ݒ肵�܂�.  <a href="#cedd5ef85ea525bdee2811827ceaf282"></a><br></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="Ldirect_8h.html#14fac664189e0bfbd5770dad1725ba8a">Ldirect_Trans</a> (void)</td></tr>
-
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">LCD �_�C���N�g�]��.  <a href="#14fac664189e0bfbd5770dad1725ba8a"></a><br></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="Ldirect_8h.html#e2c009a2d7745eed1fba9b3b0759e639">Ldirect_VBuffClear</a> (int x, int y, int w, int h)</td></tr>
-
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">�S�K���p���z��ʃo�b�t�@�𓧉ߐF�œh��ׂ�.  <a href="#e2c009a2d7745eed1fba9b3b0759e639"></a><br></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="Ldirect_8h.html#a7952189f4170c47675e7796e630de99">Ldirect_DrawObject</a> (PIECE_BMP const *p, int dx, int dy, int sx, int sy, int width, int height)</td></tr>
-
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">16�K���p���z��ʃo�b�t�@��16�K���摜��`��.  <a href="#a7952189f4170c47675e7796e630de99"></a><br></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="Ldirect_8h.html#ca6d1995fd1872863ee95d135e233a39">Ldirect_Point</a> (BYTE color, int const x, int const y)</td></tr>
-
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">16�K���p���z��ʃo�b�t�@�ɓ_��`��.  <a href="#ca6d1995fd1872863ee95d135e233a39"></a><br></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="Ldirect_8h.html#40b50d68985ee6256da849dd0aa886cf">Ldirect_Paint</a> (BYTE color, int x, int y, int width, int height)</td></tr>
-
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">16�K���p���z��ʃo�b�t�@�ɋ�`��`��.  <a href="#40b50d68985ee6256da849dd0aa886cf"></a><br></td></tr>
-<tr><td colspan="2"><br><h2>�ϐ�</h2></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top">BYTE *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="Ldirect_8h.html#dfcfe01a78c81820bd379abdcc9076b3">g_lbuff</a></td></tr>
-
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">16�K���p���z��ʃo�b�t�@.  <a href="#dfcfe01a78c81820bd379abdcc9076b3"></a><br></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top">BYTE *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="Ldirect_8h.html#8ab8c29534b2d5ff32173499922ba678">g_dbuff</a> [LDIRECT_PAGE_NUM]</td></tr>
-
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">LCD �_�C���N�g�]���p�o�b�t�@.  <a href="#8ab8c29534b2d5ff32173499922ba678"></a><br></td></tr>
+<p>16階調描画関連.  
+<a href="#details">[詳解]</a></p>
+<div class="textblock"><code>#include &lt;piece.h&gt;</code><br />
+<code>#include &lt;string.h&gt;</code><br />
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+マクロ定義</h2></td></tr>
+<tr class="memitem:a55d27f8014ef169b11ebea909b42f32d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Ldirect_8h.html#a55d27f8014ef169b11ebea909b42f32d">LDIRECT_PAGE_NUM</a>&#160;&#160;&#160;5</td></tr>
+<tr class="memdesc:a55d27f8014ef169b11ebea909b42f32d"><td class="mdescLeft">&#160;</td><td class="mdescRight">切り替えページ数  <a href="#a55d27f8014ef169b11ebea909b42f32d">[詳解]</a><br /></td></tr>
+<tr class="separator:a55d27f8014ef169b11ebea909b42f32d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a11cde3f19f1e6525c258754afed20204"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Ldirect_8h.html#a11cde3f19f1e6525c258754afed20204">LDIRECT_COLOR_NUM</a>&#160;&#160;&#160;16</td></tr>
+<tr class="memdesc:a11cde3f19f1e6525c258754afed20204"><td class="mdescLeft">&#160;</td><td class="mdescRight">階調数（LDIRECT_PAGE_NUM * 3 + 1）  <a href="#a11cde3f19f1e6525c258754afed20204">[詳解]</a><br /></td></tr>
+<tr class="separator:a11cde3f19f1e6525c258754afed20204"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a83fcc1f821ff9368801befa0c7de2a94"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Ldirect_8h.html#a83fcc1f821ff9368801befa0c7de2a94">LDIRECT_VBUFF_TRANS</a>&#160;&#160;&#160;0x40</td></tr>
+<tr class="memdesc:a83fcc1f821ff9368801befa0c7de2a94"><td class="mdescLeft">&#160;</td><td class="mdescRight">４階調用仮想画面バッファで透過色とみなすフラグ.  <a href="#a83fcc1f821ff9368801befa0c7de2a94">[詳解]</a><br /></td></tr>
+<tr class="separator:a83fcc1f821ff9368801befa0c7de2a94"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+関数</h2></td></tr>
+<tr class="memitem:add8e18cd89e161465a99ee53e05fb45d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Ldirect_8h.html#add8e18cd89e161465a99ee53e05fb45d">Ldirect_Init</a> (void)</td></tr>
+<tr class="memdesc:add8e18cd89e161465a99ee53e05fb45d"><td class="mdescLeft">&#160;</td><td class="mdescRight">初期化.  <a href="#add8e18cd89e161465a99ee53e05fb45d">[詳解]</a><br /></td></tr>
+<tr class="separator:add8e18cd89e161465a99ee53e05fb45d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82e7768e626f850897b917bd64b93185"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Ldirect_8h.html#a82e7768e626f850897b917bd64b93185">Ldirect_Update</a> (void)</td></tr>
+<tr class="memdesc:a82e7768e626f850897b917bd64b93185"><td class="mdescLeft">&#160;</td><td class="mdescRight">LCD ダイレクト転送用バッファを更新します.  <a href="#a82e7768e626f850897b917bd64b93185">[詳解]</a><br /></td></tr>
+<tr class="separator:a82e7768e626f850897b917bd64b93185"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acedd5ef85ea525bdee2811827ceaf282"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Ldirect_8h.html#acedd5ef85ea525bdee2811827ceaf282">Ldirect_VBuffView</a> (BOOL visible)</td></tr>
+<tr class="memdesc:acedd5ef85ea525bdee2811827ceaf282"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="Ldirect_8h.html#a14fac664189e0bfbd5770dad1725ba8a" title="LCD ダイレクト転送. ">Ldirect_Trans()</a> で４階調用仮想画面バッファを LCD ダイレクト転送用バッファに 転送するかどうかを設定します.  <a href="#acedd5ef85ea525bdee2811827ceaf282">[詳解]</a><br /></td></tr>
+<tr class="separator:acedd5ef85ea525bdee2811827ceaf282"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a14fac664189e0bfbd5770dad1725ba8a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Ldirect_8h.html#a14fac664189e0bfbd5770dad1725ba8a">Ldirect_Trans</a> (void)</td></tr>
+<tr class="memdesc:a14fac664189e0bfbd5770dad1725ba8a"><td class="mdescLeft">&#160;</td><td class="mdescRight">LCD ダイレクト転送.  <a href="#a14fac664189e0bfbd5770dad1725ba8a">[詳解]</a><br /></td></tr>
+<tr class="separator:a14fac664189e0bfbd5770dad1725ba8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae2c009a2d7745eed1fba9b3b0759e639"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Ldirect_8h.html#ae2c009a2d7745eed1fba9b3b0759e639">Ldirect_VBuffClear</a> (int x, int y, int w, int h)</td></tr>
+<tr class="memdesc:ae2c009a2d7745eed1fba9b3b0759e639"><td class="mdescLeft">&#160;</td><td class="mdescRight">４階調用仮想画面バッファを透過色で塗り潰す.  <a href="#ae2c009a2d7745eed1fba9b3b0759e639">[詳解]</a><br /></td></tr>
+<tr class="separator:ae2c009a2d7745eed1fba9b3b0759e639"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa7952189f4170c47675e7796e630de99"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Ldirect_8h.html#aa7952189f4170c47675e7796e630de99">Ldirect_DrawObject</a> (PIECE_BMP const *p, int dx, int dy, int sx, int sy, int width, int height)</td></tr>
+<tr class="memdesc:aa7952189f4170c47675e7796e630de99"><td class="mdescLeft">&#160;</td><td class="mdescRight">16階調用仮想画面バッファに16階調画像を描画.  <a href="#aa7952189f4170c47675e7796e630de99">[詳解]</a><br /></td></tr>
+<tr class="separator:aa7952189f4170c47675e7796e630de99"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aca6d1995fd1872863ee95d135e233a39"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Ldirect_8h.html#aca6d1995fd1872863ee95d135e233a39">Ldirect_Point</a> (BYTE color, int const x, int const y)</td></tr>
+<tr class="memdesc:aca6d1995fd1872863ee95d135e233a39"><td class="mdescLeft">&#160;</td><td class="mdescRight">16階調用仮想画面バッファに点を描画.  <a href="#aca6d1995fd1872863ee95d135e233a39">[詳解]</a><br /></td></tr>
+<tr class="separator:aca6d1995fd1872863ee95d135e233a39"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40b50d68985ee6256da849dd0aa886cf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Ldirect_8h.html#a40b50d68985ee6256da849dd0aa886cf">Ldirect_Paint</a> (BYTE color, int x, int y, int width, int height)</td></tr>
+<tr class="memdesc:a40b50d68985ee6256da849dd0aa886cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">16階調用仮想画面バッファに矩形を描画.  <a href="#a40b50d68985ee6256da849dd0aa886cf">[詳解]</a><br /></td></tr>
+<tr class="separator:a40b50d68985ee6256da849dd0aa886cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+変数</h2></td></tr>
+<tr class="memitem:adfcfe01a78c81820bd379abdcc9076b3"><td class="memItemLeft" align="right" valign="top">BYTE *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Ldirect_8h.html#adfcfe01a78c81820bd379abdcc9076b3">g_lbuff</a></td></tr>
+<tr class="memdesc:adfcfe01a78c81820bd379abdcc9076b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">16階調用仮想画面バッファ.  <a href="#adfcfe01a78c81820bd379abdcc9076b3">[詳解]</a><br /></td></tr>
+<tr class="separator:adfcfe01a78c81820bd379abdcc9076b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ab8c29534b2d5ff32173499922ba678"><td class="memItemLeft" align="right" valign="top">BYTE *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Ldirect_8h.html#a8ab8c29534b2d5ff32173499922ba678">g_dbuff</a> [<a class="el" href="Ldirect_8h.html#a55d27f8014ef169b11ebea909b42f32d">LDIRECT_PAGE_NUM</a>]</td></tr>
+<tr class="memdesc:a8ab8c29534b2d5ff32173499922ba678"><td class="mdescLeft">&#160;</td><td class="mdescRight">LCD ダイレクト転送用バッファ.  <a href="#a8ab8c29534b2d5ff32173499922ba678">[詳解]</a><br /></td></tr>
+<tr class="separator:a8ab8c29534b2d5ff32173499922ba678"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<hr><a name="_details"></a><h2>����</h2>
-16�K���`��֘A. 
-<p>
-�t���̎c���𗘗p���āA5���̉摜�������ɐ؂�ւ��A16�K���̉摜��\�����Ă���悤�ɂ݂������܂��B<br>
- ����ɁA�ʏ�̂S�K�����z��ʃo�b�t�@���d�ˍ��킹�ĕ\���ł��܂��B<p>
-�������d���ł����A�R�[�h������ RAM �ɔz�u���邱�Ƃō������ł��܂��B<br>
- project.mak �� USE_LDIRECT_ON_FRAM := true ��L���ɂ��āA<br>
- pceAppInit() �̐擪�� <a class="el" href="FramObject_8h.html#49c170896c5acae3f91a09bff5e5e994">FramObject_Init()</a> ���Ăяo���ĉ������B<p>
-<dl compact><dt><b>�Q��:</b></dt><dd><a class="el" href="pgx_format.html">16�K���摜�t�H�[�}�b�g</a></dd></dl>
-<dl compact><dt><b>���:</b></dt><dd>zurachu </dd></dl>
-<hr><h2>�}�N����`</h2>
-<a class="anchor" name="8aa809090ec300a3537695fb320de1f3"></a><!-- doxytag: member="Ldirect.h::ZURAPCE_LDIRECT_H" ref="8aa809090ec300a3537695fb320de1f3" args="" --><p>
-<table class="mdTable" cellpadding="2" cellspacing="0">
-  <tr>
-    <td class="mdRow">
-      <table cellpadding="0" cellspacing="0" border="0">
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><p>16階調描画関連. </p>
+<p>液晶の残像を利用して、5枚の画像を高速に切り替え、16階調の画像を表示しているようにみせかけます。¥n さらに、通常の４階調仮想画面バッファを重ね合わせて表示できます。</p>
+<p>処理が重いですが、コードを高速 RAM に配置することで高速化できます。¥n project.mak の USE_LDIRECT_ON_FRAM := true を有効にして、¥n pceAppInit() の先頭で <a class="el" href="FramObject_8h.html#a49c170896c5acae3f91a09bff5e5e994" title="高速 RAM に配置するオブジェクトを、配置します. ">FramObject_Init()</a> を呼び出して下さい。</p>
+<dl class="section see"><dt>参照</dt><dd><a class="el" href="pgx_format.html">16階調画像フォーマット</a></dd></dl>
+<dl class="section author"><dt>著者</dt><dd>zurachu </dd></dl>
+</div><h2 class="groupheader">マクロ定義詳解</h2>
+<a id="a55d27f8014ef169b11ebea909b42f32d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a55d27f8014ef169b11ebea909b42f32d">&#9670;&nbsp;</a></span>LDIRECT_PAGE_NUM</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
         <tr>
-          <td class="md" nowrap valign="top">#define ZURAPCE_LDIRECT_H          </td>
+          <td class="memname">#define LDIRECT_PAGE_NUM&#160;&#160;&#160;5</td>
         </tr>
       </table>
-    </td>
-  </tr>
-</table>
-<table cellspacing="5" cellpadding="0" border="0">
-  <tr>
-    <td>
-      &nbsp;
-    </td>
-    <td>
+</div><div class="memdoc">
 
-<p>
-    </td>
-  </tr>
-</table>
-<a class="anchor" name="55d27f8014ef169b11ebea909b42f32d"></a><!-- doxytag: member="Ldirect.h::LDIRECT_PAGE_NUM" ref="55d27f8014ef169b11ebea909b42f32d" args="" --><p>
-<table class="mdTable" cellpadding="2" cellspacing="0">
-  <tr>
-    <td class="mdRow">
-      <table cellpadding="0" cellspacing="0" border="0">
+<p>切り替えページ数 </p>
+
+</div>
+</div>
+<a id="a11cde3f19f1e6525c258754afed20204"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a11cde3f19f1e6525c258754afed20204">&#9670;&nbsp;</a></span>LDIRECT_COLOR_NUM</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
         <tr>
-          <td class="md" nowrap valign="top">#define LDIRECT_PAGE_NUM&nbsp;&nbsp;&nbsp;5          </td>
+          <td class="memname">#define LDIRECT_COLOR_NUM&#160;&#160;&#160;16</td>
         </tr>
       </table>
-    </td>
-  </tr>
-</table>
-<table cellspacing="5" cellpadding="0" border="0">
-  <tr>
-    <td>
-      &nbsp;
-    </td>
-    <td>
+</div><div class="memdoc">
 
-<p>
-�؂�ւ��y�[�W�� 
-<p>
-    </td>
-  </tr>
-</table>
-<a class="anchor" name="11cde3f19f1e6525c258754afed20204"></a><!-- doxytag: member="Ldirect.h::LDIRECT_COLOR_NUM" ref="11cde3f19f1e6525c258754afed20204" args="" --><p>
-<table class="mdTable" cellpadding="2" cellspacing="0">
-  <tr>
-    <td class="mdRow">
-      <table cellpadding="0" cellspacing="0" border="0">
+<p>階調数（LDIRECT_PAGE_NUM * 3 + 1） </p>
+
+</div>
+</div>
+<a id="a83fcc1f821ff9368801befa0c7de2a94"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a83fcc1f821ff9368801befa0c7de2a94">&#9670;&nbsp;</a></span>LDIRECT_VBUFF_TRANS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
         <tr>
-          <td class="md" nowrap valign="top">#define LDIRECT_COLOR_NUM&nbsp;&nbsp;&nbsp;16          </td>
+          <td class="memname">#define LDIRECT_VBUFF_TRANS&#160;&#160;&#160;0x40</td>
         </tr>
       </table>
-    </td>
-  </tr>
-</table>
-<table cellspacing="5" cellpadding="0" border="0">
-  <tr>
-    <td>
-      &nbsp;
-    </td>
-    <td>
+</div><div class="memdoc">
 
-<p>
-�K�����iLDIRECT_PAGE_NUM * 3 + 1�j 
-<p>
-    </td>
-  </tr>
-</table>
-<a class="anchor" name="83fcc1f821ff9368801befa0c7de2a94"></a><!-- doxytag: member="Ldirect.h::LDIRECT_VBUFF_TRANS" ref="83fcc1f821ff9368801befa0c7de2a94" args="" --><p>
-<table class="mdTable" cellpadding="2" cellspacing="0">
-  <tr>
-    <td class="mdRow">
-      <table cellpadding="0" cellspacing="0" border="0">
+<p>４階調用仮想画面バッファで透過色とみなすフラグ. </p>
+<p>なぜか他のビットだと上手くいかない。これでも上手くいかないこともある。 原因は不明。 </p>
+
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a id="add8e18cd89e161465a99ee53e05fb45d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#add8e18cd89e161465a99ee53e05fb45d">&#9670;&nbsp;</a></span>Ldirect_Init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
         <tr>
-          <td class="md" nowrap valign="top">#define LDIRECT_VBUFF_TRANS&nbsp;&nbsp;&nbsp;0x40          </td>
+          <td class="memname">int Ldirect_Init </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
         </tr>
       </table>
-    </td>
-  </tr>
-</table>
-<table cellspacing="5" cellpadding="0" border="0">
-  <tr>
-    <td>
-      &nbsp;
-    </td>
-    <td>
+</div><div class="memdoc">
 
-<p>
-�S�K���p���z��ʃo�b�t�@�œ��ߐF�Ƃ݂Ȃ��t���O. 
-<p>
-�Ȃ������̃r�b�g���Ə�肭�����Ȃ��B����ł���肭�����Ȃ����Ƃ�����B �����͕s���B     </td>
-  </tr>
-</table>
-<hr><h2>�֐�</h2>
-<a class="anchor" name="dd8e18cd89e161465a99ee53e05fb45d"></a><!-- doxytag: member="Ldirect.h::Ldirect_Init" ref="dd8e18cd89e161465a99ee53e05fb45d" args="(void)" --><p>
-<table class="mdTable" cellpadding="2" cellspacing="0">
-  <tr>
-    <td class="mdRow">
-      <table cellpadding="0" cellspacing="0" border="0">
-        <tr>
-          <td class="md" nowrap valign="top">int Ldirect_Init           </td>
-          <td class="md" valign="top">(&nbsp;</td>
-          <td class="md" nowrap valign="top">void&nbsp;</td>
-          <td class="mdname1" valign="top" nowrap>          </td>
-          <td class="md" valign="top">&nbsp;)&nbsp;</td>
-          <td class="md" nowrap></td>
-        </tr>
-      </table>
-    </td>
-  </tr>
-</table>
-<table cellspacing="5" cellpadding="0" border="0">
-  <tr>
-    <td>
-      &nbsp;
-    </td>
-    <td>
-
-<p>
-������. 
-<p>
-16�K���p���z��ʃo�b�t�@����� LCD �_�C���N�g�]���p�o�b�t�@�i5���j���m�ۂ��܂��B <dl compact><dt><b>�߂�l:</b></dt><dd>
-  <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>1</em>&nbsp;</td><td>�o�b�t�@�m�ې��� </td></tr>
-    <tr><td valign="top"></td><td valign="top"><em>0</em>&nbsp;</td><td>�o�b�t�@�m�ێ��s </td></tr>
+<p>初期化. </p>
+<p>16階調用仮想画面バッファおよび LCD ダイレクト転送用バッファ（5枚）を確保します。 </p><dl class="retval"><dt>戻り値</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">1</td><td>バッファ確保成功 </td></tr>
+    <tr><td class="paramname">0</td><td>バッファ確保失敗 </td></tr>
   </table>
+  </dd>
 </dl>
-    </td>
-  </tr>
-</table>
-<a class="anchor" name="82e7768e626f850897b917bd64b93185"></a><!-- doxytag: member="Ldirect.h::Ldirect_Update" ref="82e7768e626f850897b917bd64b93185" args="(void)" --><p>
-<table class="mdTable" cellpadding="2" cellspacing="0">
-  <tr>
-    <td class="mdRow">
-      <table cellpadding="0" cellspacing="0" border="0">
+
+</div>
+</div>
+<a id="a82e7768e626f850897b917bd64b93185"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a82e7768e626f850897b917bd64b93185">&#9670;&nbsp;</a></span>Ldirect_Update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
         <tr>
-          <td class="md" nowrap valign="top">void Ldirect_Update           </td>
-          <td class="md" valign="top">(&nbsp;</td>
-          <td class="md" nowrap valign="top">void&nbsp;</td>
-          <td class="mdname1" valign="top" nowrap>          </td>
-          <td class="md" valign="top">&nbsp;)&nbsp;</td>
-          <td class="md" nowrap></td>
+          <td class="memname">void Ldirect_Update </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
         </tr>
       </table>
-    </td>
-  </tr>
-</table>
-<table cellspacing="5" cellpadding="0" border="0">
-  <tr>
-    <td>
-      &nbsp;
-    </td>
-    <td>
+</div><div class="memdoc">
 
-<p>
-LCD �_�C���N�g�]���p�o�b�t�@���X�V���܂�. 
-<p>
-���ۂɂ́A�����ōX�V�t���O�𗧂Ă邾���ŁA <a class="el" href="Ldirect_8h.html#14fac664189e0bfbd5770dad1725ba8a">Ldirect_Trans()</a> ��1�t���[��1�����A<br>
- 16�K���p���z��ʁA�S�K���p���z��ʂ� LCD �_�C���N�g�]���p�o�b�t�@�ɓ]�����܂��B     </td>
-  </tr>
-</table>
-<a class="anchor" name="cedd5ef85ea525bdee2811827ceaf282"></a><!-- doxytag: member="Ldirect.h::Ldirect_VBuffView" ref="cedd5ef85ea525bdee2811827ceaf282" args="(BOOL visible)" --><p>
-<table class="mdTable" cellpadding="2" cellspacing="0">
-  <tr>
-    <td class="mdRow">
-      <table cellpadding="0" cellspacing="0" border="0">
+<p>LCD ダイレクト転送用バッファを更新します. </p>
+<p>実際には、内部で更新フラグを立てるだけで、 <a class="el" href="Ldirect_8h.html#a14fac664189e0bfbd5770dad1725ba8a" title="LCD ダイレクト転送. ">Ldirect_Trans()</a> で1フレーム1枚ずつ、¥n 16階調用仮想画面、４階調用仮想画面を LCD ダイレクト転送用バッファに転送します。 </p>
+
+</div>
+</div>
+<a id="acedd5ef85ea525bdee2811827ceaf282"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acedd5ef85ea525bdee2811827ceaf282">&#9670;&nbsp;</a></span>Ldirect_VBuffView()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
         <tr>
-          <td class="md" nowrap valign="top">void Ldirect_VBuffView           </td>
-          <td class="md" valign="top">(&nbsp;</td>
-          <td class="md" nowrap valign="top">BOOL&nbsp;</td>
-          <td class="mdname1" valign="top" nowrap> <em>visible</em>          </td>
-          <td class="md" valign="top">&nbsp;)&nbsp;</td>
-          <td class="md" nowrap></td>
+          <td class="memname">void Ldirect_VBuffView </td>
+          <td>(</td>
+          <td class="paramtype">BOOL&#160;</td>
+          <td class="paramname"><em>visible</em></td><td>)</td>
+          <td></td>
         </tr>
       </table>
-    </td>
-  </tr>
-</table>
-<table cellspacing="5" cellpadding="0" border="0">
-  <tr>
-    <td>
-      &nbsp;
-    </td>
-    <td>
+</div><div class="memdoc">
 
-<p>
-LCD_Trans() �łS�K���p���z��ʃo�b�t�@�� LCD �_�C���N�g�]���p�o�b�t�@�� �]�����邩�ǂ�����ݒ肵�܂�. 
-<p>
-<dl compact><dt><b>����:</b></dt><dd>
-  <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>visible</em>&nbsp;</td><td>�t���O </td></tr>
+<p><a class="el" href="Ldirect_8h.html#a14fac664189e0bfbd5770dad1725ba8a" title="LCD ダイレクト転送. ">Ldirect_Trans()</a> で４階調用仮想画面バッファを LCD ダイレクト転送用バッファに 転送するかどうかを設定します. </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">visible</td><td>フラグ </td></tr>
   </table>
+  </dd>
 </dl>
-    </td>
-  </tr>
-</table>
-<a class="anchor" name="14fac664189e0bfbd5770dad1725ba8a"></a><!-- doxytag: member="Ldirect.h::Ldirect_Trans" ref="14fac664189e0bfbd5770dad1725ba8a" args="(void)" --><p>
-<table class="mdTable" cellpadding="2" cellspacing="0">
-  <tr>
-    <td class="mdRow">
-      <table cellpadding="0" cellspacing="0" border="0">
+
+</div>
+</div>
+<a id="a14fac664189e0bfbd5770dad1725ba8a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a14fac664189e0bfbd5770dad1725ba8a">&#9670;&nbsp;</a></span>Ldirect_Trans()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
         <tr>
-          <td class="md" nowrap valign="top">void Ldirect_Trans           </td>
-          <td class="md" valign="top">(&nbsp;</td>
-          <td class="md" nowrap valign="top">void&nbsp;</td>
-          <td class="mdname1" valign="top" nowrap>          </td>
-          <td class="md" valign="top">&nbsp;)&nbsp;</td>
-          <td class="md" nowrap></td>
+          <td class="memname">void Ldirect_Trans </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
         </tr>
       </table>
-    </td>
-  </tr>
-</table>
-<table cellspacing="5" cellpadding="0" border="0">
-  <tr>
-    <td>
-      &nbsp;
-    </td>
-    <td>
+</div><div class="memdoc">
 
-<p>
-LCD �_�C���N�g�]��. 
-<p>
-LCD �_�C���N�g�]���p�o�b�t�@��؂�ւ��āA LCD �o�b�t�@�ɓ]�����܂��B<br>
- ���t���[���Ăяo���ĉ������B<br>
- <a class="el" href="Ldirect_8h.html#82e7768e626f850897b917bd64b93185">Ldirect_Update()</a> ���Ăяo����Ă��� �܂� LCD �_�C���N�g�]���p�o�b�t�@���X�V����Ă��Ȃ��ꍇ�A<br>
- 16�K���p���z��ʁA�S�K���p���z��ʂ� LCD �_�C���N�g�]���p�o�b�t�@�� �]�����Ă���]�����܂��B     </td>
-  </tr>
-</table>
-<a class="anchor" name="e2c009a2d7745eed1fba9b3b0759e639"></a><!-- doxytag: member="Ldirect.h::Ldirect_VBuffClear" ref="e2c009a2d7745eed1fba9b3b0759e639" args="(int x, int y, int w, int h)" --><p>
-<table class="mdTable" cellpadding="2" cellspacing="0">
-  <tr>
-    <td class="mdRow">
-      <table cellpadding="0" cellspacing="0" border="0">
+<p>LCD ダイレクト転送. </p>
+<p>LCD ダイレクト転送用バッファを切り替えて、 LCD バッファに転送します。¥n 毎フレーム呼び出して下さい。¥n <a class="el" href="Ldirect_8h.html#a82e7768e626f850897b917bd64b93185" title="LCD ダイレクト転送用バッファを更新します. ">Ldirect_Update()</a> が呼び出されてから まだ LCD ダイレクト転送用バッファが更新されていない場合、¥n 16階調用仮想画面、４階調用仮想画面を LCD ダイレクト転送用バッファに 転送してから転送します。 </p>
+
+</div>
+</div>
+<a id="ae2c009a2d7745eed1fba9b3b0759e639"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae2c009a2d7745eed1fba9b3b0759e639">&#9670;&nbsp;</a></span>Ldirect_VBuffClear()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
         <tr>
-          <td class="md" nowrap valign="top">void Ldirect_VBuffClear           </td>
-          <td class="md" valign="top">(&nbsp;</td>
-          <td class="md" nowrap valign="top">int&nbsp;</td>
-          <td class="mdname" nowrap> <em>x</em>, </td>
+          <td class="memname">void Ldirect_VBuffClear </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
         </tr>
         <tr>
-          <td class="md" nowrap align="right"></td>
-          <td class="md"></td>
-          <td class="md" nowrap>int&nbsp;</td>
-          <td class="mdname" nowrap> <em>y</em>, </td>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
         </tr>
         <tr>
-          <td class="md" nowrap align="right"></td>
-          <td class="md"></td>
-          <td class="md" nowrap>int&nbsp;</td>
-          <td class="mdname" nowrap> <em>w</em>, </td>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>w</em>, </td>
         </tr>
         <tr>
-          <td class="md" nowrap align="right"></td>
-          <td class="md"></td>
-          <td class="md" nowrap>int&nbsp;</td>
-          <td class="mdname" nowrap> <em>h</em></td>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>h</em>&#160;</td>
         </tr>
         <tr>
-          <td class="md"></td>
-          <td class="md">)&nbsp;</td>
-          <td class="md" colspan="2"></td>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
-    </td>
-  </tr>
-</table>
-<table cellspacing="5" cellpadding="0" border="0">
-  <tr>
-    <td>
-      &nbsp;
-    </td>
-    <td>
+</div><div class="memdoc">
 
-<p>
-�S�K���p���z��ʃo�b�t�@�𓧉ߐF�œh��ׂ�. 
-<p>
-<dl compact><dt><b>����:</b></dt><dd>
-  <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>x</em>&nbsp;</td><td>���� X ���W </td></tr>
-    <tr><td valign="top"></td><td valign="top"><em>y</em>&nbsp;</td><td>���� Y ���W </td></tr>
-    <tr><td valign="top"></td><td valign="top"><em>w</em>&nbsp;</td><td>�� </td></tr>
-    <tr><td valign="top"></td><td valign="top"><em>h</em>&nbsp;</td><td>���� </td></tr>
+<p>４階調用仮想画面バッファを透過色で塗り潰す. </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>左上 X 座標 </td></tr>
+    <tr><td class="paramname">y</td><td>左上 Y 座標 </td></tr>
+    <tr><td class="paramname">w</td><td>幅 </td></tr>
+    <tr><td class="paramname">h</td><td>高さ </td></tr>
   </table>
+  </dd>
 </dl>
-    </td>
-  </tr>
-</table>
-<a class="anchor" name="a7952189f4170c47675e7796e630de99"></a><!-- doxytag: member="Ldirect.h::Ldirect_DrawObject" ref="a7952189f4170c47675e7796e630de99" args="(PIECE_BMP const *p, int dx, int dy, int sx, int sy, int width, int height)" --><p>
-<table class="mdTable" cellpadding="2" cellspacing="0">
-  <tr>
-    <td class="mdRow">
-      <table cellpadding="0" cellspacing="0" border="0">
+
+</div>
+</div>
+<a id="aa7952189f4170c47675e7796e630de99"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa7952189f4170c47675e7796e630de99">&#9670;&nbsp;</a></span>Ldirect_DrawObject()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
         <tr>
-          <td class="md" nowrap valign="top">int Ldirect_DrawObject           </td>
-          <td class="md" valign="top">(&nbsp;</td>
-          <td class="md" nowrap valign="top">PIECE_BMP const *&nbsp;</td>
-          <td class="mdname" nowrap> <em>p</em>, </td>
+          <td class="memname">int Ldirect_DrawObject </td>
+          <td>(</td>
+          <td class="paramtype">PIECE_BMP const *&#160;</td>
+          <td class="paramname"><em>p</em>, </td>
         </tr>
         <tr>
-          <td class="md" nowrap align="right"></td>
-          <td class="md"></td>
-          <td class="md" nowrap>int&nbsp;</td>
-          <td class="mdname" nowrap> <em>dx</em>, </td>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>dx</em>, </td>
         </tr>
         <tr>
-          <td class="md" nowrap align="right"></td>
-          <td class="md"></td>
-          <td class="md" nowrap>int&nbsp;</td>
-          <td class="mdname" nowrap> <em>dy</em>, </td>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>dy</em>, </td>
         </tr>
         <tr>
-          <td class="md" nowrap align="right"></td>
-          <td class="md"></td>
-          <td class="md" nowrap>int&nbsp;</td>
-          <td class="mdname" nowrap> <em>sx</em>, </td>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>sx</em>, </td>
         </tr>
         <tr>
-          <td class="md" nowrap align="right"></td>
-          <td class="md"></td>
-          <td class="md" nowrap>int&nbsp;</td>
-          <td class="mdname" nowrap> <em>sy</em>, </td>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>sy</em>, </td>
         </tr>
         <tr>
-          <td class="md" nowrap align="right"></td>
-          <td class="md"></td>
-          <td class="md" nowrap>int&nbsp;</td>
-          <td class="mdname" nowrap> <em>width</em>, </td>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>width</em>, </td>
         </tr>
         <tr>
-          <td class="md" nowrap align="right"></td>
-          <td class="md"></td>
-          <td class="md" nowrap>int&nbsp;</td>
-          <td class="mdname" nowrap> <em>height</em></td>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>height</em>&#160;</td>
         </tr>
         <tr>
-          <td class="md"></td>
-          <td class="md">)&nbsp;</td>
-          <td class="md" colspan="2"></td>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
-    </td>
-  </tr>
-</table>
-<table cellspacing="5" cellpadding="0" border="0">
-  <tr>
-    <td>
-      &nbsp;
-    </td>
-    <td>
+</div><div class="memdoc">
 
-<p>
-16�K���p���z��ʃo�b�t�@��16�K���摜��`��. 
-<p>
-<dl compact><dt><b>����:</b></dt><dd>
-  <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>p</em>&nbsp;</td><td>16�K�� PIECE_BMP �ւ̃|�C���^ </td></tr>
-    <tr><td valign="top"></td><td valign="top"><em>dx</em>&nbsp;</td><td>�`��捶�� X ���W </td></tr>
-    <tr><td valign="top"></td><td valign="top"><em>dy</em>&nbsp;</td><td>�`��捶�� Y ���W </td></tr>
-    <tr><td valign="top"></td><td valign="top"><em>sx</em>&nbsp;</td><td>�`�挳���� X ���W </td></tr>
-    <tr><td valign="top"></td><td valign="top"><em>sy</em>&nbsp;</td><td>�`�挳���� Y ���W </td></tr>
-    <tr><td valign="top"></td><td valign="top"><em>width</em>&nbsp;</td><td>�� </td></tr>
-    <tr><td valign="top"></td><td valign="top"><em>height</em>&nbsp;</td><td>���� </td></tr>
+<p>16階調用仮想画面バッファに16階調画像を描画. </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p</td><td>16階調 PIECE_BMP へのポインタ </td></tr>
+    <tr><td class="paramname">dx</td><td>描画先左上 X 座標 </td></tr>
+    <tr><td class="paramname">dy</td><td>描画先左上 Y 座標 </td></tr>
+    <tr><td class="paramname">sx</td><td>描画元左上 X 座標 </td></tr>
+    <tr><td class="paramname">sy</td><td>描画元左上 Y 座標 </td></tr>
+    <tr><td class="paramname">width</td><td>幅 </td></tr>
+    <tr><td class="paramname">height</td><td>高さ </td></tr>
   </table>
+  </dd>
 </dl>
-<dl compact><dt><b>�߂�l:</b></dt><dd>
-  <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>0</em>&nbsp;</td><td>�`��Ȃ� </td></tr>
-    <tr><td valign="top"></td><td valign="top"><em>1</em>&nbsp;</td><td>�`�抮��</td></tr>
+<dl class="retval"><dt>戻り値</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>描画なし </td></tr>
+    <tr><td class="paramname">1</td><td>描画完了</td></tr>
   </table>
+  </dd>
 </dl>
-<dl compact><dt><b>�Q��:</b></dt><dd><a class="el" href="pgx_format.html">16�K���摜�t�H�[�}�b�g</a> </dd></dl>
-    </td>
-  </tr>
-</table>
-<a class="anchor" name="ca6d1995fd1872863ee95d135e233a39"></a><!-- doxytag: member="Ldirect.h::Ldirect_Point" ref="ca6d1995fd1872863ee95d135e233a39" args="(BYTE color, int const x, int const y)" --><p>
-<table class="mdTable" cellpadding="2" cellspacing="0">
-  <tr>
-    <td class="mdRow">
-      <table cellpadding="0" cellspacing="0" border="0">
+<dl class="section see"><dt>参照</dt><dd><a class="el" href="pgx_format.html">16階調画像フォーマット</a> </dd></dl>
+
+</div>
+</div>
+<a id="aca6d1995fd1872863ee95d135e233a39"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aca6d1995fd1872863ee95d135e233a39">&#9670;&nbsp;</a></span>Ldirect_Point()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
         <tr>
-          <td class="md" nowrap valign="top">void Ldirect_Point           </td>
-          <td class="md" valign="top">(&nbsp;</td>
-          <td class="md" nowrap valign="top">BYTE&nbsp;</td>
-          <td class="mdname" nowrap> <em>color</em>, </td>
+          <td class="memname">void Ldirect_Point </td>
+          <td>(</td>
+          <td class="paramtype">BYTE&#160;</td>
+          <td class="paramname"><em>color</em>, </td>
         </tr>
         <tr>
-          <td class="md" nowrap align="right"></td>
-          <td class="md"></td>
-          <td class="md" nowrap>int const &nbsp;</td>
-          <td class="mdname" nowrap> <em>x</em>, </td>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int const&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
         </tr>
         <tr>
-          <td class="md" nowrap align="right"></td>
-          <td class="md"></td>
-          <td class="md" nowrap>int const &nbsp;</td>
-          <td class="mdname" nowrap> <em>y</em></td>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int const&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
         </tr>
         <tr>
-          <td class="md"></td>
-          <td class="md">)&nbsp;</td>
-          <td class="md" colspan="2"></td>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
-    </td>
-  </tr>
-</table>
-<table cellspacing="5" cellpadding="0" border="0">
-  <tr>
-    <td>
-      &nbsp;
-    </td>
-    <td>
+</div><div class="memdoc">
 
-<p>
-16�K���p���z��ʃo�b�t�@�ɓ_��`��. 
-<p>
-<dl compact><dt><b>����:</b></dt><dd>
-  <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>color</em>&nbsp;</td><td>�F </td></tr>
-    <tr><td valign="top"></td><td valign="top"><em>x</em>&nbsp;</td><td>X���W </td></tr>
-    <tr><td valign="top"></td><td valign="top"><em>y</em>&nbsp;</td><td>Y���W </td></tr>
+<p>16階調用仮想画面バッファに点を描画. </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">color</td><td>色 </td></tr>
+    <tr><td class="paramname">x</td><td>X座標 </td></tr>
+    <tr><td class="paramname">y</td><td>Y座標 </td></tr>
   </table>
+  </dd>
 </dl>
-    </td>
-  </tr>
-</table>
-<a class="anchor" name="40b50d68985ee6256da849dd0aa886cf"></a><!-- doxytag: member="Ldirect.h::Ldirect_Paint" ref="40b50d68985ee6256da849dd0aa886cf" args="(BYTE color, int x, int y, int width, int height)" --><p>
-<table class="mdTable" cellpadding="2" cellspacing="0">
-  <tr>
-    <td class="mdRow">
-      <table cellpadding="0" cellspacing="0" border="0">
+
+</div>
+</div>
+<a id="a40b50d68985ee6256da849dd0aa886cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a40b50d68985ee6256da849dd0aa886cf">&#9670;&nbsp;</a></span>Ldirect_Paint()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
         <tr>
-          <td class="md" nowrap valign="top">void Ldirect_Paint           </td>
-          <td class="md" valign="top">(&nbsp;</td>
-          <td class="md" nowrap valign="top">BYTE&nbsp;</td>
-          <td class="mdname" nowrap> <em>color</em>, </td>
+          <td class="memname">void Ldirect_Paint </td>
+          <td>(</td>
+          <td class="paramtype">BYTE&#160;</td>
+          <td class="paramname"><em>color</em>, </td>
         </tr>
         <tr>
-          <td class="md" nowrap align="right"></td>
-          <td class="md"></td>
-          <td class="md" nowrap>int&nbsp;</td>
-          <td class="mdname" nowrap> <em>x</em>, </td>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
         </tr>
         <tr>
-          <td class="md" nowrap align="right"></td>
-          <td class="md"></td>
-          <td class="md" nowrap>int&nbsp;</td>
-          <td class="mdname" nowrap> <em>y</em>, </td>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
         </tr>
         <tr>
-          <td class="md" nowrap align="right"></td>
-          <td class="md"></td>
-          <td class="md" nowrap>int&nbsp;</td>
-          <td class="mdname" nowrap> <em>width</em>, </td>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>width</em>, </td>
         </tr>
         <tr>
-          <td class="md" nowrap align="right"></td>
-          <td class="md"></td>
-          <td class="md" nowrap>int&nbsp;</td>
-          <td class="mdname" nowrap> <em>height</em></td>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>height</em>&#160;</td>
         </tr>
         <tr>
-          <td class="md"></td>
-          <td class="md">)&nbsp;</td>
-          <td class="md" colspan="2"></td>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
-    </td>
-  </tr>
-</table>
-<table cellspacing="5" cellpadding="0" border="0">
-  <tr>
-    <td>
-      &nbsp;
-    </td>
-    <td>
+</div><div class="memdoc">
 
-<p>
-16�K���p���z��ʃo�b�t�@�ɋ�`��`��. 
-<p>
-<dl compact><dt><b>����:</b></dt><dd>
-  <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>color</em>&nbsp;</td><td>�F </td></tr>
-    <tr><td valign="top"></td><td valign="top"><em>x</em>&nbsp;</td><td>����X���W </td></tr>
-    <tr><td valign="top"></td><td valign="top"><em>y</em>&nbsp;</td><td>����Y���W </td></tr>
-    <tr><td valign="top"></td><td valign="top"><em>width</em>&nbsp;</td><td>�� </td></tr>
-    <tr><td valign="top"></td><td valign="top"><em>height</em>&nbsp;</td><td>���� </td></tr>
+<p>16階調用仮想画面バッファに矩形を描画. </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">color</td><td>色 </td></tr>
+    <tr><td class="paramname">x</td><td>左上X座標 </td></tr>
+    <tr><td class="paramname">y</td><td>左上Y座標 </td></tr>
+    <tr><td class="paramname">width</td><td>幅 </td></tr>
+    <tr><td class="paramname">height</td><td>高さ </td></tr>
   </table>
+  </dd>
 </dl>
-    </td>
-  </tr>
-</table>
-<hr><h2>�ϐ�</h2>
-<a class="anchor" name="dfcfe01a78c81820bd379abdcc9076b3"></a><!-- doxytag: member="Ldirect.h::g_lbuff" ref="dfcfe01a78c81820bd379abdcc9076b3" args="" --><p>
-<table class="mdTable" cellpadding="2" cellspacing="0">
-  <tr>
-    <td class="mdRow">
-      <table cellpadding="0" cellspacing="0" border="0">
+
+</div>
+</div>
+<h2 class="groupheader">変数詳解</h2>
+<a id="adfcfe01a78c81820bd379abdcc9076b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adfcfe01a78c81820bd379abdcc9076b3">&#9670;&nbsp;</a></span>g_lbuff</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
         <tr>
-          <td class="md" nowrap valign="top">BYTE* <a class="el" href="Ldirect_8h.html#dfcfe01a78c81820bd379abdcc9076b3">g_lbuff</a>          </td>
+          <td class="memname">BYTE* g_lbuff</td>
         </tr>
       </table>
-    </td>
-  </tr>
-</table>
-<table cellspacing="5" cellpadding="0" border="0">
-  <tr>
-    <td>
-      &nbsp;
-    </td>
-    <td>
+</div><div class="memdoc">
 
-<p>
-16�K���p���z��ʃo�b�t�@. 
-<p>
-�o�b�t�@�̍\���́A�ʏ�̂S�K���p���z��ʃo�b�t�@�Ɠ����ł��B<br>
- 1�h�b�g1�o�C�g�i����4�r�b�g�̂ݎg�p��16�F�j<br>
- ��128�h�b�g�~�c88�h�b�g = 11246�o�C�g <div class="fragment"><pre class="fragment">g_lbuff��+---------... ...------------+
+<p>16階調用仮想画面バッファ. </p>
+<p>バッファの構造は、通常の４階調用仮想画面バッファと同じです。¥n 1ドット1バイト（下位4ビットのみ使用＝16色）¥n 横128ドット×縦88ドット = 11246バイト </p><pre class="fragment">g_lbuff→+---------... ...------------+
          |                            |
-         |                            |  ��
+         |                            |  ↑
          .                            .
-         .                            .  Y 88 �h�b�g
+         .                            .  Y 88 ドット
          .                            .
-         |                            |  ��
+         |                            |  ↓
          |                            |
          +---------... ...------------+
-                �� X 128 �h�b�g��
-</pre></div>     </td>
-  </tr>
-</table>
-<a class="anchor" name="8ab8c29534b2d5ff32173499922ba678"></a><!-- doxytag: member="Ldirect.h::g_dbuff" ref="8ab8c29534b2d5ff32173499922ba678" args="[LDIRECT_PAGE_NUM]" --><p>
-<table class="mdTable" cellpadding="2" cellspacing="0">
-  <tr>
-    <td class="mdRow">
-      <table cellpadding="0" cellspacing="0" border="0">
+                ← X 128 ドット→
+</pre> 
+</div>
+</div>
+<a id="a8ab8c29534b2d5ff32173499922ba678"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ab8c29534b2d5ff32173499922ba678">&#9670;&nbsp;</a></span>g_dbuff</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
         <tr>
-          <td class="md" nowrap valign="top">BYTE* <a class="el" href="Ldirect_8h.html#8ab8c29534b2d5ff32173499922ba678">g_dbuff</a>[LDIRECT_PAGE_NUM]          </td>
+          <td class="memname">BYTE* g_dbuff[<a class="el" href="Ldirect_8h.html#a55d27f8014ef169b11ebea909b42f32d">LDIRECT_PAGE_NUM</a>]</td>
         </tr>
       </table>
-    </td>
-  </tr>
-</table>
-<table cellspacing="5" cellpadding="0" border="0">
-  <tr>
-    <td>
-      &nbsp;
-    </td>
-    <td>
+</div><div class="memdoc">
 
-<p>
-LCD �_�C���N�g�]���p�o�b�t�@. 
-<p>
-    </td>
-  </tr>
-</table>
-<hr size="1"><address style="align: right;"><small>zurapce�ɑ΂���Fri May 19 08:01:23 2006�ɐ�������܂����B&nbsp;
-<a href="http://www.doxygen.org/index.html">
-<img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.4.6-NO </small></address>
+<p>LCD ダイレクト転送用バッファ. </p>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築: &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.13
+</small></address>
 </body>
 </html>
