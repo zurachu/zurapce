@@ -71,6 +71,7 @@ static void vbuff_trans( int const page )
 	{
 		for( yy = 0; yy < DISP_Y; yy += 1 )
 		{
+			// マスクのビット演算は COLOR_MASK = 4 である前提
 			c = *vbuff_ptr++; mask_bit  = ( c & COLOR_MASK ) >> 2;	high_bit = ( c & 2 ) >> 1;	low_bit = c & 1;
 			c = *vbuff_ptr++; mask_bit |= ( c & COLOR_MASK ) >> 1;	high_bit |= c & 2;	low_bit |= ( c & 1 ) << 1;
 			c = *vbuff_ptr++; mask_bit |= ( c & COLOR_MASK ); high_bit |= ( c & 2 ) << 1;	low_bit |= ( c & 1 ) << 2;
