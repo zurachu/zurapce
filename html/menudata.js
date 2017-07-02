@@ -13,7 +13,6 @@ var menudata={children:[
 {text:"b",url:"globals.html#index_b"},
 {text:"c",url:"globals.html#index_c"},
 {text:"f",url:"globals.html#index_f"},
-{text:"g",url:"globals.html#index_g"},
 {text:"k",url:"globals.html#index_k"},
 {text:"l",url:"globals.html#index_l"},
 {text:"p",url:"globals.html#index_p"},
@@ -25,9 +24,7 @@ var menudata={children:[
 {text:"l",url:"globals_func.html#index_l"},
 {text:"p",url:"globals_func.html#index_p"},
 {text:"t",url:"globals_func.html#index_t"}]},
-{text:"変数",url:"globals_vars.html"},
 {text:"型定義",url:"globals_type.html"},
 {text:"マクロ定義",url:"globals_defs.html",children:[
 {text:"k",url:"globals_defs.html#index_k"},
-{text:"l",url:"globals_defs.html#index_l"},
 {text:"t",url:"globals_defs.html#index_t"}]}]}]}]}
