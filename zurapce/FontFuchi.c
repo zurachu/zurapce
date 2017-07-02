@@ -114,10 +114,14 @@ static unsigned short put_fuchi( int x, int y, unsigned short code )
 	
 	for( yy = 0, dy = y_start; yy < fuchi_height && dy < y_end; yy++, dy++ )
 	{
-		BOOL const dy_is_inside = ( 0 <= dy );
+		if( dy < 0 )
+		{
+			vbuff += DISP_X;
+			continue;
+		}
 		for( xx = x_start; xx < x_end; xx++ )
 		{
-			if( 0 <= xx && dy_is_inside && image[ yy ] & 0x800 ) { *vbuff = color; }
+			if( 0 <= xx && image[ yy ] & 0x800 ) { *vbuff = color; }
 			vbuff++;
 			image[ yy ] <<= 1;
 		}
@@ -153,11 +157,15 @@ static unsigned short put_moji( int x, int y, unsigned short code )
 	{
 		for( yy = y; yy < y_end; yy++ )
 		{
-			BOOL const y_is_inside = ( 0 <= yy );
 			unsigned char line = *p++;
+			if( yy < 0 )
+			{
+				vbuff += DISP_X;
+				continue;
+			}
 			for( xx = x; xx < x_end; xx++ )
 			{
-				if( 0 <= xx && y_is_inside && line & 0x80 ) { *vbuff = color; }
+				if( 0 <= xx && line & 0x80 ) { *vbuff = color; }
 				vbuff++;
 				line <<= 1;
 			}
@@ -172,17 +180,20 @@ static unsigned short put_moji( int x, int y, unsigned short code )
 		
 		for( yy = y; yy < y_end; yy += 2 )
 		{
-			BOOL const y0_is_inside = ( 0 <= yy && yy < DISP_Y );
 			BOOL const y1_is_inside = ( 0 <= yy + 1 && yy + 1 < DISP_Y );
 			unsigned int lines = ( ( ( *p << 8 ) | *(p+1) ) << 8 ) | *(p+2);
 			p += 3;
-			
+			if( yy < 0 )
+			{
+				vbuff += DISP_X;
+				continue;
+			}
 			for( xx = x; xx < x_end; xx++ )
 			{
 				if( 0 <= xx )
 				{
-					if( y0_is_inside && lines & 0x800000 ) { *vbuff = color; }
-					if( y1_is_inside && lines &    0x800 ) { *(vbuff+DISP_X) = color; }
+					if( lines & 0x800000 ) { *vbuff = color; }
+					if( y1_is_inside && lines & 0x800 ) { *(vbuff+DISP_X) = color; }
 				}
 				vbuff++;
 				lines <<= 1;
