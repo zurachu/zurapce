@@ -172,8 +172,8 @@ static unsigned short put_moji( int x, int y, unsigned short code )
 		
 		for( yy = y; yy < y_end; yy += 2 )
 		{
-			BOOL const y0_is_inside = ( 0 <= y && y < DISP_Y );
-			BOOL const y1_is_inside = ( 0 <= y + 1 && y + 1 < DISP_Y );
+			BOOL const y0_is_inside = ( 0 <= yy && yy < DISP_Y );
+			BOOL const y1_is_inside = ( 0 <= yy + 1 && yy + 1 < DISP_Y );
 			unsigned int lines = ( ( ( *p << 8 ) | *(p+1) ) << 8 ) | *(p+2);
 			p += 3;
 			
