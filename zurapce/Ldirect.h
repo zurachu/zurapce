@@ -71,9 +71,6 @@ extern BYTE* g_lbuff;
 */
 extern BYTE* g_dbuff[ LDIRECT_PAGE_NUM ];
 
-/// ４階調用仮想画面バッファで透過色とみなすフラグ.
-#define LDIRECT_VBUFF_TRANS		0x40
-
 /**
 	初期化.
 	16階調用仮想画面バッファおよび LCD ダイレクト転送用バッファ（5枚）を確保します。
@@ -109,7 +106,11 @@ void Ldirect_VBuffView( BOOL visible );
 void Ldirect_Trans( void );
 
 /**
-	４階調用仮想画面バッファを透過色で塗り潰す.
+	４階調用仮想画面バッファを透過色（COLOR_MASK）で塗り潰す.
+	P/ECE 開発環境のドキュメント「ハードウェア概要」より
+	仮想画面バッファは下位2ビットのみ使用、
+	上位ビットに０以外が書き込まれていた場合の動作は保証無しとあるため、
+	これを呼び出す場合は必ず Ldirect の重ね合わせ表示を使ってください。
 	@param x 左上 X 座標
 	@param y 左上 Y 座標
 	@param w 幅

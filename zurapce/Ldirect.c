@@ -35,7 +35,7 @@ int Ldirect_Init( void )
 			return 0;
 		}
 	}
-	memset( pceLCDSetBuffer( INVALIDPTR ), LDIRECT_VBUFF_TRANS, DISP_X * DISP_Y );
+	memset( pceLCDSetBuffer( INVALIDPTR ), COLOR_MASK, DISP_X * DISP_Y );
 	memset( g_lbuff, 0, DISP_X * DISP_Y );
 	for( i = 0; i < LDIRECT_PAGE_NUM; i++ )
 	{

@@ -71,14 +71,14 @@ static void vbuff_trans( int const page )
 	{
 		for( yy = 0; yy < DISP_Y; yy += 1 )
 		{
-			c = *vbuff_ptr++; mask_bit  = ( c & LDIRECT_VBUFF_TRANS ) >> 6;	high_bit = ( c & 2 ) >> 1;	low_bit = c & 1;
-			c = *vbuff_ptr++; mask_bit |= ( c & LDIRECT_VBUFF_TRANS ) >> 5;	high_bit |= c & 2;	low_bit |= ( c & 1 ) << 1;
-			c = *vbuff_ptr++; mask_bit |= ( c & LDIRECT_VBUFF_TRANS ) >> 4; high_bit |= ( c & 2 ) << 1;	low_bit |= ( c & 1 ) << 2;
-			c = *vbuff_ptr++; mask_bit |= ( c & LDIRECT_VBUFF_TRANS ) >> 3; high_bit |= ( c & 2 ) << 2; low_bit |= ( c & 1 ) << 3;
-			c = *vbuff_ptr++; mask_bit |= ( c & LDIRECT_VBUFF_TRANS ) >> 2; high_bit |= ( c & 2 ) << 3; low_bit |= ( c & 1 ) << 4;
-			c = *vbuff_ptr++; mask_bit |= ( c & LDIRECT_VBUFF_TRANS ) >> 1; high_bit |= ( c & 2 ) << 4; low_bit |= ( c & 1 ) << 5;
-			c = *vbuff_ptr++; mask_bit |= ( c & LDIRECT_VBUFF_TRANS ); high_bit |= ( c & 2 ) << 5; low_bit |= ( c & 1 ) << 6;
-			c = *vbuff_ptr++; mask_bit |= ( c & LDIRECT_VBUFF_TRANS ) << 1; high_bit |= ( c & 2 ) << 6; low_bit |= ( c & 1 ) << 7;
+			c = *vbuff_ptr++; mask_bit  = ( c & COLOR_MASK ) >> 2;	high_bit = ( c & 2 ) >> 1;	low_bit = c & 1;
+			c = *vbuff_ptr++; mask_bit |= ( c & COLOR_MASK ) >> 1;	high_bit |= c & 2;	low_bit |= ( c & 1 ) << 1;
+			c = *vbuff_ptr++; mask_bit |= ( c & COLOR_MASK ); high_bit |= ( c & 2 ) << 1;	low_bit |= ( c & 1 ) << 2;
+			c = *vbuff_ptr++; mask_bit |= ( c & COLOR_MASK ) << 1; high_bit |= ( c & 2 ) << 2; low_bit |= ( c & 1 ) << 3;
+			c = *vbuff_ptr++; mask_bit |= ( c & COLOR_MASK ) << 2; high_bit |= ( c & 2 ) << 3; low_bit |= ( c & 1 ) << 4;
+			c = *vbuff_ptr++; mask_bit |= ( c & COLOR_MASK ) << 3; high_bit |= ( c & 2 ) << 4; low_bit |= ( c & 1 ) << 5;
+			c = *vbuff_ptr++; mask_bit |= ( c & COLOR_MASK ) << 4; high_bit |= ( c & 2 ) << 5; low_bit |= ( c & 1 ) << 6;
+			c = *vbuff_ptr++; mask_bit |= ( c & COLOR_MASK ) << 5; high_bit |= ( c & 2 ) << 6; low_bit |= ( c & 1 ) << 7;
 			high_bit &= ~mask_bit;	*dbuff_ptr &= mask_bit;	*dbuff_ptr++ |= high_bit;
 			low_bit &= ~mask_bit;	*dbuff_ptr &= mask_bit;	*dbuff_ptr++ |= low_bit;
 			vbuff_ptr += DISP_X - 8;
@@ -129,7 +129,7 @@ void Ldirect_VBuffClear( int x, int y, int width, int height )
 	vbuff_ptr += x + DISP_X * y;
 	for( yy = 0; yy < height; yy += 1 )
 	{
-		memset( vbuff_ptr, LDIRECT_VBUFF_TRANS, width );
+		memset( vbuff_ptr, COLOR_MASK, width );
 		vbuff_ptr += DISP_X;
 	}
 }
