@@ -63,9 +63,6 @@ $(function() {
 <tr class="memitem:a11cde3f19f1e6525c258754afed20204"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Ldirect_8h.html#a11cde3f19f1e6525c258754afed20204">LDIRECT_COLOR_NUM</a>&#160;&#160;&#160;16</td></tr>
 <tr class="memdesc:a11cde3f19f1e6525c258754afed20204"><td class="mdescLeft">&#160;</td><td class="mdescRight">階調数（LDIRECT_PAGE_NUM * 3 + 1）  <a href="#a11cde3f19f1e6525c258754afed20204">[詳解]</a><br /></td></tr>
 <tr class="separator:a11cde3f19f1e6525c258754afed20204"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a83fcc1f821ff9368801befa0c7de2a94"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Ldirect_8h.html#a83fcc1f821ff9368801befa0c7de2a94">LDIRECT_VBUFF_TRANS</a>&#160;&#160;&#160;0x40</td></tr>
-<tr class="memdesc:a83fcc1f821ff9368801befa0c7de2a94"><td class="mdescLeft">&#160;</td><td class="mdescRight">４階調用仮想画面バッファで透過色とみなすフラグ.  <a href="#a83fcc1f821ff9368801befa0c7de2a94">[詳解]</a><br /></td></tr>
-<tr class="separator:a83fcc1f821ff9368801befa0c7de2a94"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 関数</h2></td></tr>
@@ -82,7 +79,7 @@ $(function() {
 <tr class="memdesc:a14fac664189e0bfbd5770dad1725ba8a"><td class="mdescLeft">&#160;</td><td class="mdescRight">LCD ダイレクト転送.  <a href="#a14fac664189e0bfbd5770dad1725ba8a">[詳解]</a><br /></td></tr>
 <tr class="separator:a14fac664189e0bfbd5770dad1725ba8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae2c009a2d7745eed1fba9b3b0759e639"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Ldirect_8h.html#ae2c009a2d7745eed1fba9b3b0759e639">Ldirect_VBuffClear</a> (int x, int y, int w, int h)</td></tr>
-<tr class="memdesc:ae2c009a2d7745eed1fba9b3b0759e639"><td class="mdescLeft">&#160;</td><td class="mdescRight">４階調用仮想画面バッファを透過色で塗り潰す.  <a href="#ae2c009a2d7745eed1fba9b3b0759e639">[詳解]</a><br /></td></tr>
+<tr class="memdesc:ae2c009a2d7745eed1fba9b3b0759e639"><td class="mdescLeft">&#160;</td><td class="mdescRight">４階調用仮想画面バッファを透過色（COLOR_MASK）で塗り潰す.  <a href="#ae2c009a2d7745eed1fba9b3b0759e639">[詳解]</a><br /></td></tr>
 <tr class="separator:ae2c009a2d7745eed1fba9b3b0759e639"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa7952189f4170c47675e7796e630de99"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Ldirect_8h.html#aa7952189f4170c47675e7796e630de99">Ldirect_DrawObject</a> (PIECE_BMP const *p, int dx, int dy, int sx, int sy, int width, int height)</td></tr>
 <tr class="memdesc:aa7952189f4170c47675e7796e630de99"><td class="mdescLeft">&#160;</td><td class="mdescRight">16階調用仮想画面バッファに16階調画像を描画.  <a href="#aa7952189f4170c47675e7796e630de99">[詳解]</a><br /></td></tr>
@@ -139,23 +136,6 @@ $(function() {
 </div><div class="memdoc">
 
 <p>階調数（LDIRECT_PAGE_NUM * 3 + 1） </p>
-
-</div>
-</div>
-<a id="a83fcc1f821ff9368801befa0c7de2a94"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a83fcc1f821ff9368801befa0c7de2a94">&#9670;&nbsp;</a></span>LDIRECT_VBUFF_TRANS</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define LDIRECT_VBUFF_TRANS&#160;&#160;&#160;0x40</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>４階調用仮想画面バッファで透過色とみなすフラグ. </p>
-<p>なぜか他のビットだと上手くいかない。これでも上手くいかないこともある。 原因は不明。 </p>
 
 </div>
 </div>
@@ -293,8 +273,8 @@ $(function() {
       </table>
 </div><div class="memdoc">
 
-<p>４階調用仮想画面バッファを透過色で塗り潰す. </p>
-<dl class="params"><dt>引数</dt><dd>
+<p>４階調用仮想画面バッファを透過色（COLOR_MASK）で塗り潰す. </p>
+<p>P/ECE 開発環境のドキュメント「ハードウェア概要」より 仮想画面バッファは下位2ビットのみ使用、 上位ビットに０以外が書き込まれていた場合の動作は保証無しとあるため、 これを呼び出す場合は必ず Ldirect の重ね合わせ表示を使ってください。 </p><dl class="params"><dt>引数</dt><dd>
   <table class="params">
     <tr><td class="paramname">x</td><td>左上 X 座標 </td></tr>
     <tr><td class="paramname">y</td><td>左上 Y 座標 </td></tr>
