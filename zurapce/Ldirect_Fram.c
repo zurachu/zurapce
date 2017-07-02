@@ -35,21 +35,21 @@ static void lbuff_trans( int const page )
 	WORD* dbuff_ptr = (WORD*)g_dbuff[ page ];
 	BYTE* lbuff_ptr = g_lbuff;
 	WORD const* const color_table_ptr = s_color_table[ page ];
-	WORD cc;
+	WORD c;
 
 	for( xx = 0; xx < DISP_X / 8; xx += 1 )
 	{
 		for( yy = 0; yy < DISP_Y; yy += 1 )
 		{
-			cc = color_table_ptr[ *lbuff_ptr++ ];
-			cc |= color_table_ptr[ *lbuff_ptr++ ] << 1;
-			cc |= color_table_ptr[ *lbuff_ptr++ ] << 2;
-			cc |= color_table_ptr[ *lbuff_ptr++ ] << 3;
-			cc |= color_table_ptr[ *lbuff_ptr++ ] << 4;
-			cc |= color_table_ptr[ *lbuff_ptr++ ] << 5;
-			cc |= color_table_ptr[ *lbuff_ptr++ ] << 6;
-			cc |= color_table_ptr[ *lbuff_ptr++ ] << 7;
-			*dbuff_ptr++ = cc;
+			c = color_table_ptr[ *lbuff_ptr++ ];
+			c |= color_table_ptr[ *lbuff_ptr++ ] << 1;
+			c |= color_table_ptr[ *lbuff_ptr++ ] << 2;
+			c |= color_table_ptr[ *lbuff_ptr++ ] << 3;
+			c |= color_table_ptr[ *lbuff_ptr++ ] << 4;
+			c |= color_table_ptr[ *lbuff_ptr++ ] << 5;
+			c |= color_table_ptr[ *lbuff_ptr++ ] << 6;
+			c |= color_table_ptr[ *lbuff_ptr++ ] << 7;
+			*dbuff_ptr++ = c;
 			lbuff_ptr += DISP_X - 8;
 		}
 		lbuff_ptr += -( DISP_X * DISP_Y ) + 8;
