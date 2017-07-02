@@ -33,7 +33,7 @@ static void lbuff_trans( int const page )
 	};
 	int xx, yy;
 	WORD* dbuff_ptr = (WORD*)g_dbuff[ page ];
-	BYTE* lbuff_ptr = g_lbuff;
+	BYTE const* lbuff_ptr = g_lbuff;
 	WORD const* const color_table_ptr = s_color_table[ page ];
 	WORD c;
 
@@ -64,7 +64,7 @@ static void vbuff_trans( int const page )
 {
 	int xx, yy;
 	BYTE* dbuff_ptr = g_dbuff[page];
-	BYTE* vbuff_ptr = pceLCDSetBuffer( INVALIDPTR );
+	BYTE const* vbuff_ptr = pceLCDSetBuffer( INVALIDPTR );
 	BYTE c, mask_bit, high_bit, low_bit;
 
 	for( xx = 0; xx < DISP_X / 8; xx += 1 )
@@ -137,12 +137,12 @@ void Ldirect_VBuffClear( int x, int y, int width, int height )
 int Ldirect_DrawObject( PIECE_BMP const* p, int dx, int dy, int sx, int sy
 						, int width, int height )
 {
-	int mask_bit = p->header.mask;
-	int sw = p->header.w;
-	int sh = p->header.h;
+	int const mask_bit = p->header.mask;
+	int const sw = p->header.w;
+	int const sh = p->header.h;
 	int xx, yy, x_bit;
-	BYTE* buff_base = p->buf;
-	BYTE* mask_base = p->mask;
+	BYTE* const buff_base = p->buf;
+	BYTE* const mask_base = p->mask;
 	BYTE* lbuff_ptr;
 	BYTE* buff_ptr;
 	BYTE* mask_ptr;
