@@ -102,7 +102,20 @@ $(function() {
 <p>フォントの種類や表示属性を指定. </p>
 <dl class="params"><dt>引数</dt><dd>
   <table class="params">
-    <tr><td class="paramname">type</td><td>bit0〜6 : フォントの種類 ¥n 0 通常フォント 半角5×10ドット 全角10×10ドット ¥n 1 拡大フォント 半角8×16ドット ボールド (ASCIIのみ) ¥n 2 極小フォント 半角4× 6ドット (ASCIIのみ) ¥n bit7 : ¥n 0 の時は、画面右端で自動改行する ¥n 1 の時は、自動改行しない </td></tr>
+    <tr><td class="paramname">type</td><td><ul>
+<li>bit0〜6 : フォントの種類<ul>
+<li>0 通常フォント 半角5×10ドット 全角10×10ドット</li>
+<li>1 拡大フォント 半角8×16ドット ボールド (ASCIIのみ)</li>
+<li>2 極小フォント 半角4× 6ドット (ASCIIのみ)</li>
+</ul>
+</li>
+<li>bit7 :<ul>
+<li>0 の時は、画面右端で自動改行する</li>
+<li>1 の時は、自動改行しない </li>
+</ul>
+</li>
+</ul>
+</td></tr>
   </table>
   </dd>
 </dl>

@@ -6,8 +6,8 @@
 	仮想画面に文字を縁取りしたフォントを表示します。
 	使用方法は、ほぼ pceFont 系関数互換です。
 
-	処理が多少重いですが、コードを高速 RAM に配置することで高速化できます。\n
-	project.mak の USE_FONT_FUCHI_ON_FRAM := true を有効にして、\n
+	処理が多少重いですが、コードを高速 RAM に配置することで高速化できます。
+	project.mak の USE_FONT_FUCHI_ON_FRAM := true を有効にして、
 	pceAppInit() の先頭で FramObject_Init() を呼び出して下さい。
 
 	@author zurachu
@@ -53,7 +53,7 @@ void FontFuchi_SetBdColor( int color );
 	@param y y座標
 	@param code 文字コード
 	@return 
-			- b0-7 x方向の幅 \n
+			- b0-7 x方向の幅
 			- b8-15 y方向の幅
 	@warning
 	ユーザ側で FontProxy を利用しない場合、フォント種類が上書きされてしまいます。

@@ -60,8 +60,9 @@ void FontFuchi_SetBdColor( int color )
 	@param x x座標（実際は x-1 から表示される）
 	@param y y座標（実際は y-1 から表示される）
 	@param code 文字コード
-	@return b0-7 x方向の幅（フォント自体の幅） \n
-			b8-15 y方向の幅（フォント自体の幅）
+	@return
+		- b0-7 x方向の幅（フォント自体の幅）
+		- b8-15 y方向の幅（フォント自体の幅）
 */
 static unsigned short put_fuchi( int x, int y, unsigned short code )
 {
@@ -137,8 +138,9 @@ static unsigned short put_fuchi( int x, int y, unsigned short code )
 	@param x x座標
 	@param y y座標
 	@param code 文字コード
-	@return b0-7 x方向の幅 \n
-			b8-15 y方向の幅
+	@return
+		- b0-7 x方向の幅
+		- b8-15 y方向の幅
 */
 static unsigned short put_moji( int x, int y, unsigned short code )
 {

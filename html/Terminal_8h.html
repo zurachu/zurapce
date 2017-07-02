@@ -65,7 +65,7 @@ $(function() {
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
 <div class="textblock"><p>拡張端子関連. </p>
-<p>P/ECE HAND BOOK Vol.2 で提唱された拡張端子への入出力を提供します。¥n P/ECE HAND BOOK Vol.2 掲載ソースコードの間違いを修正して取り込み。</p>
+<p>P/ECE HAND BOOK Vol.2 で提唱された拡張端子への入出力を提供します。 P/ECE HAND BOOK Vol.2 掲載ソースコードの間違いを修正して取り込み。</p>
 <pre class="fragment">『P/ECE Hand Book VOL.2』の「LEDランプで拡張端子の使い方を知る」の記事を試していたところ、ちょっと間違いを見つけました。
 081ページに掲載されているLED TESTアプリケーションのソースコード、29〜30行目の“ポートの初期化”のところ、
     P0CFP = ( P0IOC &amp; 0x8F ) | 0x00; // ポートとして扱う
@@ -75,7 +75,7 @@ $(function() {
     P1CFP = ( P1CFP &amp; 0xEB ) | 0x00; // ポートとして扱う
 ですね。
 付属CD-ROMに入っているソースコードと実行ファイルにも同じ間違いがあるようで、実行後にP/ECEの動作が不安定になる場合があります。
-</pre><p> P/ECE研究室（nsawa氏）2004/05/09 20:54 より¥n <a href="http://piece.no-ip.org/">http://piece.no-ip.org/</a></p>
+</pre><p> P/ECE研究室（nsawa氏）2004/05/09 20:54 より <a href="http://piece.no-ip.org/">http://piece.no-ip.org/</a></p>
 <dl class="section author"><dt>著者</dt><dd>zurachu </dd></dl>
 </div><h2 class="groupheader">関数詳解</h2>
 <a id="ae7588e842558139951f5f7b504252584"></a>

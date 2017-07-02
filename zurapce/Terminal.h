@@ -3,7 +3,7 @@
 
 /**	@file
 	拡張端子関連.
-	P/ECE HAND BOOK Vol.2 で提唱された拡張端子への入出力を提供します。\n
+	P/ECE HAND BOOK Vol.2 で提唱された拡張端子への入出力を提供します。
 	P/ECE HAND BOOK Vol.2 掲載ソースコードの間違いを修正して取り込み。
 
 @verbatim
@@ -18,7 +18,7 @@
 ですね。
 付属CD-ROMに入っているソースコードと実行ファイルにも同じ間違いがあるようで、実行後にP/ECEの動作が不安定になる場合があります。
 @endverbatim
-	P/ECE研究室（nsawa氏）2004/05/09 20:54 より\n
+	P/ECE研究室（nsawa氏）2004/05/09 20:54 より
 	http://piece.no-ip.org/
 	
 	@author zurachu

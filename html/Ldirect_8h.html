@@ -85,8 +85,8 @@ $(function() {
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
 <div class="textblock"><p>16階調描画関連. </p>
-<p>液晶の残像を利用して、5枚の画像を高速に切り替え、16階調の画像を表示しているようにみせかけます。¥n さらに、通常の４階調仮想画面バッファを重ね合わせて表示できます。</p>
-<p>処理が重いですが、コードを高速 RAM に配置することで高速化できます。¥n project.mak の USE_LDIRECT_ON_FRAM := true を有効にして、¥n pceAppInit() の先頭で <a class="el" href="FramObject_8h.html#a49c170896c5acae3f91a09bff5e5e994" title="高速 RAM に配置するオブジェクトを、配置します. ">FramObject_Init()</a> を呼び出して下さい。</p>
+<p>液晶の残像を利用して、5枚の画像を高速に切り替え、16階調の画像を表示しているようにみせかけます。 さらに、通常の４階調仮想画面バッファを重ね合わせて表示できます。</p>
+<p>処理が重いですが、コードを高速 RAM に配置することで高速化できます。 project.mak の USE_LDIRECT_ON_FRAM := true を有効にして、 pceAppInit() の先頭で <a class="el" href="FramObject_8h.html#a49c170896c5acae3f91a09bff5e5e994" title="高速 RAM に配置するオブジェクトを、配置します. ">FramObject_Init()</a> を呼び出して下さい。</p>
 <dl class="section see"><dt>参照</dt><dd><a class="el" href="pgx_format.html">16階調画像フォーマット</a></dd></dl>
 <dl class="section author"><dt>著者</dt><dd>zurachu </dd></dl>
 </div><h2 class="groupheader">関数詳解</h2>
@@ -134,7 +134,7 @@ $(function() {
 </div><div class="memdoc">
 
 <p>16階調用仮想画面バッファのアドレスを取得. </p>
-<p>バッファの構造は、通常の４階調用仮想画面バッファと同じです。¥n 1ドット1バイト（下位4ビットのみ使用＝16色）¥n 横128ドット×縦88ドット = 11246バイト </p><pre class="fragment">Ldirect_Buffer()→+---------... ...------------+
+<p>バッファの構造は、通常の４階調用仮想画面バッファと同じです。 1ドット1バイト（下位4ビットのみ使用＝16色） 横128ドット×縦88ドット = 11246バイト </p><pre class="fragment">Ldirect_Buffer()→+---------... ...------------+
                   |                            |
                   |                            |  ↑
                   .                            .
@@ -164,7 +164,7 @@ $(function() {
 </div><div class="memdoc">
 
 <p>LCD ダイレクト転送用バッファを更新します. </p>
-<p>実際には、内部で更新フラグを立てるだけで、 <a class="el" href="Ldirect_8h.html#a14fac664189e0bfbd5770dad1725ba8a" title="LCD ダイレクト転送. ">Ldirect_Trans()</a> で1フレーム1枚ずつ、¥n 16階調用仮想画面、４階調用仮想画面を LCD ダイレクト転送用バッファに転送します。 </p>
+<p>実際には、内部で更新フラグを立てるだけで、 <a class="el" href="Ldirect_8h.html#a14fac664189e0bfbd5770dad1725ba8a" title="LCD ダイレクト転送. ">Ldirect_Trans()</a> で1フレーム1枚ずつ、 16階調用仮想画面、４階調用仮想画面を LCD ダイレクト転送用バッファに転送します。 </p>
 
 </div>
 </div>
@@ -211,7 +211,7 @@ $(function() {
 </div><div class="memdoc">
 
 <p>LCD ダイレクト転送. </p>
-<p>LCD ダイレクト転送用バッファを切り替えて、 LCD バッファに転送します。¥n 毎フレーム呼び出して下さい。¥n <a class="el" href="Ldirect_8h.html#a82e7768e626f850897b917bd64b93185" title="LCD ダイレクト転送用バッファを更新します. ">Ldirect_Update()</a> が呼び出されてから まだ LCD ダイレクト転送用バッファが更新されていない場合、¥n 16階調用仮想画面、４階調用仮想画面を LCD ダイレクト転送用バッファに 転送してから転送します。 </p>
+<p>LCD ダイレクト転送用バッファを切り替えて、 LCD バッファに転送します。 毎フレーム呼び出して下さい。 <a class="el" href="Ldirect_8h.html#a82e7768e626f850897b917bd64b93185" title="LCD ダイレクト転送用バッファを更新します. ">Ldirect_Update()</a> が呼び出されてから まだ LCD ダイレクト転送用バッファが更新されていない場合、 16階調用仮想画面、４階調用仮想画面を LCD ダイレクト転送用バッファに 転送してから転送します。 </p>
 
 </div>
 </div>
