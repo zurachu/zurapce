@@ -20,6 +20,7 @@
 
 /** @page pgx_format 16階調画像フォーマット
 	PIECE_BMP の拡張フォーマットです。
+
 	構造体は PIECE_BMP をそのまま使います。
 	16階調 BMP を pgd16cnv で変換して下さい。
 
