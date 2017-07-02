@@ -62,26 +62,28 @@ static void lbuff_trans( int const page )
 */
 static void vbuff_trans( int const page )
 {
+	static WORD const s_color_table[] = { 0x000, 0x100, 0x001, 0x101 };
 	int xx, yy;
-	BYTE* dbuff_ptr = g_dbuff[page];
+	WORD* dbuff_ptr = (WORD*)g_dbuff[page];
 	BYTE const* vbuff_ptr = pceLCDSetBuffer( INVALIDPTR );
-	BYTE c, mask_bit, high_bit, low_bit;
+	BYTE c;
+	WORD color, mask_bit;
 
 	for( xx = 0; xx < DISP_X / 8; xx += 1 )
 	{
 		for( yy = 0; yy < DISP_Y; yy += 1 )
 		{
 			// マスクのビット演算は COLOR_MASK = 4 である前提
-			c = *vbuff_ptr++; mask_bit  = ( c & COLOR_MASK ) >> 2;	high_bit = ( c & 2 ) >> 1;	low_bit = c & 1;
-			c = *vbuff_ptr++; mask_bit |= ( c & COLOR_MASK ) >> 1;	high_bit |= c & 2;	low_bit |= ( c & 1 ) << 1;
-			c = *vbuff_ptr++; mask_bit |= ( c & COLOR_MASK ); high_bit |= ( c & 2 ) << 1;	low_bit |= ( c & 1 ) << 2;
-			c = *vbuff_ptr++; mask_bit |= ( c & COLOR_MASK ) << 1; high_bit |= ( c & 2 ) << 2; low_bit |= ( c & 1 ) << 3;
-			c = *vbuff_ptr++; mask_bit |= ( c & COLOR_MASK ) << 2; high_bit |= ( c & 2 ) << 3; low_bit |= ( c & 1 ) << 4;
-			c = *vbuff_ptr++; mask_bit |= ( c & COLOR_MASK ) << 3; high_bit |= ( c & 2 ) << 4; low_bit |= ( c & 1 ) << 5;
-			c = *vbuff_ptr++; mask_bit |= ( c & COLOR_MASK ) << 4; high_bit |= ( c & 2 ) << 5; low_bit |= ( c & 1 ) << 6;
-			c = *vbuff_ptr++; mask_bit |= ( c & COLOR_MASK ) << 5; high_bit |= ( c & 2 ) << 6; low_bit |= ( c & 1 ) << 7;
-			high_bit &= ~mask_bit;	*dbuff_ptr &= mask_bit;	*dbuff_ptr++ |= high_bit;
-			low_bit &= ~mask_bit;	*dbuff_ptr &= mask_bit;	*dbuff_ptr++ |= low_bit;
+			c = *vbuff_ptr++; mask_bit = ( c & COLOR_MASK ) >> 2; color = s_color_table[ c ];
+			c = *vbuff_ptr++; mask_bit |= ( c & COLOR_MASK ) >> 1; color |= s_color_table[ c ] << 1;
+			c = *vbuff_ptr++; mask_bit |= ( c & COLOR_MASK ); color |= s_color_table[ c ] << 2;
+			c = *vbuff_ptr++; mask_bit |= ( c & COLOR_MASK ) << 1; color |= s_color_table[ c ] << 3;
+			c = *vbuff_ptr++; mask_bit |= ( c & COLOR_MASK ) << 2; color |= s_color_table[ c ] << 4;
+			c = *vbuff_ptr++; mask_bit |= ( c & COLOR_MASK ) << 3; color |= s_color_table[ c ] << 5;
+			c = *vbuff_ptr++; mask_bit |= ( c & COLOR_MASK ) << 4; color |= s_color_table[ c ] << 6;
+			c = *vbuff_ptr++; mask_bit |= ( c & COLOR_MASK ) << 5; color |= s_color_table[ c ] << 7;
+			mask_bit |= mask_bit << 8;
+			*dbuff_ptr &= mask_bit;	*dbuff_ptr++ |= color & ~mask_bit;
 			vbuff_ptr += DISP_X - 8;
 		}
 		vbuff_ptr += -( DISP_X * DISP_Y ) + 8;
