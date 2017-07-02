@@ -71,7 +71,7 @@ static void vbuff_trans( int const page )
 	{
 		for( yy = 0; yy < DISP_Y; yy += 1 )
 		{
-			c = *vbuff_ptr++; mask_bit  = ( c & LDIRECT_VBUFF_TRANS ) >> 6;	high_bit = c >> 1;	low_bit = c & 1;
+			c = *vbuff_ptr++; mask_bit  = ( c & LDIRECT_VBUFF_TRANS ) >> 6;	high_bit = ( c & 2 ) >> 1;	low_bit = c & 1;
 			c = *vbuff_ptr++; mask_bit |= ( c & LDIRECT_VBUFF_TRANS ) >> 5;	high_bit |= c & 2;	low_bit |= ( c & 1 ) << 1;
 			c = *vbuff_ptr++; mask_bit |= ( c & LDIRECT_VBUFF_TRANS ) >> 4; high_bit |= ( c & 2 ) << 1;	low_bit |= ( c & 1 ) << 2;
 			c = *vbuff_ptr++; mask_bit |= ( c & LDIRECT_VBUFF_TRANS ) >> 3; high_bit |= ( c & 2 ) << 2; low_bit |= ( c & 1 ) << 3;

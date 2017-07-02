@@ -72,8 +72,6 @@ extern BYTE* g_lbuff;
 extern BYTE* g_dbuff[ LDIRECT_PAGE_NUM ];
 
 /// ４階調用仮想画面バッファで透過色とみなすフラグ.
-/// なぜか他のビットだと上手くいかない。これでも上手くいかないこともある。
-/// 原因は不明。
 #define LDIRECT_VBUFF_TRANS		0x40
 
 /**
