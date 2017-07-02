@@ -22,42 +22,33 @@ static int s_dbuff_update_count = 0;
 */
 static void lbuff_trans( int const page )
 {
-	static BYTE const s_color_table[ LDIRECT_COLOR_NUM ][ LDIRECT_PAGE_NUM ] =
+	static BYTE const s_color_table[ LDIRECT_PAGE_NUM ][ LDIRECT_COLOR_NUM ] =
 	{
-		{ 0, 0, 0, 0, 0 }, // 0
-		{ 1, 0, 0, 0, 0 }, // 1
-		{ 0, 1, 0, 1, 0 }, // 2
-		{ 1, 0, 1, 0, 1 }, // 3
-		{ 1, 1, 1, 1, 0 }, // 4
-		{ 1, 1, 1, 1, 1 }, // 5
-		{ 2, 1, 1, 1, 1 }, // 6
-		{ 1, 2, 1, 2, 1 }, // 7
-		{ 2, 1, 2, 1, 2 }, // 8
-		{ 2, 2, 2, 2, 1 }, // 9
-		{ 2, 2, 2, 2, 2 }, // A
-		{ 3, 2, 2, 2, 2 }, // B
-		{ 2, 3, 2, 3, 2 }, // C
-		{ 3, 2, 3, 2, 3 }, // D
-		{ 3, 3, 3, 3, 2 }, // E
-		{ 3, 3, 3, 3, 3 }, // F
+		{ 0, 1, 0, 1, 1, 1, 2, 1, 2, 2, 2, 3, 2, 3, 3, 3 },
+		{ 0, 0, 1, 0, 1, 1, 1, 2, 1, 2, 2, 2, 3, 2, 3, 3 },
+		{ 0, 0, 0, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3 },
+		{ 0, 0, 1, 0, 1, 1, 1, 2, 1, 2, 2, 2, 3, 2, 3, 3 },
+		{ 0, 0, 0, 1, 0, 1, 1, 1, 2, 1, 2, 2, 2, 3, 2, 3 },
+		//0, 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E, F
 	};
 	int xx, yy;
 	BYTE* dbuff_ptr = g_dbuff[ page ];
 	BYTE* lbuff_ptr = g_lbuff;
+	BYTE const* const color_table_ptr = s_color_table[ page ];
 	BYTE c, high_bit, low_bit;
 
 	for( xx = 0; xx < DISP_X / 8; xx += 1 )
 	{
 		for( yy = 0; yy < DISP_Y; yy += 1 )
 		{
-			c = s_color_table[ *lbuff_ptr++ ][ page ]; high_bit = c >> 1; low_bit = c & 1;
-			c = s_color_table[ *lbuff_ptr++ ][ page ]; high_bit |= c & 2; low_bit |= ( c & 1 ) << 1;
-			c = s_color_table[ *lbuff_ptr++ ][ page ]; high_bit |= ( c & 2 ) << 1; low_bit |= ( c & 1 ) << 2;
-			c = s_color_table[ *lbuff_ptr++ ][ page ]; high_bit |= ( c & 2 ) << 2; low_bit |= ( c & 1 ) << 3;
-			c = s_color_table[ *lbuff_ptr++ ][ page ]; high_bit |= ( c & 2 ) << 3; low_bit |= ( c & 1 ) << 4;
-			c = s_color_table[ *lbuff_ptr++ ][ page ]; high_bit |= ( c & 2 ) << 4; low_bit |= ( c & 1 ) << 5;
-			c = s_color_table[ *lbuff_ptr++ ][ page ]; high_bit |= ( c & 2 ) << 5; low_bit |= ( c & 1 ) << 6;
-			c = s_color_table[ *lbuff_ptr++ ][ page ]; high_bit |= ( c & 2 ) << 6; low_bit |= ( c & 1 ) << 7;
+			c = color_table_ptr[ *lbuff_ptr++ ]; high_bit = c >> 1; low_bit = c & 1;
+			c = color_table_ptr[ *lbuff_ptr++ ]; high_bit |= c & 2; low_bit |= ( c & 1 ) << 1;
+			c = color_table_ptr[ *lbuff_ptr++ ]; high_bit |= ( c & 2 ) << 1; low_bit |= ( c & 1 ) << 2;
+			c = color_table_ptr[ *lbuff_ptr++ ]; high_bit |= ( c & 2 ) << 2; low_bit |= ( c & 1 ) << 3;
+			c = color_table_ptr[ *lbuff_ptr++ ]; high_bit |= ( c & 2 ) << 3; low_bit |= ( c & 1 ) << 4;
+			c = color_table_ptr[ *lbuff_ptr++ ]; high_bit |= ( c & 2 ) << 4; low_bit |= ( c & 1 ) << 5;
+			c = color_table_ptr[ *lbuff_ptr++ ]; high_bit |= ( c & 2 ) << 5; low_bit |= ( c & 1 ) << 6;
+			c = color_table_ptr[ *lbuff_ptr++ ]; high_bit |= ( c & 2 ) << 6; low_bit |= ( c & 1 ) << 7;
 			*dbuff_ptr++ = high_bit;
 			*dbuff_ptr++ = low_bit;
 			lbuff_ptr += DISP_X - 8;
