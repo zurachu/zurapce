@@ -5,6 +5,11 @@
 	縁取りフォント関連.
 	仮想画面に文字を縁取りしたフォントを表示します。
 	使用方法は、ほぼ pceFont 系関数互換です。
+
+	処理が多少重いですが、コードを高速 RAM に配置することで高速化できます。\n
+	project.mak の USE_FONT_FUCHI_ON_FRAM := true を有効にして、\n
+	pceAppInit() の先頭で FramObject_Init() を呼び出して下さい。
+
 	@author zurachu
 */
 

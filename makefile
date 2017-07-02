@@ -63,6 +63,19 @@ $(FRAM_LDIRECT) : $(ZURAPCE_LIBRARY)
 endif
 
 #=======================================
+# 縁取りフォント関連コードを高速 RAM に配置する場合
+#=======================================
+ifeq ($(strip $(USE_FONT_FUCHI_ON_FRAM)),true)
+
+FRAM_FONT_FUCHI := FontFuchi.o
+FRAM_OBJECTS += $(FRAM_FONT_FUCHI)
+
+$(FRAM_FONT_FUCHI) : $(ZURAPCE_LIBRARY)
+	$(LIB) -x $< $@
+
+endif
+
+#=======================================
 # 高速 RAM に配置する場合
 #=======================================
 ifneq ($(strip $(FRAM_OBJECTS)),)
