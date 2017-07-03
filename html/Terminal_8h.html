@@ -42,6 +42,7 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#define-members">マクロ定義</a> &#124;
 <a href="#func-members">関数</a>  </div>
   <div class="headertitle">
 <div class="title">Terminal.h ファイル</div>  </div>
@@ -51,6 +52,15 @@ $(function() {
 <p>拡張端子関連.  
 <a href="#details">[詳解]</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+マクロ定義</h2></td></tr>
+<tr class="memitem:ac4bea42cdb1c2dfaa24aaef784001c7e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Terminal_8h.html#ac4bea42cdb1c2dfaa24aaef784001c7e">T_IN</a>&#160;&#160;&#160;(0)</td></tr>
+<tr class="memdesc:ac4bea42cdb1c2dfaa24aaef784001c7e"><td class="mdescLeft">&#160;</td><td class="mdescRight">入力  <a href="#ac4bea42cdb1c2dfaa24aaef784001c7e">[詳解]</a><br /></td></tr>
+<tr class="separator:ac4bea42cdb1c2dfaa24aaef784001c7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab578c399b060a06e7a1c20631a9f9a70"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Terminal_8h.html#ab578c399b060a06e7a1c20631a9f9a70">T_OUT</a>&#160;&#160;&#160;(1)</td></tr>
+<tr class="memdesc:ab578c399b060a06e7a1c20631a9f9a70"><td class="mdescLeft">&#160;</td><td class="mdescRight">出力  <a href="#ab578c399b060a06e7a1c20631a9f9a70">[詳解]</a><br /></td></tr>
+<tr class="separator:ab578c399b060a06e7a1c20631a9f9a70"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 関数</h2></td></tr>
 <tr class="memitem:ae7588e842558139951f5f7b504252584"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Terminal_8h.html#ae7588e842558139951f5f7b504252584">Terminal_Init</a> (unsigned char p1, unsigned char p2, unsigned char p3, unsigned char p4, unsigned char p5)</td></tr>
@@ -77,7 +87,40 @@ $(function() {
 付属CD-ROMに入っているソースコードと実行ファイルにも同じ間違いがあるようで、実行後にP/ECEの動作が不安定になる場合があります。
 </pre><p> P/ECE研究室（nsawa氏）2004/05/09 20:54 より <a href="http://piece.no-ip.org/">http://piece.no-ip.org/</a></p>
 <dl class="section author"><dt>著者</dt><dd>zurachu </dd></dl>
-</div><h2 class="groupheader">関数詳解</h2>
+</div><h2 class="groupheader">マクロ定義詳解</h2>
+<a id="ac4bea42cdb1c2dfaa24aaef784001c7e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac4bea42cdb1c2dfaa24aaef784001c7e">&#9670;&nbsp;</a></span>T_IN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define T_IN&#160;&#160;&#160;(0)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>入力 </p>
+
+</div>
+</div>
+<a id="ab578c399b060a06e7a1c20631a9f9a70"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab578c399b060a06e7a1c20631a9f9a70">&#9670;&nbsp;</a></span>T_OUT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define T_OUT&#160;&#160;&#160;(1)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>出力 </p>
+
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
 <a id="ae7588e842558139951f5f7b504252584"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae7588e842558139951f5f7b504252584">&#9670;&nbsp;</a></span>Terminal_Init()</h2>
 
@@ -123,7 +166,7 @@ $(function() {
 </div><div class="memdoc">
 
 <p>拡張端子の入出力を初期化. </p>
-<p>入力＝０／出力＝１ </p><dl class="params"><dt>引数</dt><dd>
+<p>それぞれ T_IN または T_OUT を指定してください。 </p><dl class="params"><dt>引数</dt><dd>
   <table class="params">
     <tr><td class="paramname">p1</td><td>ポート１（拡張端子１） </td></tr>
     <tr><td class="paramname">p2</td><td>ポート２（拡張端子４） </td></tr>
