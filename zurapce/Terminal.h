@@ -24,9 +24,15 @@
 	@author zurachu
 */
 
+/// 入力
+#define T_IN (0)
+
+/// 出力
+#define T_OUT (1)
+
 /**
 	拡張端子の入出力を初期化.
-	入力＝０／出力＝１
+	それぞれ T_IN または T_OUT を指定してください。
 	@param p1 ポート１（拡張端子１）
 	@param p2 ポート２（拡張端子４）
 	@param p3 ポート３（拡張端子６）
