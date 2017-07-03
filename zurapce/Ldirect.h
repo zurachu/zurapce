@@ -20,8 +20,10 @@
 /** @page pgx_format 16階調画像フォーマット
 	PIECE_BMP の拡張フォーマットです。
 
-	構造体は PIECE_BMP をそのまま使います。
-	16階調 BMP を pgd16cnv で変換して下さい。
+	構造体は PIECE_BMP をそのまま使うため、
+	通常の PIECE_BMP と同様に PieceBmp_Construct() で初期化できます。
+	元データとしては、 16階調 BMP を pgd16cnv で変換したものを渡してください。
+	https://github.com/zurachu/pgd16cnv
 
 @code
 	typedef struct {
