@@ -16,7 +16,6 @@
 */
 
 #include <piece.h>
-#include <string.h>
 
 /** @page pgx_format 16階調画像フォーマット
 	PIECE_BMP の拡張フォーマットです。
