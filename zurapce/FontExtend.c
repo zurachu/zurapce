@@ -76,10 +76,7 @@ static struct FONT_TABLE const s_font_table[] =
 };
 
 /// 通常の pceFontGetAdrs を退避
-static unsigned char const* (*old_pceFontGetAdrs)( unsigned short code );
-
-/// pceFontGetAdrs API フックフラグ
-static BOOL s_pceFontGetAdrs_hooked = FALSE;
+static unsigned char const* (*old_pceFontGetAdrs)( unsigned short code ) = NULL;
 
 unsigned char const* FontExtend_GetAdrs( unsigned short code )
 {
@@ -92,26 +89,25 @@ unsigned char const* FontExtend_GetAdrs( unsigned short code )
 			return s_font_table[ i ].data;
 		}
 	}
-	return s_pceFontGetAdrs_hooked
+	return old_pceFontGetAdrs
 			? old_pceFontGetAdrs( code )
 			: pceFontGetAdrs( code );
 }
 
 void FontExtend_Hook_GetAdrs( void )
 {
-	if( !s_pceFontGetAdrs_hooked )
+	if( !old_pceFontGetAdrs )
 	{
 		old_pceFontGetAdrs = pceVectorSetKs( KSNO_FontGetAdrs, FontExtend_GetAdrs );
-		s_pceFontGetAdrs_hooked = TRUE;
 	}
 }
 
 void FontExtend_Unhook_GetAdrs( void )
 {
-	if( s_pceFontGetAdrs_hooked )
+	if( old_pceFontGetAdrs )
 	{
 		pceVectorSetKs( KSNO_FontGetAdrs, old_pceFontGetAdrs );
-		s_pceFontGetAdrs_hooked = FALSE;
+		old_pceFontGetAdrs = NULL;
 	}
 }
 
