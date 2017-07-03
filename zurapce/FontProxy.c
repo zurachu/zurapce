@@ -13,17 +13,14 @@ static int s_tx_color = 3; ///< •¶ŽšF
 static int s_bk_color = 0; ///< ”wŒiF
 
 /// ’Êí‚Ì pceFontSet ŒnŠÖ”‚ð‘Þ”ð
-static void (*old_pceFontSetType)( int type );
-static void (*old_pceFontSetTxColor)( int color );
-static void (*old_pceFontSetBkColor)( int color );
-
-/// pceFontSet Œn API ƒtƒbƒNƒtƒ‰ƒO
-static BOOL s_pceFontSet_hooked = FALSE;
+static void (*old_pceFontSetType)( int type ) = NULL;
+static void (*old_pceFontSetTxColor)( int color ) = NULL;
+static void (*old_pceFontSetBkColor)( int color ) = NULL;
 
 void FontProxy_SetType( int type )
 {
 	s_type = type;
-	s_pceFontSet_hooked ? old_pceFontSetType( type ) : pceFontSetType( type );
+	old_pceFontSetType ? old_pceFontSetType( type ) : pceFontSetType( type );
 }
 
 int FontProxy_GetType( void )
@@ -34,7 +31,7 @@ int FontProxy_GetType( void )
 void FontProxy_SetTxColor( int color )
 {
 	s_tx_color = color;
-	s_pceFontSet_hooked ? old_pceFontSetTxColor( color ) : pceFontSetTxColor( color );
+	old_pceFontSetTxColor ? old_pceFontSetTxColor( color ) : pceFontSetTxColor( color );
 }
 
 int FontProxy_GetTxColor( void )
@@ -45,7 +42,7 @@ int FontProxy_GetTxColor( void )
 void FontProxy_SetBkColor( int color )
 {
 	s_bk_color = color;
-	s_pceFontSet_hooked ? old_pceFontSetBkColor( color ) : pceFontSetBkColor( color );
+	old_pceFontSetBkColor ? old_pceFontSetBkColor( color ) : pceFontSetBkColor( color );
 }
 
 int FontProxy_GetBkColor( void )
@@ -55,23 +52,24 @@ int FontProxy_GetBkColor( void )
 
 void FontProxy_Hook_Set( void )
 {
-	if( !s_pceFontSet_hooked )
+	if( !old_pceFontSetType && !old_pceFontSetTxColor && !old_pceFontSetBkColor )
 	{
 		old_pceFontSetType = pceVectorSetKs( KSNO_FontSetType, FontProxy_SetType );
 		old_pceFontSetTxColor = pceVectorSetKs( KSNO_FontSetTxColor, FontProxy_SetTxColor );
 		old_pceFontSetBkColor = pceVectorSetKs( KSNO_FontSetBkColor, FontProxy_SetBkColor );
-		s_pceFontSet_hooked = TRUE;
 	}
 }
 
 void FontProxy_Unhook_Set( void )
 {
-	if( s_pceFontSet_hooked )
+	if( old_pceFontSetType && old_pceFontSetTxColor && old_pceFontSetBkColor )
 	{
-		 pceVectorSetKs( KSNO_FontSetBkColor, old_pceFontSetBkColor );
-		 pceVectorSetKs( KSNO_FontSetTxColor, old_pceFontSetTxColor );
-		 pceVectorSetKs( KSNO_FontSetType, old_pceFontSetType );
-		s_pceFontSet_hooked = FALSE;
+		pceVectorSetKs( KSNO_FontSetBkColor, old_pceFontSetBkColor );
+		old_pceFontSetBkColor = NULL;
+		pceVectorSetKs( KSNO_FontSetTxColor, old_pceFontSetTxColor );
+		old_pceFontSetTxColor = NULL;
+		pceVectorSetKs( KSNO_FontSetType, old_pceFontSetType );
+		old_pceFontSetType = NULL;
 	}
 }
 
