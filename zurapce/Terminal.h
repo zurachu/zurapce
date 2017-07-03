@@ -19,7 +19,7 @@
 付属CD-ROMに入っているソースコードと実行ファイルにも同じ間違いがあるようで、実行後にP/ECEの動作が不安定になる場合があります。
 @endverbatim
 	P/ECE研究室（nsawa氏）2004/05/09 20:54 より
-	http://piece.no-ip.org/
+	http://www.piece-me.org/
 	
 	@author zurachu
 */
