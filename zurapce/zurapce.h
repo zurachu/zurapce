@@ -15,6 +15,7 @@
 #include "FontExtend.h"
 #include "FontFuchi.h"
 #include "PieceBmp.h"
+#include "PieceBmpAnimation.h"
 #include "PceWaveInfo.h"
 #include "Terminal.h"
 
