@@ -42,6 +42,8 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">データ構造</a> &#124;
+<a href="#typedef-members">型定義</a> &#124;
 <a href="#func-members">関数</a>  </div>
   <div class="headertitle">
 <div class="title">PieceBmp.h ファイル</div>  </div>
@@ -52,6 +54,17 @@ $(function() {
 <a href="#details">[詳解]</a></p>
 <div class="textblock"><code>#include &lt;piece.h&gt;</code><br />
 </div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+データ構造</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structUnitedPieceBmp.html">UnitedPieceBmp</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">一定サイズの複数の画像を縦横に並べた PIECE_BMP.  <a href="structUnitedPieceBmp.html#details">[詳解]</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+型定義</h2></td></tr>
+<tr class="memitem:a4a56ae7d8bddd9e5413f94416844269d"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structUnitedPieceBmp.html">UnitedPieceBmp</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="PieceBmp_8h.html#a4a56ae7d8bddd9e5413f94416844269d">UnitedPieceBmp</a></td></tr>
+<tr class="separator:a4a56ae7d8bddd9e5413f94416844269d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 関数</h2></td></tr>
 <tr class="memitem:a489e07f232644cfa9c1328b61c6c564c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="PieceBmp_8h.html#a489e07f232644cfa9c1328b61c6c564c">PieceBmp_Construct</a> (PIECE_BMP *p, unsigned char *source)</td></tr>
@@ -60,11 +73,44 @@ $(function() {
 <tr class="memitem:ab78d043826453e190375d8988cf8364e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="PieceBmp_8h.html#ab78d043826453e190375d8988cf8364e">PieceBmp_Draw</a> (PIECE_BMP *p, int dx, int dy, int sx, int sy, int width, int height, int param)</td></tr>
 <tr class="memdesc:ab78d043826453e190375d8988cf8364e"><td class="mdescLeft">&#160;</td><td class="mdescRight">PIECE_BMP の描画.  <a href="#ab78d043826453e190375d8988cf8364e">[詳解]</a><br /></td></tr>
 <tr class="separator:ab78d043826453e190375d8988cf8364e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a685c0aeade62776e7f4fd409fea349fc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="PieceBmp_8h.html#a685c0aeade62776e7f4fd409fea349fc">UnitedPieceBmp_Construct</a> (<a class="el" href="structUnitedPieceBmp.html">UnitedPieceBmp</a> *p, unsigned char *source, int width, int height)</td></tr>
+<tr class="memdesc:a685c0aeade62776e7f4fd409fea349fc"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structUnitedPieceBmp.html" title="一定サイズの複数の画像を縦横に並べた PIECE_BMP. ">UnitedPieceBmp</a> の初期化.  <a href="#a685c0aeade62776e7f4fd409fea349fc">[詳解]</a><br /></td></tr>
+<tr class="separator:a685c0aeade62776e7f4fd409fea349fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab03f6bf457857408bc1e2f77cf83f8de"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="PieceBmp_8h.html#ab03f6bf457857408bc1e2f77cf83f8de">UnitedPieceBmp_ConstructByDivision</a> (<a class="el" href="structUnitedPieceBmp.html">UnitedPieceBmp</a> *p, unsigned char *source, int divx, int divy)</td></tr>
+<tr class="memdesc:ab03f6bf457857408bc1e2f77cf83f8de"><td class="mdescLeft">&#160;</td><td class="mdescRight">分割数を指定しての <a class="el" href="structUnitedPieceBmp.html" title="一定サイズの複数の画像を縦横に並べた PIECE_BMP. ">UnitedPieceBmp</a> の初期化.  <a href="#ab03f6bf457857408bc1e2f77cf83f8de">[詳解]</a><br /></td></tr>
+<tr class="separator:ab03f6bf457857408bc1e2f77cf83f8de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f4395c5e865dcba0047a257c3a51b97"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="PieceBmp_8h.html#a5f4395c5e865dcba0047a257c3a51b97">UnitedPieceBmp_NumDivision</a> (<a class="el" href="structUnitedPieceBmp.html">UnitedPieceBmp</a> const *p)</td></tr>
+<tr class="memdesc:a5f4395c5e865dcba0047a257c3a51b97"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structUnitedPieceBmp.html" title="一定サイズの複数の画像を縦横に並べた PIECE_BMP. ">UnitedPieceBmp</a> の分割数を取得.  <a href="#a5f4395c5e865dcba0047a257c3a51b97">[詳解]</a><br /></td></tr>
+<tr class="separator:a5f4395c5e865dcba0047a257c3a51b97"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9bd9e8d1c82d0dd822a0da869b017f56"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="PieceBmp_8h.html#a9bd9e8d1c82d0dd822a0da869b017f56">UnitedPieceBmp_NumDivisionByXY</a> (<a class="el" href="structUnitedPieceBmp.html">UnitedPieceBmp</a> const *p, int *x, int *y)</td></tr>
+<tr class="memdesc:a9bd9e8d1c82d0dd822a0da869b017f56"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structUnitedPieceBmp.html" title="一定サイズの複数の画像を縦横に並べた PIECE_BMP. ">UnitedPieceBmp</a> の分割数を X, Y 方向それぞれ個別に取得.  <a href="#a9bd9e8d1c82d0dd822a0da869b017f56">[詳解]</a><br /></td></tr>
+<tr class="separator:a9bd9e8d1c82d0dd822a0da869b017f56"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a20e53b395ead6b0c587c174709bfaf49"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="PieceBmp_8h.html#a20e53b395ead6b0c587c174709bfaf49">UnitedPieceBmp_Draw</a> (<a class="el" href="structUnitedPieceBmp.html">UnitedPieceBmp</a> *p, int dx, int dy, int index, int param)</td></tr>
+<tr class="memdesc:a20e53b395ead6b0c587c174709bfaf49"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structUnitedPieceBmp.html" title="一定サイズの複数の画像を縦横に並べた PIECE_BMP. ">UnitedPieceBmp</a> の描画.  <a href="#a20e53b395ead6b0c587c174709bfaf49">[詳解]</a><br /></td></tr>
+<tr class="separator:a20e53b395ead6b0c587c174709bfaf49"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c48926c6d8d8a5c114fe2a686be36df"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="PieceBmp_8h.html#a2c48926c6d8d8a5c114fe2a686be36df">UnitedPieceBmp_DrawByXY</a> (<a class="el" href="structUnitedPieceBmp.html">UnitedPieceBmp</a> *p, int dx, int dy, int ix, int iy, int param)</td></tr>
+<tr class="memdesc:a2c48926c6d8d8a5c114fe2a686be36df"><td class="mdescLeft">&#160;</td><td class="mdescRight">X, Y 方向で個別にインデックスを指定して <a class="el" href="structUnitedPieceBmp.html" title="一定サイズの複数の画像を縦横に並べた PIECE_BMP. ">UnitedPieceBmp</a> の描画.  <a href="#a2c48926c6d8d8a5c114fe2a686be36df">[詳解]</a><br /></td></tr>
+<tr class="separator:a2c48926c6d8d8a5c114fe2a686be36df"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
 <div class="textblock"><p>PIECE_BMP 関連. </p>
 <dl class="section author"><dt>著者</dt><dd>zurachu </dd></dl>
-</div><h2 class="groupheader">関数詳解</h2>
+</div><h2 class="groupheader">型定義詳解</h2>
+<a id="a4a56ae7d8bddd9e5413f94416844269d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a56ae7d8bddd9e5413f94416844269d">&#9670;&nbsp;</a></span>UnitedPieceBmp</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structUnitedPieceBmp.html">UnitedPieceBmp</a> <a class="el" href="structUnitedPieceBmp.html">UnitedPieceBmp</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
 <a id="a489e07f232644cfa9c1328b61c6c564c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a489e07f232644cfa9c1328b61c6c564c">&#9670;&nbsp;</a></span>PieceBmp_Construct()</h2>
 
@@ -174,6 +220,309 @@ $(function() {
     <tr><td class="paramname">sy</td><td>描画元左上 Y 座標 </td></tr>
     <tr><td class="paramname">width</td><td>幅 </td></tr>
     <tr><td class="paramname">height</td><td>高さ </td></tr>
+    <tr><td class="paramname">param</td><td>パラメータ </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>pceLCDDrawObject() の戻り値（0:描画なし, 1:描画完了） </dd></dl>
+
+</div>
+</div>
+<a id="a685c0aeade62776e7f4fd409fea349fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a685c0aeade62776e7f4fd409fea349fc">&#9670;&nbsp;</a></span>UnitedPieceBmp_Construct()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UnitedPieceBmp_Construct </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structUnitedPieceBmp.html">UnitedPieceBmp</a> *&#160;</td>
+          <td class="paramname"><em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned char *&#160;</td>
+          <td class="paramname"><em>source</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>width</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>height</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="structUnitedPieceBmp.html" title="一定サイズの複数の画像を縦横に並べた PIECE_BMP. ">UnitedPieceBmp</a> の初期化. </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p</td><td><a class="el" href="structUnitedPieceBmp.html" title="一定サイズの複数の画像を縦横に並べた PIECE_BMP. ">UnitedPieceBmp</a> 構造体へのポインタ </td></tr>
+    <tr><td class="paramname">source</td><td>元データ </td></tr>
+    <tr><td class="paramname">width</td><td>画像１つの幅 </td></tr>
+    <tr><td class="paramname">height</td><td>画像１つの高さ </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ab03f6bf457857408bc1e2f77cf83f8de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab03f6bf457857408bc1e2f77cf83f8de">&#9670;&nbsp;</a></span>UnitedPieceBmp_ConstructByDivision()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UnitedPieceBmp_ConstructByDivision </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structUnitedPieceBmp.html">UnitedPieceBmp</a> *&#160;</td>
+          <td class="paramname"><em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned char *&#160;</td>
+          <td class="paramname"><em>source</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>divx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>divy</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>分割数を指定しての <a class="el" href="structUnitedPieceBmp.html" title="一定サイズの複数の画像を縦横に並べた PIECE_BMP. ">UnitedPieceBmp</a> の初期化. </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p</td><td><a class="el" href="structUnitedPieceBmp.html" title="一定サイズの複数の画像を縦横に並べた PIECE_BMP. ">UnitedPieceBmp</a> 構造体へのポインタ </td></tr>
+    <tr><td class="paramname">source</td><td>元データ </td></tr>
+    <tr><td class="paramname">divx</td><td>X 方向の分割数 </td></tr>
+    <tr><td class="paramname">divy</td><td>Y 方向の分割数 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a5f4395c5e865dcba0047a257c3a51b97"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5f4395c5e865dcba0047a257c3a51b97">&#9670;&nbsp;</a></span>UnitedPieceBmp_NumDivision()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int UnitedPieceBmp_NumDivision </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structUnitedPieceBmp.html">UnitedPieceBmp</a> const *&#160;</td>
+          <td class="paramname"><em>p</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="structUnitedPieceBmp.html" title="一定サイズの複数の画像を縦横に並べた PIECE_BMP. ">UnitedPieceBmp</a> の分割数を取得. </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p</td><td><a class="el" href="structUnitedPieceBmp.html" title="一定サイズの複数の画像を縦横に並べた PIECE_BMP. ">UnitedPieceBmp</a> 構造体へのポインタ </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a9bd9e8d1c82d0dd822a0da869b017f56"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9bd9e8d1c82d0dd822a0da869b017f56">&#9670;&nbsp;</a></span>UnitedPieceBmp_NumDivisionByXY()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UnitedPieceBmp_NumDivisionByXY </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structUnitedPieceBmp.html">UnitedPieceBmp</a> const *&#160;</td>
+          <td class="paramname"><em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="structUnitedPieceBmp.html" title="一定サイズの複数の画像を縦横に並べた PIECE_BMP. ">UnitedPieceBmp</a> の分割数を X, Y 方向それぞれ個別に取得. </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir"></td><td class="paramname">p</td><td><a class="el" href="structUnitedPieceBmp.html" title="一定サイズの複数の画像を縦横に並べた PIECE_BMP. ">UnitedPieceBmp</a> 構造体へのポインタ </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">x</td><td>X 方向の分割数格納先 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">y</td><td>Y 方向の分割数格納先 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a20e53b395ead6b0c587c174709bfaf49"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a20e53b395ead6b0c587c174709bfaf49">&#9670;&nbsp;</a></span>UnitedPieceBmp_Draw()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int UnitedPieceBmp_Draw </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structUnitedPieceBmp.html">UnitedPieceBmp</a> *&#160;</td>
+          <td class="paramname"><em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>dx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>dy</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>index</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>param</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="structUnitedPieceBmp.html" title="一定サイズの複数の画像を縦横に並べた PIECE_BMP. ">UnitedPieceBmp</a> の描画. </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p</td><td><a class="el" href="structUnitedPieceBmp.html" title="一定サイズの複数の画像を縦横に並べた PIECE_BMP. ">UnitedPieceBmp</a> 構造体へのポインタ </td></tr>
+    <tr><td class="paramname">dx</td><td>描画先左上 X 座標 </td></tr>
+    <tr><td class="paramname">dy</td><td>描画先左上 Y 座標 </td></tr>
+    <tr><td class="paramname">index</td><td>描画する画像のインデックス番号. </td></tr>
+    <tr><td class="paramname">param</td><td>パラメータ </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>pceLCDDrawObject() の戻り値（0:描画なし, 1:描画完了） index は左上から 0,1,... と進み、右端まで行ったら下の行の左端から数えます。 <pre class="fragment">X 方向４分割、 Y 方向２分割の場合
++-+-+-+-+
+|0|1|2|3|
++-+-+-+-+
+|4|5|6|7|
++-+-+-+-+
+</pre> </dd></dl>
+
+</div>
+</div>
+<a id="a2c48926c6d8d8a5c114fe2a686be36df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2c48926c6d8d8a5c114fe2a686be36df">&#9670;&nbsp;</a></span>UnitedPieceBmp_DrawByXY()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int UnitedPieceBmp_DrawByXY </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structUnitedPieceBmp.html">UnitedPieceBmp</a> *&#160;</td>
+          <td class="paramname"><em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>dx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>dy</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>ix</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>iy</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>param</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>X, Y 方向で個別にインデックスを指定して <a class="el" href="structUnitedPieceBmp.html" title="一定サイズの複数の画像を縦横に並べた PIECE_BMP. ">UnitedPieceBmp</a> の描画. </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p</td><td><a class="el" href="structUnitedPieceBmp.html" title="一定サイズの複数の画像を縦横に並べた PIECE_BMP. ">UnitedPieceBmp</a> 構造体へのポインタ </td></tr>
+    <tr><td class="paramname">dx</td><td>描画先左上 X 座標 </td></tr>
+    <tr><td class="paramname">dy</td><td>描画先左上 Y 座標 </td></tr>
+    <tr><td class="paramname">ix</td><td>X 方向インデックス </td></tr>
+    <tr><td class="paramname">iy</td><td>Y 方向インデックス </td></tr>
     <tr><td class="paramname">param</td><td>パラメータ </td></tr>
   </table>
   </dd>

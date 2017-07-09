@@ -1,0 +1,202 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>zurapce: PieceBmpAnimation 構造体</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">zurapce
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.13 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',false,false,'search.php','検索');
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-attribs">フィールド</a>  </div>
+  <div class="headertitle">
+<div class="title">PieceBmpAnimation 構造体</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>PIECE_BMP を使ったアニメーション再生機構.  
+ <a href="structPieceBmpAnimation.html#details">[詳解]</a></p>
+
+<p><code>#include &lt;PieceBmpAnimation.h&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+フィールド</h2></td></tr>
+<tr class="memitem:a1e38f0c11a518a751abcbd867f9c159e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structUnitedPieceBmp.html">UnitedPieceBmp</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structPieceBmpAnimation.html#a1e38f0c11a518a751abcbd867f9c159e">playing</a></td></tr>
+<tr class="memdesc:a1e38f0c11a518a751abcbd867f9c159e"><td class="mdescLeft">&#160;</td><td class="mdescRight">再生中の画像  <a href="#a1e38f0c11a518a751abcbd867f9c159e">[詳解]</a><br /></td></tr>
+<tr class="separator:a1e38f0c11a518a751abcbd867f9c159e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa5df81a704b63e57e278f9da344c83f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structPieceBmpAnimation.html#afa5df81a704b63e57e278f9da344c83f">current_index</a></td></tr>
+<tr class="memdesc:afa5df81a704b63e57e278f9da344c83f"><td class="mdescLeft">&#160;</td><td class="mdescRight">現在のインデックス  <a href="#afa5df81a704b63e57e278f9da344c83f">[詳解]</a><br /></td></tr>
+<tr class="separator:afa5df81a704b63e57e278f9da344c83f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d8bb2dd445466d9612e22f0947b042f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structPieceBmpAnimation.html#a9d8bb2dd445466d9612e22f0947b042f">start_index</a></td></tr>
+<tr class="memdesc:a9d8bb2dd445466d9612e22f0947b042f"><td class="mdescLeft">&#160;</td><td class="mdescRight">先頭のインデックス  <a href="#a9d8bb2dd445466d9612e22f0947b042f">[詳解]</a><br /></td></tr>
+<tr class="separator:a9d8bb2dd445466d9612e22f0947b042f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb308389afe0a78dd5bb78fa6af22333"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structPieceBmpAnimation.html#abb308389afe0a78dd5bb78fa6af22333">end_index</a></td></tr>
+<tr class="memdesc:abb308389afe0a78dd5bb78fa6af22333"><td class="mdescLeft">&#160;</td><td class="mdescRight">最終のインデックス  <a href="#abb308389afe0a78dd5bb78fa6af22333">[詳解]</a><br /></td></tr>
+<tr class="separator:abb308389afe0a78dd5bb78fa6af22333"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0cd1ac07f2438c21cee97f4b7babb306"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structPieceBmpAnimation.html#a0cd1ac07f2438c21cee97f4b7babb306">delta</a></td></tr>
+<tr class="memdesc:a0cd1ac07f2438c21cee97f4b7babb306"><td class="mdescLeft">&#160;</td><td class="mdescRight">経過時間（更新周期に達する毎に次のインデックスに進みます）  <a href="#a0cd1ac07f2438c21cee97f4b7babb306">[詳解]</a><br /></td></tr>
+<tr class="separator:a0cd1ac07f2438c21cee97f4b7babb306"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a96f67748847b1b6c7575a3e7d4f4785d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structPieceBmpAnimation.html#a96f67748847b1b6c7575a3e7d4f4785d">update_period</a></td></tr>
+<tr class="memdesc:a96f67748847b1b6c7575a3e7d4f4785d"><td class="mdescLeft">&#160;</td><td class="mdescRight">更新周期  <a href="#a96f67748847b1b6c7575a3e7d4f4785d">[詳解]</a><br /></td></tr>
+<tr class="separator:a96f67748847b1b6c7575a3e7d4f4785d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6348564589253ae4b42b1aa8889edf44"><td class="memItemLeft" align="right" valign="top">BOOL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structPieceBmpAnimation.html#a6348564589253ae4b42b1aa8889edf44">loop</a></td></tr>
+<tr class="memdesc:a6348564589253ae4b42b1aa8889edf44"><td class="mdescLeft">&#160;</td><td class="mdescRight">ループするか否か  <a href="#a6348564589253ae4b42b1aa8889edf44">[詳解]</a><br /></td></tr>
+<tr class="separator:a6348564589253ae4b42b1aa8889edf44"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><p>PIECE_BMP を使ったアニメーション再生機構. </p>
+</div><h2 class="groupheader">フィールド詳解</h2>
+<a id="a1e38f0c11a518a751abcbd867f9c159e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1e38f0c11a518a751abcbd867f9c159e">&#9670;&nbsp;</a></span>playing</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structUnitedPieceBmp.html">UnitedPieceBmp</a>* PieceBmpAnimation::playing</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>再生中の画像 </p>
+
+</div>
+</div>
+<a id="afa5df81a704b63e57e278f9da344c83f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa5df81a704b63e57e278f9da344c83f">&#9670;&nbsp;</a></span>current_index</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int PieceBmpAnimation::current_index</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>現在のインデックス </p>
+
+</div>
+</div>
+<a id="a9d8bb2dd445466d9612e22f0947b042f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9d8bb2dd445466d9612e22f0947b042f">&#9670;&nbsp;</a></span>start_index</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int PieceBmpAnimation::start_index</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>先頭のインデックス </p>
+
+</div>
+</div>
+<a id="abb308389afe0a78dd5bb78fa6af22333"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abb308389afe0a78dd5bb78fa6af22333">&#9670;&nbsp;</a></span>end_index</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int PieceBmpAnimation::end_index</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>最終のインデックス </p>
+
+</div>
+</div>
+<a id="a0cd1ac07f2438c21cee97f4b7babb306"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0cd1ac07f2438c21cee97f4b7babb306">&#9670;&nbsp;</a></span>delta</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int PieceBmpAnimation::delta</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>経過時間（更新周期に達する毎に次のインデックスに進みます） </p>
+
+</div>
+</div>
+<a id="a96f67748847b1b6c7575a3e7d4f4785d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a96f67748847b1b6c7575a3e7d4f4785d">&#9670;&nbsp;</a></span>update_period</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int PieceBmpAnimation::update_period</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>更新周期 </p>
+
+</div>
+</div>
+<a id="a6348564589253ae4b42b1aa8889edf44"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6348564589253ae4b42b1aa8889edf44">&#9670;&nbsp;</a></span>loop</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BOOL PieceBmpAnimation::loop</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>ループするか否か </p>
+
+</div>
+</div>
+<hr/>この構造体詳解は次のファイルから抽出されました:<ul>
+<li>zurapce/<a class="el" href="PieceBmpAnimation_8h.html">PieceBmpAnimation.h</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築: &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.13
+</small></address>
+</body>
+</html>
