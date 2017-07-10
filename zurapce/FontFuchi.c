@@ -251,7 +251,7 @@ static int put_str( int type, char const* p )
 		{
 			if( *p )
 			{
-				unsigned short const code = ( ch << 8 ) | *p++;
+				unsigned short const code = ( ch << 8 ) | (unsigned char)*p++;
 				m.s = ( type )? put_moji( x, y, code ) : put_fuchi( x, y, code );
 				x += m.b.w;
 			}
