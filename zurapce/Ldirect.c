@@ -25,7 +25,7 @@ static BYTE* s_dbuff[ LDIRECT_PAGE_NUM ] = { NULL };
 /// 通常の pceLCDSetBuffer を退避
 static unsigned char* (*old_pceLCDSetBuffer)( unsigned char* pbuff ) = NULL;
 
-/// 4階調バッファ描画フラグ
+/// 4階調用描画バッファの内容を仮想画面バッファに描画するフラグ
 static BOOL s_vbuff_view = FALSE;
 
 /// LCD 更新フラグ

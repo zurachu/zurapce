@@ -51,7 +51,7 @@
 	また、 pceLCDSetBuffer() をフックして、戻り値で仮想画面バッファの代わりに
 	4階調用描画バッファのアドレスを返すようにします。
 	（これにより、既存の4階調描画関数は4階調用描画バッファに描き込まれます）
-	16階調用仮想画面バッファのアドレスは Ldirect_Buffer() で取り出せます。
+	16階調用描画バッファのアドレスは Ldirect_Buffer() で取り出せます。
 	仮想画面バッファのアドレスは取り出せませんが、直接アクセスする必要はないはずです。
 	@attention
 		Lcd_Init() とは排他的になっているので、両方を呼び出さないようにしてください。
@@ -67,7 +67,7 @@ int Ldirect_Init( void );
 void Ldirect_Exit( void );
 
 /**
-	16階調用仮想画面バッファのアドレスを取得.
+	16階調用描画バッファのアドレスを取得.
 	バッファの構造は、通常の4階調用仮想画面バッファと同じです。
 	1ドット1バイト（下位4ビットのみ使用＝16色）
 	横128ドット×縦88ドット = 11246バイト
@@ -89,14 +89,15 @@ BYTE* Ldirect_Buffer( void );
 /**
 	LCD ダイレクト転送用バッファを更新します.
 	実際には、内部で更新フラグを立てるだけで、
-	Ldirect_Trans() で1フレーム1枚ずつ、
-	16階調用仮想画面、4階調用仮想画面を LCD ダイレクト転送用バッファに転送します。
+	Ldirect_Trans() で16階調用描画バッファと4階調用描画バッファの内容を
+	仮想画面バッファに重ね描きし、仮想画面バッファを1フレームに1枚ずつ
+	LCD ダイレクト転送用バッファに転送します。
 */
 void Ldirect_Update( void );
 
 /**
-	Ldirect_Trans() で4階調用仮想画面バッファを LCD ダイレクト転送用バッファに
-	転送するかどうかを設定します.
+	Ldirect_Trans() で4階調用描画バッファの内容を仮想画面バッファに
+	重ね描きするかどうかを設定します.
 	@param visible フラグ
 */
 void Ldirect_VBuffView( BOOL visible );
@@ -105,19 +106,15 @@ void Ldirect_VBuffView( BOOL visible );
 	LCD ダイレクト転送.
 	LCD ダイレクト転送用バッファを切り替えて、 LCD バッファに転送します。
 	毎フレーム呼び出して下さい。
-	Ldirect_Update() が呼び出されてから
-	まだ LCD ダイレクト転送用バッファが更新されていない場合、
-	16階調用仮想画面、4階調用仮想画面を LCD ダイレクト転送用バッファに
-	転送してから転送します。
+	Ldirect_Update() が呼び出されてからまだ仮想画面バッファが更新されていない場合、
+	16階調用描画バッファと4階調用描画バッファの内容を仮想画面に重ね描きします。
+	また、仮想画面バッファの内容がこのフレームで使用される LCD ダイレクト転送用
+	バッファに反映されていない場合、反映してから転送します。
 */
 void Ldirect_Trans( void );
 
 /**
-	4階調用仮想画面バッファを透過色（COLOR_MASK）で塗り潰す.
-	P/ECE 開発環境のドキュメント「ハードウェア概要」より
-	仮想画面バッファは下位2ビットのみ使用、
-	上位ビットに０以外が書き込まれていた場合の動作は保証無しとあるため、
-	これを呼び出す場合は必ず Ldirect の重ね合わせ表示を使ってください。
+	4階調用描画バッファを透過色（COLOR_MASK）で塗り潰す.
 	@param x 左上 X 座標
 	@param y 左上 Y 座標
 	@param w 幅
@@ -126,7 +123,7 @@ void Ldirect_Trans( void );
 void Ldirect_VBuffClear( int x, int y, int w, int h );
 
 /**
-	16階調用仮想画面バッファに16階調画像を描画.
+	16階調用描画バッファに16階調画像を描画.
 	@param p 16階調 PIECE_BMP へのポインタ
 	@param dx 描画先左上 X 座標
 	@param dy 描画先左上 Y 座標
@@ -143,7 +140,7 @@ int Ldirect_DrawObject( PIECE_BMP const* p, int dx, int dy, int sx, int sy
 						, int width, int height );
 
 /**
-	16階調用仮想画面バッファに点を描画.
+	16階調用描画バッファに点を描画.
 	@param color 色
 	@param x X座標
 	@param y Y座標
@@ -151,7 +148,7 @@ int Ldirect_DrawObject( PIECE_BMP const* p, int dx, int dy, int sx, int sy
 void Ldirect_Point( BYTE color, int const x, int const y );
 
 /**
-	16階調用仮想画面バッファに矩形を描画.
+	16階調用描画バッファに矩形を描画.
 	@param color 色
 	@param x 左上X座標
 	@param y 左上Y座標
