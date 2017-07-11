@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>zurapce: pgd16cnv/pgd16cnv ディレクトリリファレンス</title>
+<title>zurapce: Windows側キャプチャソフトの16階調対応</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -35,24 +35,26 @@ $(function() {
 });
 </script>
 <div id="main-nav"></div>
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_28fde032fffbc04981cbc7542b0d5bc1.html">pgd16cnv</a></li><li class="navelem"><a class="el" href="dir_f73965f9f1778417ce63775486ae4f5a.html">pgd16cnv</a></li>  </ul>
-</div>
 </div><!-- top -->
 <div class="header">
   <div class="headertitle">
-<div class="title">pgd16cnv ディレクトリリファレンス</div>  </div>
+<div class="title">Windows側キャプチャソフトの16階調対応 </div>  </div>
 </div><!--header-->
 <div class="contents">
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="files"></a>
-ファイル</h2></td></tr>
-<tr class="memitem:pgd16cnv_8h"><td class="memItemLeft" align="right" valign="top">ファイル &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pgd16cnv_8h.html">pgd16cnv.h</a></td></tr>
-<tr class="memdesc:pgd16cnv_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Windows BMP から16階調 P/ECE BMP に変換. <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
-</div><!-- contents -->
+<div class="textblock"><p>Windows側でP/ECEの画面をキャプチャするソフトで、16階調描画に対応させる方法です。</p>
+<ul>
+<li><p class="startli">P/ECE monitor（nsawa氏） <a href="http://www.piece-me.org/">http://www.piece-me.org/</a></p>
+<p class="startli">実行後、右クリックメニューで「16階調モード」にチェックを入れてください。</p>
+</li>
+<li><p class="startli">pceCaps（まかべひろし氏） リンク切れ</p>
+<p class="startli">readme.txt の通り、 usbcapt.h をインクルードして、 <a class="el" href="Ldirect_8h.html#add8e18cd89e161465a99ee53e05fb45d" title="初期化. ">Ldirect_Init()</a> の前に usbCaptureInit() を、 <a class="el" href="Ldirect_8h.html#ae846823f242e5e31535967f735dbc0cd" title="終了時処理. ">Ldirect_Exit()</a> の後に usbCaptureRelease() を呼び出してください。</p>
+<p class="startli">pcecaps.exe 実行後は、 File→option→MultiColorで以下の設定を行ってください。</p><ul>
+<li>1フレームの時間間隔: pceAppSetProcPeriod() の値（うまく表示されない場合は調整が必要かも）</li>
+<li>フレーム枚数: 5 </li>
+</ul>
+</li>
+</ul>
+</div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 構築: &#160;<a href="http://www.doxygen.org/index.html">

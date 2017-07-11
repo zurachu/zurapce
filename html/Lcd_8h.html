@@ -84,6 +84,7 @@ $(function() {
 </div><div class="memdoc">
 
 <p>画面関係の初期化. </p>
+<p>仮想画面バッファを確保し、その領域を使用するよう設定します。 仮想画面バッファのアドレスは pceLCDSetBuffer( INVALIDPTR ) で取り出せます。 </p><dl class="section attention"><dt>注意</dt><dd><a class="el" href="Ldirect_8h.html#add8e18cd89e161465a99ee53e05fb45d" title="初期化. ">Ldirect_Init()</a> とは排他的になっているので、両方を呼び出さないようにしてください。 </dd></dl>
 <dl class="retval"><dt>戻り値</dt><dd>
   <table class="retval">
     <tr><td class="paramname">1</td><td>仮想画面バッファ確保成功 </td></tr>
