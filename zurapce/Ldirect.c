@@ -141,7 +141,7 @@ void trans_4buff_to_vbuff( void )
 	仮想画面バッファから指定ページのダイレクト転送用バッファにマスクなし転送.
 	@param page ダイレクト転送用バッファのページ番号
 */
-static void trans_vbuff_to_dbuff( int const page )
+static void trans_vbuff_to_dbuff( int page )
 {
 	static WORD const s_color_table[ LDIRECT_PAGE_NUM ][ LDIRECT_COLOR_NUM ] =
 	{
