@@ -44,6 +44,24 @@
 @endcode
 */
 
+/** @page support_capturing Windows側キャプチャソフトの16階調対応
+	Windows側でP/ECEの画面をキャプチャするソフトで、16階調描画に対応させる方法です。
+
+	- P/ECE monitor（nsawa氏） http://www.piece-me.org/
+
+	  実行後、右クリックメニューで「16階調モード」にチェックを入れてください。
+
+	- pceCaps（まかべひろし氏） リンク切れ
+
+	  readme.txt の通り、 usbcapt.h をインクルードして、
+	  Ldirect_Init() の前に usbCaptureInit() を、
+	  Ldirect_Exit() の後に usbCaptureRelease() を呼び出してください。
+
+	  pcecaps.exe 実行後は、 File→option→MultiColorで以下の設定を行ってください。
+	  - 1フレームの時間間隔: pceAppSetProcPeriod() の値（うまく表示されない場合は調整が必要かも）
+	  - フレーム枚数: 5
+*/
+
 /**
 	初期化.
 	仮想画面バッファ、16階調用描画バッファ、4階調用描画バッファ、
