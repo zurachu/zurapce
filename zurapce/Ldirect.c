@@ -153,14 +153,15 @@ static void trans_vbuff_to_dbuff( int page )
 		//    0,     1,     2,     3,     4,     5,     6,     7,     8,     9,     A,     B,     C,     D,     E,     F
 	};
 	int xx, yy;
-	WORD* dbuff_ptr = (WORD*)s_dbuff[ page ];
+	DWORD* dbuff_ptr = (DWORD*)s_dbuff[ page ];
 	BYTE const* vbuff_ptr = s_vbuff;
+	BYTE const* vbuff_ptr1 = vbuff_ptr + DISP_X;
 	WORD const* const color_table_ptr = s_color_table[ page ];
-	WORD c;
+	DWORD c, c1;
 
 	for( xx = 0; xx < DISP_X / 8; xx += 1 )
 	{
-		for( yy = 0; yy < DISP_Y; yy += 1 )
+		for( yy = 0; yy < DISP_Y / 2; yy += 1 )
 		{
 			c = color_table_ptr[ *vbuff_ptr++ ];
 			c |= color_table_ptr[ *vbuff_ptr++ ] << 1;
@@ -170,10 +171,20 @@ static void trans_vbuff_to_dbuff( int page )
 			c |= color_table_ptr[ *vbuff_ptr++ ] << 5;
 			c |= color_table_ptr[ *vbuff_ptr++ ] << 6;
 			c |= color_table_ptr[ *vbuff_ptr++ ] << 7;
-			*dbuff_ptr++ = c;
-			vbuff_ptr += DISP_X - 8;
+			c1 = color_table_ptr[ *vbuff_ptr1++ ];
+			c1 |= color_table_ptr[ *vbuff_ptr1++ ] << 1;
+			c1 |= color_table_ptr[ *vbuff_ptr1++ ] << 2;
+			c1 |= color_table_ptr[ *vbuff_ptr1++ ] << 3;
+			c1 |= color_table_ptr[ *vbuff_ptr1++ ] << 4;
+			c1 |= color_table_ptr[ *vbuff_ptr1++ ] << 5;
+			c1 |= color_table_ptr[ *vbuff_ptr1++ ] << 6;
+			c1 |= color_table_ptr[ *vbuff_ptr1++ ] << 7;
+			*dbuff_ptr++ = c | ( c1 << 16 );
+			vbuff_ptr += DISP_X * 2 - 8;
+			vbuff_ptr1 += DISP_X * 2 - 8;
 		}
 		vbuff_ptr += -( DISP_X * DISP_Y ) + 8;
+		vbuff_ptr1 += -( DISP_X * DISP_Y ) + 8;
 	}
 }
 
