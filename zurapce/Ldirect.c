@@ -8,63 +8,140 @@
 
 #include <piece.h>
 #include <string.h>
+#include "vector.h"
 
 #define LDIRECT_PAGE_NUM	5 ///< 切り替えページ数
 #define LDIRECT_COLOR_NUM	16 ///< 階調数（LDIRECT_PAGE_NUM * 3 + 1）
 
-/// 16階調用仮想画面バッファ
-BYTE* g_lbuff = NULL;
-
+/// 仮想画面バッファ（16階調用描画の上に4階調用描画が重なる見た目）
+static BYTE* s_vbuff = NULL;
+/// 16階調用描画バッファ
+static BYTE* s_16buff = NULL;
+/// 4階調用描画バッファ
+static BYTE* s_4buff = NULL;
 /// LCD ダイレクト転送用バッファ
-BYTE* g_dbuff[ LDIRECT_PAGE_NUM ] = { NULL };
+static BYTE* s_dbuff[ LDIRECT_PAGE_NUM ] = { NULL };
 
-/// ４階調バッファ描画フラグ
+/// 通常の pceLCDSetBuffer を退避
+static unsigned char* (*old_pceLCDSetBuffer)( unsigned char* pbuff ) = NULL;
+
+/// 4階調バッファ描画フラグ
 static BOOL s_vbuff_view = FALSE;
 
+/// LCD 更新フラグ
+static BOOL s_lcd_update;
 /// 残り更新ページ数カウント
 static int s_dbuff_update_count = 0;
 
-int Ldirect_Init( void )
+static BYTE* alloc_vbuff( BYTE color )
 {
+	static int const size = DISP_X * DISP_Y;
+	BYTE* const vbuff = pceHeapAlloc( size );
+	memset( vbuff, color, size );
+	return vbuff;
+}
+
+int alloc_dbuff( void )
+{
+	static int const size = DISP_X * DISP_Y / 4;
 	int i;
-	
-	g_lbuff = pceHeapAlloc( DISP_X * DISP_Y );
-	if( !g_lbuff ) { return 0; }
-	
 	for( i = 0; i < LDIRECT_PAGE_NUM; i++ )
 	{
-		g_dbuff[ i ] = pceHeapAlloc( DISP_X * DISP_Y / 4 );
-		if( !g_dbuff[ i ] )
+		s_dbuff[ i ] = pceHeapAlloc( size );
+		memset( s_dbuff[ i ], 0, size );
+		if( !s_dbuff[ i ] )
 		{
 			while( --i >= 0 )
 			{
-				pceHeapFree( g_dbuff[ i ] );
-				g_dbuff[ i ] = NULL;
+				pceHeapFree( s_dbuff[ i ] );
 			}
-			pceHeapFree( g_lbuff );
-			g_lbuff = NULL;
 			return 0;
 		}
-	}
-	Ldirect_VBuffClear( 0, 0, DISP_X, DISP_Y );
-	memset( g_lbuff, 0, DISP_X * DISP_Y );
-	for( i = 0; i < LDIRECT_PAGE_NUM; i++ )
-	{
-		memset( g_dbuff[ i ], 0, DISP_X * DISP_Y / 4 );
 	}
 	return 1;
 }
 
+// 戻り値で仮想画面バッファの代わりに4階調用描画バッファを返す
+// （既存の4階調描画関数からの呼び出しを想定）
+static unsigned char* LCDSetBuffer( unsigned char* pbuff )
+{
+	unsigned char* const p = old_pceLCDSetBuffer( pbuff );
+	return ( p == s_vbuff ) ? s_4buff : p;
+}
+
+int Ldirect_Init( void )
+{
+	pceLCDDispStop();
+	if( !old_pceLCDSetBuffer )
+	{
+		s_vbuff = alloc_vbuff( 0 );
+		if( s_vbuff )
+		{
+			s_16buff = alloc_vbuff( 0 );
+			if( s_16buff )
+			{
+				s_4buff = alloc_vbuff( COLOR_MASK );
+				if( s_4buff )
+				{
+					if( alloc_dbuff() )
+					{
+						pceLCDSetBuffer( s_vbuff );
+						old_pceLCDSetBuffer = pceVectorSetKs( KSNO_LCDSetBuffer, LCDSetBuffer );
+						s_lcd_update = TRUE;
+						pceLCDDispStart();
+						return 1;
+					}
+					pceHeapFree( s_4buff );
+				}
+				pceHeapFree( s_16buff );
+			}
+			pceHeapFree( s_vbuff );
+		}
+	}
+	pceLCDDispStart();
+	return 0;
+}
+
+void Ldirect_Exit( void )
+{
+	if( old_pceLCDSetBuffer )
+	{
+		pceVectorSetKs( KSNO_LCDSetBuffer, old_pceLCDSetBuffer );
+	}
+}
+
 BYTE* Ldirect_Buffer( void )
 {
-	return g_lbuff;
+	return s_16buff;
 }
 
 /**
-	16階調用仮想画面バッファから指定ページのダイレクト転送用バッファにマスクなし転送.
+	4階調用描画バッファから仮想画面バッファにマスクあり転送.
+*/
+void trans_4buff_to_vbuff( void )
+{
+	static DWORD const s_color_bits = 0x03030303;
+	static DWORD const s_mask_bits = ( COLOR_MASK << 24 ) | ( COLOR_MASK << 16 ) | ( COLOR_MASK << 8 ) | COLOR_MASK;
+	int i;
+	DWORD color, mask;
+	DWORD* vbuff_ptr = (DWORD*)s_vbuff;
+	DWORD const* b4buff_ptr = (DWORD*)s_4buff;
+	for( i = 0; i < DISP_X * DISP_Y / sizeof(DWORD); i += 1 )
+	{
+		color = ( *b4buff_ptr & s_color_bits );
+		color |= color << 2;
+		mask = ( ( *b4buff_ptr & s_mask_bits ) >> 2 ) * 0xFF;
+		*vbuff_ptr &= mask;
+		*vbuff_ptr++ |= color & ~mask;
+		++b4buff_ptr;
+	}
+}
+
+/**
+	仮想画面バッファから指定ページのダイレクト転送用バッファにマスクなし転送.
 	@param page ダイレクト転送用バッファのページ番号
 */
-static void lbuff_trans( int const page )
+static void trans_vbuff_to_dbuff( int const page )
 {
 	static WORD const s_color_table[ LDIRECT_PAGE_NUM ][ LDIRECT_COLOR_NUM ] =
 	{
@@ -76,8 +153,8 @@ static void lbuff_trans( int const page )
 		//    0,     1,     2,     3,     4,     5,     6,     7,     8,     9,     A,     B,     C,     D,     E,     F
 	};
 	int xx, yy;
-	WORD* dbuff_ptr = (WORD*)g_dbuff[ page ];
-	BYTE const* lbuff_ptr = g_lbuff;
+	WORD* dbuff_ptr = (WORD*)s_dbuff[ page ];
+	BYTE const* vbuff_ptr = s_vbuff;
 	WORD const* const color_table_ptr = s_color_table[ page ];
 	WORD c;
 
@@ -85,49 +162,15 @@ static void lbuff_trans( int const page )
 	{
 		for( yy = 0; yy < DISP_Y; yy += 1 )
 		{
-			c = color_table_ptr[ *lbuff_ptr++ ];
-			c |= color_table_ptr[ *lbuff_ptr++ ] << 1;
-			c |= color_table_ptr[ *lbuff_ptr++ ] << 2;
-			c |= color_table_ptr[ *lbuff_ptr++ ] << 3;
-			c |= color_table_ptr[ *lbuff_ptr++ ] << 4;
-			c |= color_table_ptr[ *lbuff_ptr++ ] << 5;
-			c |= color_table_ptr[ *lbuff_ptr++ ] << 6;
-			c |= color_table_ptr[ *lbuff_ptr++ ] << 7;
+			c = color_table_ptr[ *vbuff_ptr++ ];
+			c |= color_table_ptr[ *vbuff_ptr++ ] << 1;
+			c |= color_table_ptr[ *vbuff_ptr++ ] << 2;
+			c |= color_table_ptr[ *vbuff_ptr++ ] << 3;
+			c |= color_table_ptr[ *vbuff_ptr++ ] << 4;
+			c |= color_table_ptr[ *vbuff_ptr++ ] << 5;
+			c |= color_table_ptr[ *vbuff_ptr++ ] << 6;
+			c |= color_table_ptr[ *vbuff_ptr++ ] << 7;
 			*dbuff_ptr++ = c;
-			lbuff_ptr += DISP_X - 8;
-		}
-		lbuff_ptr += -( DISP_X * DISP_Y ) + 8;
-	}
-}
-
-/**
-	４階調用仮想画面バッファから指定ページのダイレクト転送用バッファにマスクあり転送.
-	@param page ダイレクト転送用バッファのページ番号
-*/
-static void vbuff_trans( int const page )
-{
-	static WORD const s_color_table[] = { 0x000, 0x100, 0x001, 0x101 };
-	int xx, yy;
-	WORD* dbuff_ptr = (WORD*)g_dbuff[page];
-	BYTE const* vbuff_ptr = pceLCDSetBuffer( INVALIDPTR );
-	BYTE c;
-	WORD color, mask_bit;
-
-	for( xx = 0; xx < DISP_X / 8; xx += 1 )
-	{
-		for( yy = 0; yy < DISP_Y; yy += 1 )
-		{
-			// マスクのビット演算は COLOR_MASK = 4 である前提
-			c = *vbuff_ptr++; mask_bit = ( c & COLOR_MASK ) >> 2; color = s_color_table[ c ];
-			c = *vbuff_ptr++; mask_bit |= ( c & COLOR_MASK ) >> 1; color |= s_color_table[ c ] << 1;
-			c = *vbuff_ptr++; mask_bit |= ( c & COLOR_MASK ); color |= s_color_table[ c ] << 2;
-			c = *vbuff_ptr++; mask_bit |= ( c & COLOR_MASK ) << 1; color |= s_color_table[ c ] << 3;
-			c = *vbuff_ptr++; mask_bit |= ( c & COLOR_MASK ) << 2; color |= s_color_table[ c ] << 4;
-			c = *vbuff_ptr++; mask_bit |= ( c & COLOR_MASK ) << 3; color |= s_color_table[ c ] << 5;
-			c = *vbuff_ptr++; mask_bit |= ( c & COLOR_MASK ) << 4; color |= s_color_table[ c ] << 6;
-			c = *vbuff_ptr++; mask_bit |= ( c & COLOR_MASK ) << 5; color |= s_color_table[ c ] << 7;
-			mask_bit |= mask_bit << 8;
-			*dbuff_ptr &= mask_bit;	*dbuff_ptr++ |= color & ~mask_bit;
 			vbuff_ptr += DISP_X - 8;
 		}
 		vbuff_ptr += -( DISP_X * DISP_Y ) + 8;
@@ -136,23 +179,28 @@ static void vbuff_trans( int const page )
 
 void Ldirect_Update( void )
 {
-	s_dbuff_update_count = LDIRECT_PAGE_NUM;
+	s_lcd_update = TRUE;
 }
 
 void Ldirect_Trans( void )
 {
 	static int page = 0;
-	
-	if( s_dbuff_update_count )
+
+	if( s_lcd_update )
 	{
-		lbuff_trans( page );
+		memcpy( s_vbuff, s_16buff, DISP_X * DISP_Y );
 		if( s_vbuff_view )
 		{
-			vbuff_trans( page );
+			trans_4buff_to_vbuff();
 		}
+		s_dbuff_update_count = LDIRECT_PAGE_NUM;
+	}
+	if( s_dbuff_update_count )
+	{
+		trans_vbuff_to_dbuff( page );
 		s_dbuff_update_count--;
 	}
-	pceLCDTransDirect( g_dbuff[ page ] );
+	pceLCDTransDirect( s_dbuff[ page ] );
 	page = ( page + 1 ) % LDIRECT_PAGE_NUM;
 }
 
@@ -206,7 +254,7 @@ int Ldirect_DrawObject( PIECE_BMP const* p, int dx, int dy, int sx, int sy
 	if( dx + width > DISP_X ) { width = DISP_X - dx; }
 	if( dy + height > DISP_Y ) { height = DISP_Y - dy; }
 
-	lbuff_ptr = g_lbuff + ( dx + DISP_X * dy );
+	lbuff_ptr = s_16buff + ( dx + DISP_X * dy );
 
 	for( yy = 0; yy < height; yy += 1 )
 	{
@@ -236,7 +284,7 @@ void Ldirect_Point( BYTE color, int const x, int const y )
 	if( y >= DISP_Y ) return;
 	if( y < 0 ) return;
 	
-	*( g_lbuff + ( x + DISP_X * y ) ) = color;
+	*( s_16buff + ( x + DISP_X * y ) ) = color;
 }
 
 void Ldirect_Paint( BYTE color, int x, int y, int width, int height )
@@ -251,7 +299,7 @@ void Ldirect_Paint( BYTE color, int x, int y, int width, int height )
 	if( x + width > DISP_X ) { width = DISP_X - x; }
 	if( y + height > DISP_Y ) { height = DISP_Y - y; }
 
-	lbuff_ptr = g_lbuff + ( x + DISP_X * y );
+	lbuff_ptr = s_16buff + ( x + DISP_X * y );
 	for( yy = 0; yy < height; yy += 1 )
 	{
 		memset( lbuff_ptr, color, width );
