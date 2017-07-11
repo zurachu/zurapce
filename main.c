@@ -17,25 +17,22 @@ void pceAppInit( void )
 	FontProxy_Hook_Set();
 	FontExtend_Hook_GetAdrs();
 	
-	if( Lcd_Init() )
+	if( Ldirect_Init() )
 	{
-		if( Ldirect_Init() )
-		{
-			PieceBmp_Construct( &s_bmp, FilePack_Data( "B001000.pgx", GRP ) );
-			Ldirect_DrawObject( &s_bmp, 0, 0, 0, 0, s_bmp.header.w, s_bmp.header.h );
-			Ldirect_VBuffView( TRUE );
-			
-			FontFuchi_SetType( 0 );
-			FontFuchi_SetTxColor( 0 );
-			FontFuchi_SetBdColor( 3 );
-			FontFuchi_SetPos( 1, 1 );
-			FontFuchi_SetRange( 1, 0, DISP_X - 1, DISP_Y - 1 );
-			FontFuchi_Printf( "Hello, World\n"
-								"\xF0\x40\xF0\x41\xF0\x42\xF0\x46\xF0\x47" );
-			PrecisionTimer_Construct( &g_timer );
-			
-			s_initialize_succeed = TRUE;
-		}
+		PieceBmp_Construct( &s_bmp, FilePack_Data( "B001000.pgx", GRP ) );
+		Ldirect_DrawObject( &s_bmp, 0, 0, 0, 0, s_bmp.header.w, s_bmp.header.h );
+		Ldirect_VBuffView( TRUE );
+		
+		FontFuchi_SetType( 0 );
+		FontFuchi_SetTxColor( 0 );
+		FontFuchi_SetBdColor( 3 );
+		FontFuchi_SetPos( 1, 1 );
+		FontFuchi_SetRange( 1, 0, DISP_X - 1, DISP_Y - 1 );
+		FontFuchi_Printf( "Hello, World\n"
+							"\xF0\x40\xF0\x41\xF0\x42\xF0\x46\xF0\x47" );
+		PrecisionTimer_Construct( &g_timer );
+		
+		s_initialize_succeed = TRUE;
 	}
 }
 
@@ -65,6 +62,7 @@ void pceAppProc( int cnt )
 /// èIóπ.
 void pceAppExit( void )
 {
+	Ldirect_Exit();
 	FontExtend_Unhook_GetAdrs();
 	FontProxy_Unhook_Set();
 	Configure_Exit();
