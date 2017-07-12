@@ -47,7 +47,8 @@ ZURAPCE_LIBRARY := $(ZURAPCE_LIBRARY_DIR)/zurapce.lib
 SOURCES := $(wildcard *.c)
 DEPENDS := $(patsubst %.c,%.depend,$(SOURCES))
 OBJECTS := $(patsubst %.c,%.o,$(SOURCES))
-LIBRARIES := $(ZURAPCE_LIBRARY)
+LIBRARIES := $(LIBRARIES)
+LIBRARIES += $(ZURAPCE_LIBRARY)
 
 #=======================================
 # 16階調描画関連コードを高速 RAM に配置する場合
