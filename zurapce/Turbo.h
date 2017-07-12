@@ -1,5 +1,5 @@
-#if !defined( ZURAPCDE_TURBO_H )
-#define ZURAPCDE_TURBO_H
+#if !defined( ZURAPCE_TURBO_H )
+#define ZURAPCE_TURBO_H
 
 /** @file
 	48 MHz ìÆçÏä÷òA.
@@ -37,4 +37,4 @@ void Turbo_Init( void );
 */
 void Turbo_Exit( void );
 
-#endif // !defined( ZURAPCDE_TURBO_H )
+#endif // !defined( ZURAPCE_TURBO_H )
