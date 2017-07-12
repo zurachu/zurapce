@@ -18,7 +18,7 @@ include project.mak
 # 生成コマンド・オプション
 #=======================================
 CC := pcc33
-CFLAGS := -c -g -gp=0x0 -near -O2 -Wall
+CFLAGS := -c -g -gp=0x0 -near -O2 -Wall $(addprefix -I,$(CINCS)) $(addprefix -D,$(CDEFS))
 AS := pcc33
 ASFLAGS := -c -g -gp=0x0 -near
 LD := pcc33
