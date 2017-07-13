@@ -70,6 +70,35 @@ int alloc_dbuff( void )
 	return 1;
 }
 
+static void point( BYTE* vbuff, BYTE color, int const x, int const y )
+{
+	if( x >= DISP_X ) return;
+	if( x < 0 ) return;
+	if( y >= DISP_Y ) return;
+	if( y < 0 ) return;
+	
+	*( vbuff + ( x + DISP_X * y ) ) = color;
+}
+
+static void paint( BYTE* vbuff, BYTE color, int x, int y, int width, int height )
+{
+	int yy;
+
+	if( x >= DISP_X || y >= DISP_Y ) return;
+	if( x < 0 ) { width += x; x = 0; }
+	if( y < 0 ) { height += y; y = 0; }
+	if( width <= 0 || height <= 0 ) return;
+	if( x + width > DISP_X ) { width = DISP_X - x; }
+	if( y + height > DISP_Y ) { height = DISP_Y - y; }
+
+	vbuff += x + DISP_X * y;
+	for( yy = 0; yy < height; yy += 1 )
+	{
+		memset( vbuff, color, width );
+		vbuff += DISP_X;
+	}
+}
+
 // 戻り値で仮想画面バッファの代わりに4階調用描画バッファを返す
 // （既存の4階調描画関数からの呼び出しを想定）
 // その4階調用描画バッファを指定された時は、元の状態に戻すとみなして仮想画面バッファを設定する
@@ -126,20 +155,24 @@ static void LCDPaint( long color, long x, long y, long w, long h )
 {
 	if( s_lcd_set_buffer == s_vbuff )
 	{
-		old_pceLCDSetBuffer( s_4buff );
+		paint( s_4buff, color, x, y, w, h );
 	}
-	old_pceLCDPaint( color, x, y, w, h );
-	old_pceLCDSetBuffer( s_lcd_set_buffer );
+	else
+	{
+		old_pceLCDPaint( color, x, y, w, h );
+	}
 }
 
 static void LCDPoint( long color, long x, long y )
 {
 	if( s_lcd_set_buffer == s_vbuff )
 	{
-		old_pceLCDSetBuffer( s_4buff );
+		point( s_4buff, color, x, y );
 	}
-	old_pceLCDPoint( color, x, y );
-	old_pceLCDSetBuffer( s_lcd_set_buffer );
+	else
+	{
+		old_pceLCDPoint( color, x, y );
+	}
 }
 
 int Ldirect_Init( void )
@@ -305,22 +338,7 @@ void Ldirect_VBuffView( BOOL visible )
 
 void Ldirect_VBuffClear( int x, int y, int width, int height )
 {
-	BYTE* vbuff_ptr = pceLCDSetBuffer( INVALIDPTR );
-	int yy;
-
-	if( x >= DISP_X || y >= DISP_Y ) return;
-	if( x < 0 ) { width += x; x = 0; }
-	if( y < 0 ) { height += y; y = 0; }
-	if( width <= 0 || height <= 0 ) return;
-	if( x + width >= DISP_X ) { width = DISP_X - x; }
-	if( y + height >= DISP_Y ) { height = DISP_Y - y; }
-
-	vbuff_ptr += x + DISP_X * y;
-	for( yy = 0; yy < height; yy += 1 )
-	{
-		memset( vbuff_ptr, COLOR_MASK, width );
-		vbuff_ptr += DISP_X;
-	}
+	paint( s_4buff, COLOR_MASK, x, y, width, height );
 }
 
 int Ldirect_DrawObject( PIECE_BMP const* p, int dx, int dy, int sx, int sy
@@ -373,31 +391,11 @@ int Ldirect_DrawObject( PIECE_BMP const* p, int dx, int dy, int sx, int sy
 
 void Ldirect_Point( BYTE color, int const x, int const y )
 {
-	if( x >= DISP_X ) return;
-	if( x < 0 ) return;
-	if( y >= DISP_Y ) return;
-	if( y < 0 ) return;
-	
-	*( s_16buff + ( x + DISP_X * y ) ) = color;
+	point( s_16buff, color, x, y );
 }
 
-void Ldirect_Paint( BYTE color, int x, int y, int width, int height )
+void Ldirect_Paint( BYTE color, int x, int y, int w, int h )
 {
-	BYTE* lbuff_ptr;
-	int yy;
-
-	if( x >= DISP_X || y >= DISP_Y ) return;
-	if( x < 0 ) { width += x; x = 0; }
-	if( y < 0 ) { height += y; y = 0; }
-	if( width <= 0 || height <= 0 ) return;
-	if( x + width > DISP_X ) { width = DISP_X - x; }
-	if( y + height > DISP_Y ) { height = DISP_Y - y; }
-
-	lbuff_ptr = s_16buff + ( x + DISP_X * y );
-	for( yy = 0; yy < height; yy += 1 )
-	{
-		memset( lbuff_ptr, color, width );
-		lbuff_ptr += DISP_X;
-	}
+	paint( s_16buff, color, x, y, w, h );
 }
 
