@@ -24,6 +24,15 @@ static BYTE* s_dbuff[ LDIRECT_PAGE_NUM ] = { NULL };
 
 /// 通常の pceLCDSetBuffer を退避
 static unsigned char* (*old_pceLCDSetBuffer)( unsigned char* pbuff ) = NULL;
+/// pceLcdSetBuffer 設定内容
+static unsigned char* s_lcd_set_buffer = INVALIDPTR;
+/// 通常の描画関数（pceLcdSetBuffer() または vbuff を参照）を退避
+static unsigned short (*old_pceFontPut)( int x, int y, unsigned short code ) = NULL;
+static int (*old_pceLCDDrawObject)( DRAW_OBJECT obj ) = NULL;
+static void (*old_pceLCDLine)( long color, long x1, long y1, long x2, long y2 ) = NULL;
+static void (*old_pceLCDPaint)( long color, long x, long y, long w, long h ) = NULL;
+static void (*old_pceLCDPoint)( long color, long x, long y ) = NULL;
+
 
 /// 4階調用描画バッファの内容を仮想画面バッファに描画するフラグ
 static BOOL s_vbuff_view = FALSE;
@@ -66,8 +75,71 @@ int alloc_dbuff( void )
 // その4階調用描画バッファを指定された時は、元の状態に戻すとみなして仮想画面バッファを設定する
 static unsigned char* LCDSetBuffer( unsigned char* pbuff )
 {
-	unsigned char* const p = old_pceLCDSetBuffer( (pbuff == s_4buff) ? s_vbuff : pbuff );
+	unsigned char* p;
+	if( pbuff == s_4buff )
+	{
+		pbuff = s_vbuff;
+	}
+	if( pbuff != INVALIDPTR )
+	{
+		s_lcd_set_buffer = pbuff;
+	}
+	p = old_pceLCDSetBuffer( pbuff );
 	return ( p == s_vbuff ) ? s_4buff : p;
+}
+
+static unsigned short FontPut( int x, int y, unsigned short code )
+{
+	unsigned short ret;
+	if( s_lcd_set_buffer == s_vbuff )
+	{
+		old_pceLCDSetBuffer( s_4buff );
+	}
+	ret = old_pceFontPut( x, y, code );
+	old_pceLCDSetBuffer( s_lcd_set_buffer );
+	return ret;
+}
+
+static int LCDDrawObject( DRAW_OBJECT obj )
+{
+	int ret;
+	if( s_lcd_set_buffer == s_vbuff )
+	{
+		old_pceLCDSetBuffer( s_4buff );
+	}
+	ret = old_pceLCDDrawObject( obj );
+	old_pceLCDSetBuffer( s_lcd_set_buffer );
+	return ret;
+}
+
+static void LCDLine( long color, long x1, long y1, long x2, long y2 )
+{
+	if( s_lcd_set_buffer == s_vbuff )
+	{
+		old_pceLCDSetBuffer( s_4buff );
+	}
+	old_pceLCDLine( color, x1, y1, x2, y2 );
+	old_pceLCDSetBuffer( s_lcd_set_buffer );
+}
+
+static void LCDPaint( long color, long x, long y, long w, long h )
+{
+	if( s_lcd_set_buffer == s_vbuff )
+	{
+		old_pceLCDSetBuffer( s_4buff );
+	}
+	old_pceLCDPaint( color, x, y, w, h );
+	old_pceLCDSetBuffer( s_lcd_set_buffer );
+}
+
+static void LCDPoint( long color, long x, long y )
+{
+	if( s_lcd_set_buffer == s_vbuff )
+	{
+		old_pceLCDSetBuffer( s_4buff );
+	}
+	old_pceLCDPoint( color, x, y );
+	old_pceLCDSetBuffer( s_lcd_set_buffer );
 }
 
 int Ldirect_Init( void )
@@ -86,8 +158,13 @@ int Ldirect_Init( void )
 				{
 					if( alloc_dbuff() )
 					{
-						pceLCDSetBuffer( s_vbuff );
 						old_pceLCDSetBuffer = pceVectorSetKs( KSNO_LCDSetBuffer, LCDSetBuffer );
+						old_pceFontPut = pceVectorSetKs( KSNO_FontPut, FontPut );
+						old_pceLCDDrawObject = pceVectorSetKs( KSNO_LCDDrawObject, LCDDrawObject );
+						old_pceLCDLine = pceVectorSetKs( KSNO_LCDLine, LCDLine );
+						old_pceLCDPaint = pceVectorSetKs( KSNO_LCDPaint, LCDPaint );
+						old_pceLCDPoint = pceVectorSetKs( KSNO_LCDPoint, LCDPoint );
+						pceLCDSetBuffer( s_vbuff );
 						s_lcd_update = TRUE;
 						pceLCDDispStart();
 						return 1;
@@ -108,6 +185,11 @@ void Ldirect_Exit( void )
 	if( old_pceLCDSetBuffer )
 	{
 		pceVectorSetKs( KSNO_LCDSetBuffer, old_pceLCDSetBuffer );
+		pceVectorSetKs( KSNO_FontPut, old_pceFontPut );
+		pceVectorSetKs( KSNO_LCDDrawObject, old_pceLCDDrawObject );
+		pceVectorSetKs( KSNO_LCDLine, old_pceLCDLine );
+		pceVectorSetKs( KSNO_LCDPaint, old_pceLCDPaint );
+		pceVectorSetKs( KSNO_LCDPoint, old_pceLCDPoint );
 	}
 }
 
