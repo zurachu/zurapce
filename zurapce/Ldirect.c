@@ -28,11 +28,12 @@ static unsigned char* (*old_pceLCDSetBuffer)( unsigned char* pbuff ) = NULL;
 static unsigned char* s_lcd_set_buffer = INVALIDPTR;
 /// 通常の描画関数（pceLcdSetBuffer() または vbuff を参照）を退避
 static unsigned short (*old_pceFontPut)( int x, int y, unsigned short code ) = NULL;
+static unsigned int (*old_pceFontPutStr)( const char *p ) = NULL;
+extern unsigned int (*old_pceFontPrintf)( const char *fmt, ... ); // Ldirect_Printf.c
 static int (*old_pceLCDDrawObject)( DRAW_OBJECT obj ) = NULL;
 static void (*old_pceLCDLine)( long color, long x1, long y1, long x2, long y2 ) = NULL;
 static void (*old_pceLCDPaint)( long color, long x, long y, long w, long h ) = NULL;
 static void (*old_pceLCDPoint)( long color, long x, long y ) = NULL;
-
 
 /// 4階調用描画バッファの内容を仮想画面バッファに描画するフラグ
 static BOOL s_vbuff_view = FALSE;
@@ -129,6 +130,18 @@ static unsigned short FontPut( int x, int y, unsigned short code )
 	return ret;
 }
 
+static unsigned int FontPutStr( const char *p )
+{
+	unsigned int ret;
+	if( s_lcd_set_buffer == s_vbuff )
+	{
+		old_pceLCDSetBuffer( s_4buff );
+	}
+	ret = old_pceFontPutStr( p );
+	old_pceLCDSetBuffer( s_lcd_set_buffer );
+	return ret;
+}
+
 static int LCDDrawObject( DRAW_OBJECT obj )
 {
 	int ret;
@@ -191,8 +204,11 @@ int Ldirect_Init( void )
 				{
 					if( alloc_dbuff() )
 					{
+						extern unsigned int new_pceFontPrintf( const char *fmt, ... );
 						old_pceLCDSetBuffer = pceVectorSetKs( KSNO_LCDSetBuffer, LCDSetBuffer );
 						old_pceFontPut = pceVectorSetKs( KSNO_FontPut, FontPut );
+						old_pceFontPutStr = pceVectorSetKs( KSNO_FontPutStr, FontPutStr );
+						old_pceFontPrintf = pceVectorSetKs( KSNO_FontPrintf, new_pceFontPrintf );
 						old_pceLCDDrawObject = pceVectorSetKs( KSNO_LCDDrawObject, LCDDrawObject );
 						old_pceLCDLine = pceVectorSetKs( KSNO_LCDLine, LCDLine );
 						old_pceLCDPaint = pceVectorSetKs( KSNO_LCDPaint, LCDPaint );
@@ -219,6 +235,8 @@ void Ldirect_Exit( void )
 	{
 		pceVectorSetKs( KSNO_LCDSetBuffer, old_pceLCDSetBuffer );
 		pceVectorSetKs( KSNO_FontPut, old_pceFontPut );
+		pceVectorSetKs( KSNO_FontPutStr, old_pceFontPutStr );
+		pceVectorSetKs( KSNO_FontPrintf, old_pceFontPrintf );
 		pceVectorSetKs( KSNO_LCDDrawObject, old_pceLCDDrawObject );
 		pceVectorSetKs( KSNO_LCDLine, old_pceLCDLine );
 		pceVectorSetKs( KSNO_LCDPaint, old_pceLCDPaint );
