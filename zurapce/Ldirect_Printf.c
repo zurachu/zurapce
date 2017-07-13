@@ -12,9 +12,6 @@
 #include <piece.h>
 #include <smcvals.h>
 
-/// 通常の pceFontPrintf() を退避
-unsigned int (*old_pceFontPrintf)( const char *fmt, ... ) = NULL;
-
 unsigned int new_pceFontPrintf( const char *fmt, ... )
 {
 	// システムで確保している画面バッファを文字列展開に利用

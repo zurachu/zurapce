@@ -26,7 +26,7 @@ static unsigned char* s_lcd_set_buffer = INVALIDPTR;
 /// ’Êí‚Ì•`‰æŠÖ”ipceLcdSetBuffer() ‚Ü‚½‚Í vbuff ‚ğQÆj‚ğ‘Ş”ğ
 static unsigned short (*old_pceFontPut)( int x, int y, unsigned short code ) = NULL;
 static unsigned int (*old_pceFontPutStr)( const char *p ) = NULL;
-extern unsigned int (*old_pceFontPrintf)( const char *fmt, ... ); // Ldirect_Printf.c
+static unsigned int (*old_pceFontPrintf)( const char *fmt, ... ) = NULL;
 static int (*old_pceLCDDrawObject)( DRAW_OBJECT obj ) = NULL;
 static void (*old_pceLCDLine)( long color, long x1, long y1, long x2, long y2 ) = NULL;
 static void (*old_pceLCDPaint)( long color, long x, long y, long w, long h ) = NULL;

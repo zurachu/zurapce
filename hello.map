@@ -70,8 +70,8 @@ Address     Vaddress    Size        File                           ID  Attr
 00103110    --------    00000000    zurapce\zurapce.lib:Configure.o  1   REL
 00103110    --------    00000018    zurapce\zurapce.lib:FontProxy.o  1   REL
 00103128    --------    00000004    zurapce\zurapce.lib:FontExtend.o  1   REL
-0010312c    --------    00000044    zurapce\zurapce.lib:Ldirect.o  1   REL
-00103170    --------    00000004    zurapce\zurapce.lib:Ldirect_Printf.o  1   REL
+0010312c    --------    00000048    zurapce\zurapce.lib:Ldirect.o  1   REL
+00103174    --------    00000000    zurapce\zurapce.lib:Ldirect_Printf.o  1   REL
 00103174    --------    00000000    zurapce\zurapce.lib:PrecisionTimer.o  1   REL
 00103174    --------    00000000    zurapce\zurapce.lib:PieceBmp.o  1   REL
 00103174    --------    00000000    zurapce\zurapce.lib:FilePack.o  1   REL
