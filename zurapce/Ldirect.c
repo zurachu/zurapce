@@ -63,9 +63,10 @@ int alloc_dbuff( void )
 
 // 戻り値で仮想画面バッファの代わりに4階調用描画バッファを返す
 // （既存の4階調描画関数からの呼び出しを想定）
+// その4階調用描画バッファを指定された時は、元の状態に戻すとみなして仮想画面バッファを設定する
 static unsigned char* LCDSetBuffer( unsigned char* pbuff )
 {
-	unsigned char* const p = old_pceLCDSetBuffer( pbuff );
+	unsigned char* const p = old_pceLCDSetBuffer( (pbuff == s_4buff) ? s_vbuff : pbuff );
 	return ( p == s_vbuff ) ? s_4buff : p;
 }
 
